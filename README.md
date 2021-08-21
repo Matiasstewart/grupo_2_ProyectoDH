@@ -23,7 +23,9 @@ https://municipal.com/ Pagina del exterior con una estetica muy bonita y peculia
 https://www.billabong.com.ar/ Al igual que varias que mencionamos, esta página es de la índole de productos de los cuales queremos promocionar y comercializar. Tiene un público objetivo casi idéntico al nuestro y se utiliza como inspiración.
 
 
-WIREFRAMES: 
+
+WIREFRAMES:
+
 https://wireframe.cc/d1U46T HOME
 
 https://wireframe.cc/tdIUub CARRITO DE COMPRAS
@@ -34,4 +36,4 @@ https://wireframe.cc/icPneJ FORMULARIO DE REGISTRO
 
 https://wireframe.cc/DC19uQ DETALLES DEL PRODUCTO
 
-      
+
