@@ -6,7 +6,7 @@ Matias Stewart Usher, vive en Ricardo Rojas, Argentina. Es una persona proactiva
 
 Camila tiene 25 años, es de CABA y en su tiempo libre le gusta ver series y películas, y pasar tiempo con su familia.
 
-Mauricio Rigal:
+Mauricio Rigal tiene 41 años, vive en CABA, tiene 3 hijos, trabaja en finanzas y le gusta arreglar cosas. Su tiempo libre lo dedica a andar en bicicleta, correr, pasear por duggan-areco.
 
 
 
