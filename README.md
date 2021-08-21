@@ -8,8 +8,7 @@ Camila tiene 25 años, es de CABA y en su tiempo libre le gusta ver series y pel
 
 Mauricio Rigal tiene 41 años, vive en CABA, tiene 3 hijos, trabaja en finanzas y le gusta arreglar cosas. Su tiempo libre lo dedica a andar en bicicleta, correr, pasear por duggan-areco.
 
-
-
+https://www.cristobalcolon.com/ buena estetica aunque algo cargada, dinamica con lindos colores.
 
 https://www.puravida.com.ar/ Este sitio sigue un poco el estilo de lo que queremos hacer, de el se pueden extraer diversos productos que queremos ofrecer en nuestra pagina y que caracteristicas basicas tienen que tener los sitios de este estilo.
 
