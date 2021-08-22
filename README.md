@@ -24,16 +24,5 @@ https://www.billabong.com.ar/ Al igual que varias que mencionamos, esta página 
 
 
 
-WIREFRAMES:
-
-https://wireframe.cc/d1U46T HOME
-
-https://wireframe.cc/tdIUub CARRITO DE COMPRAS
-
-https://wireframe.cc/m9nJGO FORMULARIO DE LOGIN
-
-https://wireframe.cc/icPneJ FORMULARIO DE REGISTRO
-
-https://wireframe.cc/DC19uQ DETALLES DEL PRODUCTO
 
 
