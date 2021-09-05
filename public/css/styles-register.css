@@ -1,5 +1,61 @@
+body { 
+    background-color: rgba(83, 198, 226, 0.295)
+}
+
+main {
+    padding-top: 53px;
+}
+
+.registro {
+    padding: 12px;
+    text-align: center;
+    margin: 5px;
+}
+
 .formulario-de-registro{
     text-align: center;
+    margin:auto;
+    padding-top: 25px;
+    padding-left: 60px;
+}
+
+.formulario-de-registro label {
     display:block;
-    border: red solid 1px;
+    border: none;
+    border-radius: 5px;
+    padding: 0px 0px 0px 5px;
+    text-align: left;
+}
+
+.texto-registro {
+    display:flex;
+    width: 250px;
+    font-size: 20px;
+}
+
+.titulo-label {
+    color: black;
+    font-weight: bold;
+}
+
+p {
+    text-align: left;
+    padding-left: 60px;
+    padding-top: 20px;
+    color: black;
+    font-size: 12px;
+}
+
+
+.boton-formulario {
+    
+    background-color:black;
+    font-size: 15px;
+    color:white;
+    padding:5px 5px;
+    border-radius: 10px;
+}
+
+.boton-formulario a {
+    color: white;
 }
