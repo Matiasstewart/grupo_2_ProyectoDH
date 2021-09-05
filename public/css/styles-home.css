@@ -5,6 +5,7 @@
 
 :root {
     --colorBarras : #666;
+    --colorFooter : #777;
 }
 
 body{
@@ -196,7 +197,7 @@ footer{
     padding: 20px;
     text-decoration: none;
     text-align: center;
-    background-color: #063438;
+    background-color: var(--colorFooter);
 }
 
 footer div{
