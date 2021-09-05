@@ -40,7 +40,8 @@ form section {
     border-radius: 20px;
     border: none;
     margin-top: 5px;
-    padding: 5px;
+    padding: 5px 5px 5px 10px;
+    border: solid red 1px;
 }
 
 .titulo-label {
@@ -48,10 +49,11 @@ form section {
     font-weight: bold;
 }
 
-form section p {
+.p-del-registro {
     text-align: left;
     padding-left: 60px;
     padding-top: 20px;
+    padding-bottom: 20px;
     color: black;
     font-size: 12px;
 }
