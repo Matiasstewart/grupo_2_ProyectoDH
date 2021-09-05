@@ -1,12 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+    <title>Be/Live Wild</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles-home.css">
+    <script src="https://kit.fontawesome.com/b5260bf5c3.js"
+      crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Roboto&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="nav">
+        <div class="mobile-nav-bar">
+          <div class="left-side">
+            <i class="fas fa-bars"></i>
+            <p>Menu</p>
+          </div>
+          <div class="logo">
+            <a href="/"><p>BE/LIVE WILD</p></a>
+          </div>
+          <div class="right-side">
+            <div class="icons-top">
+              <a href="/log-in"><i class="fas fa-user"></i></a>
+              <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+            <div class="icons-bottom">
+              <a href="facebook.com"><i class="fab fa-facebook-f"></i></a>
+              <a href="instagram.com"><i class="fab fa-instagram"></i></a>
+              <a href="twitter.com"><i class="fab fa-twitter"></i></a>
+
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+      <main>
+          <form action="" method="POST" class="registro">
+              <section>
+                  <div class="formulario-de-registro">
+                      <label class="titulo-label">Nombre</label>
+                      <input type="text" class="texto-registro" minlength="3" required>
+                  </div>
+                  <div  class="formulario-de-registro">
+                      <label class="titulo-label">Apellido</label>
+                      <input type="text" class="texto-registro" minlength="3" required>
+                  </div>
+                  <div  class="formulario-de-registro">
+                      <label for="fecha-de-nacimiento" class="titulo-label">Fecha de nacimiento</label>
+                      <input type="date" class="texto-registro" name="fecha-de-nacimiento" required>
+                  </div>
+                  <div  class="formulario-de-registro">
+                      <label class="titulo-label">DNI</label>
+                      <input type="text" class="texto-registro" maxlength="8" required>
+                  </div>
+                  <div  class="formulario-de-registro">
+                      <input type="email" class="texto-registro" name="email" required>
+                  </div>
+                  <div class="formulario-de-registro">
+                      <label for="contraseña" class="titulo-label">Contraseña</label>
+                      <input type="password" class="texto-registro" name="contraseña" required>
+                  </div>
+                  <div class="formulario-de-registro">
+                      <label for="confirmar-contraseña" class="titulo-label">Confirmar Contraseña</label>
+                      <input type="password" class="texto-registro" name="confirmar-contraseña" required>
+                  </div>
+              </section>
+          </form>
+      </main>
 </body>
 </html>
