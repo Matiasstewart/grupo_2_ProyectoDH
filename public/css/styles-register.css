@@ -4,8 +4,13 @@ body {
 
 .registro {
     padding: 12px;
-    text-align: center;
     margin: 5px;
+}
+
+.texto-de-registro {
+    color:black;
+    padding-left: 60px;
+    padding-top: 20px;
 }
 
 .formulario-de-registro{
@@ -21,6 +26,7 @@ body {
     border-radius: 5px;
     padding: 0px 0px 0px 5px;
     text-align: left;
+    font-size: 20px;
 }
 
 .texto-registro {
@@ -49,8 +55,12 @@ p {
     color:white;
     padding:5px 5px;
     border-radius: 10px;
+    text-align: left;
+    margin-left: 200px;
 }
 
 .boton-formulario a {
     color: white;
+    font-size: 20px;
+   
 }
