@@ -1,0 +1,275 @@
+*{
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+    color:#fff;
+}
+
+/* HEADER */
+.mobile-nav-bar, .left-side, .right-side{
+    display:flex;
+    justify-content: space-between;
+}
+
+.mobile-nav-bar{
+    width: 100%;
+    background-color: #8cb4b8;
+    color: #fff;
+    position: fixed;
+    z-index:10;
+}
+
+.logo, .left-side, .right-side{
+    font-size: 20px;
+    margin: auto;
+}
+
+.logo{
+    background-color: #8cb4b8;
+    padding: 15px;
+    font-family: 'Rampart One', cursive;
+    text-align: center;
+}
+
+.logo a p, .icons-top a i{
+    color: #fff;
+}
+
+.icons-bottom{
+    display: none;
+}
+
+
+/* MAIN */
+.main-form{
+    background-color: #a1c1c4;
+    padding: 70px 20px 20px 20px;
+}
+
+.login-and-new-account{
+    background-color: #478c92;
+    width: 90%;
+    margin: auto;
+    padding: 0px 5%;
+    text-align: center;
+}
+
+.login-form{
+    padding: 30px 0;
+}
+
+.new-account{
+    padding: 30px 0;
+    border-top: solid 1px #000;
+}
+
+.login-form h2, .new-account h2, .login-form p, .new-account p{
+    padding-bottom: 10px;
+}
+
+.email, .password{
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+    padding-bottom: 15px;
+}
+
+.email input, .password input{
+    width: 100%;
+    border: none;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.login-form a{
+    display: block;
+    padding-bottom: 5px;
+    color: #fff;
+}
+
+.login-form button, .new-account button{
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #063438;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Footer */
+footer{
+    padding: 20px;
+    text-decoration: none;
+    text-align: center;
+    background-color: #063438;
+}
+
+footer div{
+    margin: 20px 0;
+    padding: auto;
+} 
+
+.information ul li a{
+    color: #fff;
+}
+
+.suscription a{
+    color:#fff
+}
+
+
+
+@media(min-width:481px){
+
+}
+
+/* DESKTOP */
+@media(min-width:769px){
+    /* HEADER */
+    .mobile-nav-bar{
+        display: flex;
+        justify-content: center;
+        background-color: #8cb4b8;
+        position: static;
+    }
+    
+    .right-side, .left-side{
+        flex-direction:column;
+        position: fixed;
+        align-items: center;
+        z-index: 10;
+        height: 100vh;
+        padding: 2vw 1vw;
+        background-color: #8cb4b8;
+        opacity: 1
+    }
+
+    .left-side{
+        left: 0;
+    }
+
+    .right-side{
+        right: 0;
+    }
+
+    .left-side p{
+        display:none;
+    }
+    
+    .logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .icons-top{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-self: flex-end;
+        text-align: center;
+        transition: opacity 300ms;
+    }
+
+    .fa-user, .fa-shopping-cart{
+        padding-bottom: 30px;
+    }
+
+    .icons-bottom{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-self: flex-end;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .icons-bottom a{
+        padding: 15% 0;
+        color: #fff;
+    }
+
+
+    /* Main */
+    .main-form{
+        padding: 80px 20px 40px 20px;
+    }
+
+    .login-and-new-account{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap:wrap;
+        margin: auto;
+        padding: 0px;
+        text-align: left;
+    }
+
+    .login-form{
+        width: 50%;
+        border-right: solid 1px #000;
+        padding: 30px 15px;
+    }
+
+    .new-account{
+        width: 50%;
+        margin: auto;
+        padding: 0 5%;
+        text-align: center;
+        border-top: none;
+    }
+    
+    .form{
+        text-align: center;
+    }
+
+   
+
+    
+    
+    /* Footer */
+    footer{
+        display: flex;
+        padding: 20px 40px;
+        justify-content: center;
+    }
+    
+    .about-us{
+        width: 40%;
+        text-align: left;
+        padding-right: 15px;
+    }
+    .about-us p{
+        margin: 10px 0;
+        
+    }
+
+    footer div{
+        margin: 10px 0;
+    } 
+
+    .information h2{
+        text-align: left;
+    }
+    .information ul li{
+        text-align: left;
+        margin: 10px;
+    }
+    .information{
+        width: 25%;
+    } 
+    
+    .suscription{
+        width: 30%;
+        text-align:left;
+    }
+    .suscription p{
+        margin: 10px 0;
+    }
+    .suscription a{
+        margin: 0 10px;
+    }
+}
