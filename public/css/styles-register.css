@@ -2,6 +2,11 @@ body {
     background-color: rgba(83, 198, 226, 0.295)
 }
 
+form section {
+    padding: top;
+    border-right:  solid red 1px;
+}
+
 .registro {
     padding: 12px;
     margin: 5px;
@@ -10,7 +15,7 @@ body {
 .texto-de-registro {
     color:black;
     padding-left: 60px;
-    padding-top: 20px;
+    padding-top: 21px;
 }
 
 .formulario-de-registro{
@@ -24,7 +29,6 @@ body {
     display:block;
     border: none;
     border-radius: 5px;
-    padding: 0px 0px 0px 5px;
     text-align: left;
     font-size: 20px;
 }
@@ -33,6 +37,10 @@ body {
     display:flex;
     width: 250px;
     font-size: 15px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 5px;
+    padding: 5px;
 }
 
 .titulo-label {
@@ -40,7 +48,7 @@ body {
     font-weight: bold;
 }
 
-p {
+form section p {
     text-align: left;
     padding-left: 60px;
     padding-top: 20px;
@@ -61,5 +69,5 @@ p {
 .boton-formulario a {
     color: white;
     font-size: 20px;
-   
 }
+
