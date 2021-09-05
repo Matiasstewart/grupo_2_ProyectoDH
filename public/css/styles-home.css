@@ -27,14 +27,17 @@ body{
 
 .logo, .left-side, .right-side{
     font-size: 20px;
+    margin: auto;
 }
 
-.logo a p{
+.logo{
+    background-color: #8cb4b8;
+    padding: 15px;
     font-family: 'Rampart One', cursive;
-    color: #fff;
+    text-align: center;
 }
 
-.icons-top a i{
+.logo a p, .icons-top a i{
     color: #fff;
 }
 
@@ -46,7 +49,8 @@ body{
 .video-loop{
     width: 100%;
     background-color: #517073;
-    position:relative
+    position:relative;
+    padding-top: 55px;
 }
 
 .video-loop video{
@@ -251,6 +255,7 @@ footer div{
         display: flex;
         justify-content: center;
         background-color: #8cb4b8;
+        position: static;
     }
     
     .right-side, .left-side{
@@ -259,7 +264,7 @@ footer div{
         align-items: center;
         z-index: 10;
         height: 100vh;
-        padding: 0 1vw;
+        padding: 2vw 1vw;
         background-color: #8cb4b8;
         opacity: 1
     }
@@ -312,7 +317,7 @@ footer div{
 
     /* Main */
     .video-loop{
-        padding: 50px 20px 0px 20px;
+        padding: 0 20px;
         border: none;
     }
     
