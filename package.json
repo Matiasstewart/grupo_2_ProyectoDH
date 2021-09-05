@@ -1,0 +1,24 @@
+{
+  "name": "proyectobewild",
+  "version": "1.0.0",
+  "description": "Vamos a crear una página que venda productos de diferentes marcas de primer nivel, el sitio va a estar orientado tanto a jóvenes como adultos que se relacionen con los deportes como el skateboard, el snowboard , el surf entre otros . Siempre unidos por la pasión de realizar actividades al aire libre y en contacto con la naturaleza.",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js",
+    "run" : "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Matiasstewart/grupo_2_ProyectoDH.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Matiasstewart/grupo_2_ProyectoDH/issues"
+  },
+  "homepage": "https://github.com/Matiasstewart/grupo_2_ProyectoDH#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  }
+}
