@@ -1,0 +1,58 @@
+/* Footer */
+footer{
+    padding: 20px;
+    text-decoration: none;
+    text-align: center;
+}
+footer div{
+    margin: 20px 0;
+}
+.information ul li a, .suscription a{
+    text-decoration: none;
+    color: #000;
+}
+.suscription input{
+    border:none;
+    border-radius: 5px;
+    padding: 5px 0;
+}
+
+@media(min-width:769px){
+    footer{
+        display: flex;
+        padding: 20px 40px;
+        justify-content: center;
+   }
+
+    .about-us{
+        width: 40%;
+        text-align: left;
+        padding-right: 15px;
+   }
+    .about-us p{
+        margin: 10px 0;
+   }
+    footer div{
+        margin: 10px 0;
+   }
+    .information h2{
+        text-align: left;
+   }
+    .information ul li{
+        text-align: left;
+        margin: 10px;
+   }
+    .information{
+        width: 25%;
+   }
+    .suscription{
+        width: 30%;
+        text-align:left;
+   }
+    .suscription p{
+        margin: 10px 0;
+   }
+    .suscription a{
+        margin: 0 10px;
+   }
+}
