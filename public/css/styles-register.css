@@ -1,10 +1,7 @@
-body { 
-    background-color: rgba(83, 198, 226, 0.295)
-}
-
-form section {
-    padding: top;
-    border-right:  solid red 1px;
+body{
+    font-family: 'Roboto', sans-serif;
+    color:#000;
+    background-image: linear-gradient(to bottom, #ace0f9 0%, #fbed96 100%);
 }
 
 .registro {
@@ -12,11 +9,18 @@ form section {
     margin: 5px;
 }
 
-.texto-de-registro {
+.texto-de-registro h1{
     color:black;
     padding-left: 60px;
-    padding-top: 21px;
+    padding-top: 20px;
 }
+
+.texto-de-registro h3{
+    color:black;
+    padding-left: 60px;
+}
+
+
 
 .formulario-de-registro{
     text-align: center;
@@ -38,10 +42,11 @@ form section {
     width: 250px;
     font-size: 15px;
     border-radius: 20px;
-    border: none;
+    border: 2px silver solid;
     margin-top: 5px;
     padding: 5px 5px 5px 10px;
-    border: solid red 1px;
+    background-color:white;
+    color:black;
 }
 
 .titulo-label {
@@ -55,17 +60,18 @@ form section {
     padding-top: 20px;
     padding-bottom: 20px;
     color: black;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .boton-formulario {
-    background-color:black;
+    background-color: black;
     font-size: 15px;
     color:white;
-    padding:5px 5px;
+    padding: 8px 10px;
     border-radius: 10px;
     text-align: left;
     margin-left: 200px;
+    border: 2px solid silver
 }
 
 .boton-formulario a {
