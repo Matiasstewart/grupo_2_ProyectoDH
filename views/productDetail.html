@@ -1,12 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Be/Live Wild</title>
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <script
+      src="https://kit.fontawesome.com/b5260bf5c3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles-productDetail.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="nav">
+        <div class="mobile-nav-bar">
+          <div class="left-side">
+            <i class="fas fa-bars"></i>
+            <p>Menu</p>
+          </div>
+          <div class="logo">
+            <a href="/"><p>BE/LIVE WILD</p></a>
+          </div>
+          <div class="right-side">
+            <div class="icons-top">
+              <a href="/log-in"><i class="fas fa-user"></i></a>
+              <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+            <div class="icons-bottom">
+              <a href="facebook.com"><i class="fab fa-facebook-f"></i></a>
+              <a href="instagram.com"><i class="fab fa-instagram"></i></a>
+              <a href="twitter.com"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="product">
+        <div class="product-photos">
+          <div class="main-photo">
+            <img src="/images/remera1.jpg" alt="remera1" />
+          </div>
+          <div class="gallery-product">
+            <img src="/images/remera2.jpg" alt="remera2" />
+            <img src="/images/remera3.jpg" alt="remera3" />
+            <img src="/images/remera4.jpg" alt="remera4" />
+          </div>
+        </div>
+        <div class="product-price-and-form">
+          <div class="product-details">
+            <h2 class="product-name">Remera</h2>
+            <h4>EN STOCK</h4>
+            <h2 class="price">$$$</h2>
+            <h4>3 y 6 cuotas sin interés</h4>
+            <p>Según la promo de tu tarjeta/banco</p>
+            <a href="#">Calcular cuotas</a>
+          </div>
+          <div class="product-add-form">
+          <form action="/product-form" method="POST">
+            <div class="color">
+              <h4>COLOR:</h4>
+              <input type="radio" name="color" id="negro" value="remera 1">
+              <label for="negro"><img src="/images/remera1.jpg" alt="negro"></label>
+
+              <input type="radio" name="color" id="azul" value="remera 2">
+              <label for="azul"><img src="/images/remera2.jpg" alt="azul"></label>
+              
+              <input type="radio" name="color" id="rojo" value="remera 3">
+              <label for="rojo"><img src="/images/remera3.jpg" alt="rojo"></label>
+              
+              <input type="radio" name="color" id="verde" value="remera 4">
+              <label for="verde"><img src="/images/remera4.jpg" alt="verde"></label>
+            </div>
+            <div class="talle">
+              <h4>TALLE:</h4>
+              <input type="radio" name="talle" id="S" value="S" />
+              <label for="S">S</label>
+
+              <input type="radio" name="talle" id="M" value="M" />
+              <label for="M">M</label>
+
+              <input type="radio" name="talle" id="L" value="L" />
+              <label for="L">L</label>
+            </div>
+            <div class="add-to-cart-button">
+              <button type="submit"><h4>AGREGAR AL CARRITO</h4></button>
+            </div>
+          </form>
+          </div>
+          <div class="product-info">
+          <h2>Detalle del producto</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
+            nobis eum praesentium provident consequatur molestiae itaque nulla
+            quasi quisquam, magni, eos cum molestias officiis perspiciatis
+            fugiat, exercitationem laborum ipsam suscipit!
+          </p>
+          </div>
+        </div>
+      </section>
+      <section class="other-products">
+        <h2>PRODUCTOS RELACIONADOS</h2>
+        <div class="carrusel">
+          <a href="#" class="left-arrow"><i class="fas fa-chevron-left"></i></a>
+          <a href="#" class="right-arrow"><i class="fas fa-chevron-right"></i></a>
+          <div class="carrusel-block">
+            <div class="item-de-carrusel">
+              <a href="#"><img src="images/prod 1.jpg" alt="Foto de producto"></a>
+              <h4 class="Titulo-de-producto">Producto 1</h4>
+              <p class="precio-de-producto">$$$</p>
+            </div>
+            <div class="item-de-carrusel">
+              <a href="#"><img src="images/prod 2.jpg" alt="Foto de producto"></a>
+              <h4 class="Titulo-de-producto">Producto 2</h4>
+              <p class="precio-de-producto">$$$</p>
+            </div>
+            <div class="item-de-carrusel">
+              <a href="#"><img src="images/prod 3.jpg" alt="Foto de producto"></a>
+              <h4 class="Titulo-de-producto">Producto 3</h4>
+              <p class="precio-de-producto">$$$</p>
+            </div>    
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="about-us">
+        <h2>SOBRE NOSOTRXS</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+          aliquam nihil tempora aut provident dolore. Optio esse quas, explicabo
+          cumque perferendis aperiam rem voluptates quod rerum? Consequatur
+          nobis ab iure.
+        </p>
+      </div>
+      <div class="information">
+        <h2>INFORMACIÓN</h2>
+        <ul>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Pagos y envios</a></li>
+          <li><a href="#">Terminos y condiciones</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="suscription">
+        <h2>SUSCRIBITE AL NEWSLETTER</h2>
+        <p>Suscribite y recibí nuestro newsletter y promociones</p>
+        <input type="email" placeholder="E-mail" />
+        <a href="#">Suscribirse</a>
+      </div>
+    </footer>
+  </body>
 </html>
