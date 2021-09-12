@@ -3,6 +3,10 @@
 /* FOOTER */
 @import "footer.css";
 
+*{
+    list-style: none;
+}
+
 body{
     font-family: 'Roboto', sans-serif;
     color:#000;
@@ -10,8 +14,7 @@ body{
 }
 
 .registro {
-    padding: 12px;
-    margin: 5px;
+    padding: 15px;
 }
 
 .texto-de-registro h1{
