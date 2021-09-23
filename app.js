@@ -3,6 +3,8 @@ const app = express();
 const path = require('path');
 const publicPath = path.resolve(__dirname, './public')
 
+app.set('view engine', 'ejs');
+
 app.use(express.static(publicPath));
 
 app.listen(3090, () => {
@@ -10,21 +12,21 @@ app.listen(3090, () => {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile (path.resolve (__dirname , 'views/index.html'))
+    res.render (path.resolve (__dirname , 'views/index.ejs'))
 });
 
 app.get('/registro', (req, res) => {
-    res.sendFile (path.resolve (__dirname , 'views/register.html'))
+    res.render (path.resolve (__dirname , 'views/register.ejs'))
 });
 
 app.get('/log-in', (req, res) => {
-    res.sendFile (path.resolve (__dirname , 'views/login.html'))
+    res.render (path.resolve (__dirname , 'views/login.ejs'))
 });
 
 app.get('/producto', (req, res) => {
-    res.sendFile (path.resolve (__dirname , 'views/productDetail.html'))
+    res.render (path.resolve (__dirname , 'views/productDetail.ejs'))
 });
 
 app.get('/carrito', (req, res) => {
-    res.sendFile (path.resolve (__dirname , 'views/productCart.html'))
+    res.render (path.resolve (__dirname , 'views/productCart.ejs'))
 });
