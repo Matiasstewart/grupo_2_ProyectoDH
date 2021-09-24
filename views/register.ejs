@@ -15,30 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rampart+One&family=Roboto&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header class="main-header">
-      <nav class="nav">
-        <div class="mobile-nav-bar">
-          <div class="left-side">
-            <i class="fas fa-bars"></i>
-            <p>Menu</p>
-          </div>
-          <div class="logo">
-            <a href="/"><p>BE/LIVE WILD</p></a>
-          </div>
-          <div class="right-side">
-            <div class="icons-top">
-              <a href="/log-in"><i class="fas fa-user"></i></a>
-              <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
-            </div>
-            <div class="icons-bottom">
-              <a href="facebook.com"><i class="fab fa-facebook-f"></i></a>
-              <a href="instagram.com"><i class="fab fa-instagram"></i></a>
-              <a href="twitter.com"><i class="fab fa-twitter"></i></a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <%- include('partials/header.ejs') %> 
       <main>
           <form action="" method="POST" class="registro">
               <section>
@@ -86,30 +63,6 @@
               </section>
           </form>
       </main>
-      <footer>
-        <div class="about-us">
-          <h2>SOBRE NOSOTRXS</h2>
-          <p>
-            Nos dedicamos a la venta de productos de distintas marcas orientadas
-            al skateboard, surf y snowboard. Siempre unidxs por la pasion de
-            realizar actividades al aire libre y en contacto con la naturaleza.
-          </p>
-        </div>
-        <div class="information">
-            <h2>INFORMACIÓN</h2>
-            <ul>
-                <li><a href="#">Preguntas frecuentes</a></li>
-                <li><a href="#">Pagos y envios</a></li>
-                <li><a href="#">Terminos y condiciones</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </div>
-        <div class="suscription">
-            <h2>SUSCRIBITE AL NEWSLETTER</h2>
-            <p>Suscribite y recibí nuestro newsletter y promociones</p>
-            <input type="email" value="E-mail">
-            <a href="#">Suscribirse</a>
-        </div>
-      </footer>
+      <%- include('partials/footer.ejs') %> 
 </body>
 </html>
