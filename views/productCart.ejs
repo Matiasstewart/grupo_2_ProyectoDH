@@ -19,16 +19,16 @@
     <%- include('partials/header.ejs') %> 
     <main>
         <section>
-            <h2 class="texto-del-carrito">Carrito</h2>
+            <h2 class="text-cart">Carrito</h2>
         </section>
-        <article class="producto-del-carrito">
-            <div class="imagen-del-carrito">
+        <article class="product-cart">
+            <div class="img-cart">
              <img src="/images/prod 3.jpg" alt="foto del producto">
             </div>
-            <form class="talle-y-color" method="POST">
+            <form class="size-color" method="POST">
                 <div>
                     <label>Talle:</label>
-                    <select name="talle" class="talle">
+                    <select name="talle" class="size">
                         <option value="talle1">S</option>
                         <option value="talle2">M</option>
                         <option value="talle3">L</option>
@@ -46,11 +46,11 @@
                     </select>
                 </div>
                 </form>
-                <div class="precio-y-cantidad">
+                <div class="price-amount">
                    <p>Precio</p>
-                    <form class="cantidad-del-producto" method="POST">
+                    <form class="amount-product" method="POST">
                         <label>Cantidad</label>
-                        <select name="cantidad" class="cantidad">
+                        <select name="cantidad" class="amount">
                             <option value="1">1</option>
                             <option value="1">2</option>
                             <option value="1">3</option>
@@ -59,18 +59,18 @@
                     </form>
                    <p>Subtotal</p>
                 </div>
-                <div class="tacho-de-basura">
+                <div class="trash-can">
                 <i class="fas fa-trash"></i>
              </div>
         </article>
-        <article class="producto-del-carrito">
-            <div class="imagen-del-carrito">
+        <article class="product-cart">
+            <div class="img-cart">
              <img src="/images/prod 4.jpg" alt="foto del producto">
             </div>
-            <form class="talle-y-color" method="POST">
+            <form class="size-color" method="POST">
                 <div>
                     <label>Talle:</label>
-                    <select name="talle" class="talle">
+                    <select name="talle" class="size">
                         <option value="talle1">S</option>
                         <option value="talle2">M</option>
                         <option value="talle3">L</option>
@@ -88,11 +88,11 @@
                     </select>
                 </div>
                 </form>
-                <div class="precio-y-cantidad">
+                <div class="price-amount">
                    <p>Precio</p>
-                    <form class="cantidad-del-producto" method="POST">
+                    <form class="amount-product" method="POST">
                         <label>Cantidad</label>
-                        <select name="cantidad" class="cantidad">
+                        <select name="cantidad" class="amount">
                             <option value="1">1</option>
                             <option value="1">2</option>
                             <option value="1">3</option>
@@ -101,29 +101,29 @@
                     </form>
                    <p>Subtotal</p>
                 </div>
-                <div class="tacho-de-basura">
+                <div class="trash-can">
                 <i class="fas fa-trash"></i>
              </div>
         </article>
        </section>
-       <section class ="resumen-y-codigo">
-        <article class="resumen-del-carrito">
+       <section class ="summary-code">
+        <article class="summary-cart">
             <div><h2>Resumen</h2></div>
             <div><p>Subtotal $</p>
                  <p>Total $</p>
                  <p>Envio $</p>
              </div>
              <div><h3>Codigo de descuento</h3>
-               <form class="descuento">
+               <form class="discount-cart">
                 <input tpye="text" name="codigo-de-descuento">
-                <button type="submit" class="boton-del-descuento"><p>Aplicar</p></button>
+                <button type="submit" class="button-discount"><p>Aplicar</p></button>
              </form>
             </div>
             <div><h2>Total del pedido</h2>
                 <p>$</p>
             </div>
-            <form class="boton-del-carrito" method="POST">
-              <a href="/home"><button type="submit" class="boton-del-carrito"><p>Finalizar Pedido</p></button></a>
+            <form class="button-cart" method="POST">
+              <a href="/home"><button type="submit" class="button-cart"><p>Finalizar Pedido</p></button></a>
             </form>
             </article>
         </section>

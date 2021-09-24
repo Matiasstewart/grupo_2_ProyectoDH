@@ -19,8 +19,7 @@ main {
     display: absolute;
 }
 
-
-.producto-del-carrito {
+.product-cart {
     padding: 15px;
     margin-right: 30vw;
     background-color: white;
@@ -30,7 +29,7 @@ main {
     box-shadow: 0px 0px 10px rgb(0, 0, 0); 
 }
 
-.imagen-del-carrito {
+.img-cart {
     max-width: 200px;
     margin: auto;
 }
@@ -39,7 +38,7 @@ form div {
     margin-top: 5px;
 }
 
-.resumen-del-carrito {
+.summary-cart {
     background-color: white;
     text-align: center;
     padding: 10px;
@@ -50,18 +49,18 @@ form div {
     box-shadow: 0px 0px 10px rgb(0, 0, 0); 
 }
 
-.resumen-del-carrito div {
+.summary-cart div {
     border-bottom: black solid 1px;
     padding-top: 7px;
     padding-bottom: 7px;
 }
 
-.resumen-del-carrito div p {
+.summary-cart div p {
     text-align: left;
     padding: 5px;
 }
 
-.boton-del-carrito {
+.button-cart {
     margin-top: 10px;
     font-size: 15px;
     background-color: black;
@@ -70,24 +69,24 @@ form div {
     border-radius: 20px;
 }
 
-.boton-del-carrito p {
+.button-cart p {
     margin-bottom: 10px;
     font-size: 16px;
 }
 
-.descuento {
+.discount-cart {
     padding: 7px;
 }
 
 
-.descuento input {
+.discount-cart input {
    width: 80%;
    margin-top: 5px;
    margin-bottom: 5px;
    border: black solid 2px
 }
 
-.boton-del-descuento {
+.button-discount {
     margin-top: 7px;
     padding: 10px;
     background-color: black;
@@ -96,7 +95,7 @@ form div {
     border-radius: 20px;
 }
 
-.boton-del-descuento p {
+.button-discount p {
     font-size: 16px;
 }
 
@@ -105,7 +104,7 @@ footer {
 }
 
 @media (min-width: 361px){
-    .producto-del-carrito {
+    .product-cart {
         display: block;
         margin-top: 15%;
         width: 100%;
@@ -115,43 +114,44 @@ footer {
      margin-top: 0vw;
      
  }
- .resumen-del-carrito {
+
+ .summary-cart {
      max-width: 50%;
      margin-top: 15%;
  }
 
- .resumen-y-codigo {
+ .summary-code {
      display: flex;
  }
 
-.talle-y-color {
+.size-color {
     margin-top: 20px;
     margin-bottom: 20px;
     display: flex;
 }
 
-.talle {
+.size {
     margin-right: 20px;
 }
 
-.precio-y-cantidad {
+.price-amount {
     display: flex;
     margin-top: 5px;
     margin-left: -10px;
 }
 
-.precio-y-cantidad p {
+.price-amount p {
     padding-right: 3%;
     padding-left: 3%;
     display: block;
 }
 
-.cantidad {
+.amount {
     display:block;
     margin-top: 1vw; 
 }
 
-.tacho-de-basura {
+.trash-can {
     margin-left: 95%;
     font-size: 20px;
 }
@@ -165,7 +165,7 @@ div.mobile-nav-bar {
     main {
         margin-top: 50px;
     }
-    .producto-del-carrito {
+    .product-cart {
         display:flex;
         width: 60%;
         max-width: 1200px;
@@ -174,11 +174,11 @@ div.mobile-nav-bar {
         padding-right: 50px;
     }
 
-    .imagen-del-carrito {
+    .img-cart {
         display:block;
     }
-
-    .resumen-del-carrito {
+    
+    .summary-cart {
         display: absolute;
         margin-top: -48%;
         margin-left: 70%;
@@ -187,7 +187,7 @@ div.mobile-nav-bar {
         max-width: 200px;
     }
 
-    .talle {
+    .size {
         display:flex;
     }
     
@@ -195,29 +195,29 @@ div.mobile-nav-bar {
         display:flex;
     }
 
-    .talle-y-color {
+    .size-color {
         margin-top: 6vw;
         margin-left: 2vw;
         display: block;
     }
 
-    .precio-y-cantidad {
+    .price-amount {
         display: flex;
         margin-left: 10%;
     }
     
-    .precio-y-cantidad p {
+    .price-amount p {
         padding-right: 3vw;
         padding-left: 3vw;
         display: block;
     }
     
-    .cantidad {
+    .amount{
         display:block;
         margin-top: 1vw;
     }
     
-    .tacho-de-basura {
+    .trash-can {
         margin-top: 16vw;
         margin-left: -5vw;
         font-size: 20px;
@@ -230,7 +230,7 @@ div.mobile-nav-bar {
 }
 
 @media (min-width: 1200px) {
-    .resumen-del-carrito {
+    .summary-cart {
         max-width: 250px;
         margin-top: -45%;
         margin-left: 75%;
