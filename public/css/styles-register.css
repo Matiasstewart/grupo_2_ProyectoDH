@@ -13,30 +13,30 @@ body{
     background-image: linear-gradient(to bottom, #ace0f9 0%, #fbed96 100%);
 }
 
-.registro {
+.register {
     padding: 15px;
 }
 
-.texto-de-registro h1{
+.text-register h1{
     color:black;
     padding-left: 60px;
     padding-top: 20px;
 }
 
 
-.texto-de-registro h3{
+.text-register h3{
     color:black;
     padding-left: 60px;
 }
 
 
 
-.formulario-de-registro{
+.form-register {
     padding-top: 25px;
     padding-left: 60px;
 }
 
-.formulario-de-registro label {
+.form-register label {
     display:block;
     border: none;
     border-radius: 5px;
@@ -45,7 +45,7 @@ body{
     font-size: 20px;
 }
 
-.formulario-de-registro input {
+.form-register input {
     margin: left;
     margin-left: -20px;
     margin-top: 10px;
@@ -53,7 +53,7 @@ body{
 
 
 
-.texto-registro {
+.text-register-form {
     display:flex;
     width: 250px;
     font-size: 15px;
@@ -66,12 +66,12 @@ body{
     text-align: center;
 }
 
-.titulo-label {
+.title-label {
     color: black;
     font-weight: bold;
 }
 
-.p-del-registro {
+.p-register {
     text-align: center;
     margin-left: -100px;
     padding-top: 20px;
@@ -80,7 +80,7 @@ body{
     font-size: 15px;
 }
 
-.boton-formulario {
+.button-register {
     background-color: black;
     font-size: 15px;
     color:white;
@@ -90,29 +90,29 @@ body{
     border: 2px solid silver;
 }
 
-.boton-formulario a {
+.button-register a {
     color: white;
     font-size: 20px;
 }
 
 @media (min-width: 361px) {
-    .formulario-de-registro input {
+    .form-register input {
         margin: auto;
         margin-top: 10px;
         width: 300px;
     }
 
-    .texto-de-registro h1{
+    .text-register h1{
         text-align: center;
     }
 
-    .texto-de-registro h3{
+    .text-register h3{
         color:black;
         padding-left: 60px;
         text-align: center;
     }
 
-    .formulario-de-registro label {
+    .form-register label {
         display:block;
         border: none;
         border-radius: 5px;
@@ -121,7 +121,7 @@ body{
         margin-left: 0px;
     }
 
-    .boton-formulario {
+    .button-register {
         background-color: black;
         font-size: 15px;
         color:white;
