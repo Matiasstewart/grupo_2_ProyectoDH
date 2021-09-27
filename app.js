@@ -11,6 +11,11 @@ app.listen(3090, () => {
     console.log('Servidor corriendo en el puerto http://localhost:3090/ !');
 });
 
-mainRoutes = require('./routers/main');
+// RUTAS
+const mainRoutes = require('./routers/main');
+const usersRoutes = require("./routers/users");
+const productsRoutes = require("./routers/products");
 
 app.use('/', mainRoutes)
+app.use("/productos",productsRoutes);
+app.use("/usuario", usersRoutes);
