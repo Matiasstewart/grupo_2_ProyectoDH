@@ -1,0 +1,113 @@
+/* HEADER */
+@import "header.css";
+/* FOOTER */
+@import "footer.css";
+
+
+*{
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    color:#000;
+    background-image: linear-gradient(to bottom, #ace0f9 0%, #fbed96 100%);
+}
+
+/* HEADER */
+
+/* MAIN */
+.edit-form{
+    padding: 50px 20px 0px 20px;
+}
+
+.edit-product-form{
+    width: 90%;
+    margin: auto;
+    padding: 3%;
+    text-align: left;
+}
+
+.form-section-left label, .title-right{
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.title-right{
+    margin-bottom: 10px;
+}
+
+.edit-product-form input, .form-section-left textarea{
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px;
+    width: 100%;
+    outline: none;
+    overflow: hidden;
+}
+
+input[type=checkbox]{
+    width: 5%;
+}
+
+.form-section-right label{
+    display:inline-block;
+    width: 20%;
+}
+
+.edit-product-button{
+    display: block;
+    margin: 10px auto;
+    padding: 10px 15px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #ace0f9;
+    border: solid 2px #000;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #000;
+    transition: all 300ms;
+}
+
+.edit-product-button:hover{
+    background-color: #fbed96;
+}
+
+/* FOOTER */
+
+
+/* DESKTOP */
+@media(min-width:769px){
+    /* HEADER */
+
+    /* MAIN */
+    .edit-form{
+        padding: 0;
+    }
+    
+    .edit-product-form{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 90%;
+        padding: 70px 20px 20px 20px;
+    }
+
+    .edit-product-form h2{
+        width:100%
+    }
+
+    .form-section-left, .form-section-right{
+        width: 45%;
+    }
+
+    .edit-product-button{
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px 30px;
+    }
+    
+    /* FOOTER */
+}

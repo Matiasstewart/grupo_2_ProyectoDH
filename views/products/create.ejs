@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <%- include('../partials/head', {titulo:'Crear NuevoProducto', css: 'create'}) %>
+  <body>
+    <%- include('../partials/header') %>
+    <main class="create-form">
+      <form action="/productos/ver-body" method="POST" class="new-product-form">
+        <h2>Formulario de producto</h2>
+        <section class="form-section-left">
+            <label for="name">Nombre</label>
+            <input type="text" name="nombre">
+            <label for="description">Descripción</label>
+            <textarea name="descripcion" id="description" rows="3"></textarea>
+            <label for="image">Imagen</label>
+            <input type="file" name="image" multiple>
+            <label for="category">Categoría</label>
+            <input type="text">
+        </section>
+        <section class="form-section-right">
+            <p class="title-right">Colores<p>
+            <input type="checkbox" name="color1" id="color1" value="Rojo">
+            <label for="color1">Rojo</label>
+            <input type="checkbox" name="color2" id="color2" value="Azul">
+            <label for="color2">Azul</label>
+            <input type="checkbox" name="color3" id="color3" value="Verde">
+            <label for="color3">Verde</label><br>
+            <input type="checkbox" name="color4" id="color4" value="Amarillo">
+            <label for="color4">Amarillo</label>
+            <input type="checkbox" name="color5" id="color5" value="Blanco">
+            <label for="color5">Blanco</label>
+            <input type="checkbox" name="color6" id="color6" value="Negro">
+            <label for="color6">Negro</label>
+            <p class="title-right">Talles<p>
+            <input type="checkbox" name="talle" id="S" value="S" />
+            <label for="S">S</label>
+            <input type="checkbox" name="talle" id="M" value="M" />
+            <label for="M">M</label>
+            <input type="checkbox" name="talle" id="L" value="L" />
+            <label for="L">L</label><br>
+            <label for="price" class="title-right"><strong>Precio</strong></label><br>
+            <input type="number"><br>
+        </section>
+        <div>
+            <button type="submit" class="new-product-button">CREAR PRODUCTO</button>
+        </div>
+      </form>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

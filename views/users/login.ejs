@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <%- include('../partials/head.ejs',{titulo:'Login', css:'login'})%>
+  <body>
+    <%- include('../partials/header.ejs') %> 
+    <main class="main-form">
+      <div class="login-and-new-account">
+        <section class="login-form">
+            <h2>Acceso del cliente</h2>
+            <p>Si estás registrado, ingresá con tu dirección de correo electrónico</p>
+            <form action="/login" method="POST" class="form">
+              <div class="email">
+                <label for="e-mail">Correo electrónico</label>
+                <input type="email" id="e-mail">
+              </div>
+              <div class="password">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password">
+              </div>
+              <div class="remember-me">
+                <input type="checkbox" name="remember-me" id="remember-me">
+                <label for="remember-me">Recordar mi cuenta</label>
+              </div>
+              <a href="#"><button type="submit" class="login-button"><strong>INICIAR SESION</strong></button></a>
+              <a href="#">¿Olvidaste tu contraseña?</a>
+            </form>
+        </section>
+        <section class="new-account">
+          <h2>Nuevos usuarios</h2>
+          <p>¿Primera vez? Registrate en pocos segundos y continua con tu compra. Podes acceder a <strong>beneficios exclusivos</strong>.</p>
+          <a href="/usuario/registro"><button type="button" class="account-button"><strong>CREAR UNA CUENTA</strong></button></a>
+        </section>
+      </div>
+    </main>
+    <%- include('../partials/footer.ejs') %> 
+  </body>
+</html>

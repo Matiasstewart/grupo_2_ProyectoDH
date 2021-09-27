@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <%- include('../partials/head', {titulo:'Lista de productos', css: 'list'}) %>
+  <body>
+    <%- include('../partials/header') %>
+    <main class="main-list">
+      <h2>Listado de Productos</h2>
+      <div class="products-list">
+      <% productos.forEach(function(producto){ %>
+      <section class="product">
+        <a href="/productos/detalle/<%= producto.id %>">
+          <img alt="imagen de producto" src="/images/<%=producto.imagen%>">
+          <article class="product-data">
+            <p><strong>Nombre: </strong> <%= producto.nombre %></p>
+            <p><strong>Descripcion: </strong> <%= producto.descripcion %></p>
+            <p><strong>Categoría: </strong> <%= producto.categoria %></p>
+            <p><strong>Precio: </strong> $<%=producto.precio%></p>
+          </article>
+        </a>
+        <div class="edit-button-div">
+          <a href="/productos/editar/<%= producto.id%>/" class="edit-button"><strong>Editar</strong></a>
+        </div>
+      </section>
+      <% }) %>
+      </div>
+      <div class="new-product-div">
+        <a href="/productos/crear/" class="new-product-button"><strong>CREAR PRODUCTO NUEVO</strong></a>
+      </div>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>
