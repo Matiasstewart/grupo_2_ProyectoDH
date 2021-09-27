@@ -17,23 +17,19 @@ body{
     padding: 15px;
 }
 
+.text-register{
+    text-align: center;
+    margin: 0 auto;
+}
+
 .text-register h1{
-    color:black;
-    padding-left: 60px;
-    padding-top: 20px;
+    padding-top: 25px;
 }
-
-
-.text-register h3{
-    color:black;
-    padding-left: 60px;
-}
-
-
 
 .form-register {
+    width: 90%;
+    margin: auto;
     padding-top: 25px;
-    padding-left: 60px;
 }
 
 .form-register label {
@@ -50,8 +46,6 @@ body{
     margin-left: -20px;
     margin-top: 10px;
 }
-
-
 
 .text-register-form {
     display:flex;
@@ -73,7 +67,7 @@ body{
 
 .p-register {
     text-align: center;
-    margin-left: -100px;
+    margin-left: -120px;
     padding-top: 20px;
     padding-bottom: 20px;
     color: black;
@@ -81,13 +75,14 @@ body{
 }
 
 .button-register {
+    display:block;
     background-color: black;
     font-size: 15px;
     color:white;
     padding: 8px 10px;
     border-radius: 10px;
-    margin-left: 200px;
     border: 2px solid silver;
+    margin: auto;
 }
 
 .button-register a {
@@ -106,11 +101,11 @@ body{
         text-align: center;
     }
 
-    .text-register h3{
+    /* .text-register h3{
         color:black;
         padding-left: 60px;
         text-align: center;
-    }
+    } */
 
     .form-register label {
         display:block;
@@ -127,7 +122,6 @@ body{
         color:white;
         padding: 8px 10px;
         border-radius: 10px;
-        margin-left: 52%;
         border: 2px solid silver;
     }
 }

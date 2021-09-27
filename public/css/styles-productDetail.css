@@ -129,12 +129,12 @@ body{
     border-radius: 5px;
     width: 70%;
     margin: 0 15%;
+    border:solid 2px #000;
     transition: all 450ms;
 }
 
 .add-to-cart-button:hover button{
     background-color: #fbed96;
-    border:solid 2px #000;
 }
 
 

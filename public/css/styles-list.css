@@ -1,0 +1,152 @@
+/* HEADER */
+@import "header.css";
+/* FOOTER */
+@import "footer.css";
+
+
+*{
+    text-decoration:none;
+    list-style: none;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    color:#000;
+    background-image: linear-gradient(to bottom, #ace0f9 0%, #fbed96 100%);
+    outline: none;
+}
+
+/* HEADER */
+
+/* MAIN */
+.main-list{
+    padding: 70px 20px 0px 20px;
+    
+}
+
+.products-list{
+    margin: 10px 30px
+}
+
+.product{
+    border:solid 2px transparent;
+    border-radius: 15px;
+    background-color: transparent;
+    margin: 10px;
+    padding: 5px;
+    transition: all 300ms
+}
+
+.product:hover{
+    border: solid 2px #fff;
+    background-color: #fff;
+}
+
+.product:hover .edit-button{
+    background-color: #ace0f9;
+    border-radius: 20px;
+    border:solid 2px black
+}
+
+.product a{
+    color: #000;
+}
+
+.edit-button-div{
+    width: 50%;
+    margin: 5px auto;
+}
+
+.edit-button{
+    display: block;
+    text-align: center;
+    padding: 5px;
+    margin: auto;
+    max-width: 140px;
+    border: solid 2px transparent;
+    border-radius: 20px;
+    transition: all 300ms;
+}
+
+.product:hover .edit-button:hover{
+    background-color: #fbed96;
+}
+
+.new-product-div{
+    margin: auto;
+    width: 70%;
+}
+
+.new-product-button{
+    display: block;
+    color: #000;
+    text-align: center;
+    padding: 7px;
+    background-color: #ace0f9;
+    border: solid 2px #000;
+    border-radius: 20px;
+    margin: auto;
+    max-width: 280px;
+    transition: all 300ms;
+}
+
+.new-product-button:hover{
+    background-color: #fbed96;
+}
+
+/* FOOTER */
+
+/* TABLET */
+@media(min-width: 489px){
+    .products-list{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 10px 0;
+    }
+
+    .product{
+        width: 47%;
+        margin: 0;
+        margin-bottom: 7px;
+    }
+}
+
+
+/* DESKTOP */
+@media(min-width:769px){
+    /* HEADER */
+    
+    /* Main */
+    .main-list{
+        padding: 70px 35px 0px 35px;
+    }
+
+    .products-list{
+        margin: 10px;
+    }
+
+    .product{
+        width: 49%;
+    }
+
+    .product a{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap:wrap;
+        text-align: left;
+    }
+
+    .product img{
+        width: 50%;
+        height: 90%;
+        max-width: 200px;
+        max-height: 200px;
+        
+    }
+    .product-data{
+        width: 48%;
+    }
+   
+    /* FOOTER */
+   
+}

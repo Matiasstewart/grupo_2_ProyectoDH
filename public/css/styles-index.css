@@ -70,7 +70,7 @@ body{
 }
 .button-ver-mas{
     margin: 0 auto;
-    width: 30%
+    width: 30%;
 }
 .button-ver-mas a{
     display: block;
@@ -78,10 +78,17 @@ body{
     margin: 0 auto;
     text-decoration: none;
     text-align: center;
-    background-color: #000;
     font-weight: bold;
-    color: #fff;
+    color: #000;
     border-radius: 5px;
+    background-color: #ace0f9;
+    border: solid 2px black;
+    transition: all 350ms;
+}
+
+.button-ver-mas:hover a{
+    background-color: #fbed96;
+    
 }
 /* carrusel */
 .top-products{
