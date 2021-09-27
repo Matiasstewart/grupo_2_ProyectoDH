@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <%- include('partials/head.ejs',{titulo:'Producto', css:'productDetail'})%>
+  <%- include('../partials/head.ejs',{titulo: producto.nombre, css:'productDetail'})%>
   <body>
-    <%- include('partials/header.ejs') %> 
+    <%- include('../partials/header.ejs') %> 
     <main>
       <section class="product">
         <div class="product-photos">
           <div class="main-photo">
-            <img src="/images/remera1.jpg" alt="remera1" />
+            <img src="/images/<%= producto.imagen%>" alt= <%=producto.nombre%> >
           </div>
           <div class="gallery-product">
             <img src="/images/remera2.jpg" alt="remera2" />
@@ -17,9 +17,9 @@
         </div>
         <div class="product-price-and-form">
           <div class="product-details">
-            <h2 class="product-name">Remera</h2>
+            <h2 class="product-name"><%=producto.nombre %></h2>
             <h4>EN STOCK</h4>
-            <h2 class="price">$$$</h2>
+            <h2 class="price">$<%= producto.precio%></h2>
             <h4>3 y 6 cuotas sin interés</h4>
             <p>Según la promo de tu tarjeta/banco</p>
             <a href="#">Calcular cuotas</a>
@@ -59,10 +59,7 @@
           <div class="product-info">
           <h2>Detalle del producto</h2>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
-            nobis eum praesentium provident consequatur molestiae itaque nulla
-            quasi quisquam, magni, eos cum molestias officiis perspiciatis
-            fugiat, exercitationem laborum ipsam suscipit!
+            <%=producto.descripcion%>
           </p>
           </div>
         </div>
@@ -74,17 +71,17 @@
           <a href="#" class="right-arrow"><i class="fas fa-chevron-right"></i></a>
           <div class="carrusel-block">
             <div class="item-de-carrusel">
-              <a href="#"><img src="images/prod 1.jpg" alt="Foto de producto"></a>
+              <a href="#"><img src="/images/prod 1.jpg" alt="Foto de producto"></a>
               <h4 class="Titulo-de-producto">Producto 1</h4>
               <p class="precio-de-producto">$$$</p>
             </div>
             <div class="item-de-carrusel">
-              <a href="#"><img src="images/prod 2.jpg" alt="Foto de producto"></a>
+              <a href="#"><img src="/images/prod 2.jpg" alt="Foto de producto"></a>
               <h4 class="Titulo-de-producto">Producto 2</h4>
               <p class="precio-de-producto">$$$</p>
             </div>
             <div class="item-de-carrusel">
-              <a href="#"><img src="images/prod 3.jpg" alt="Foto de producto"></a>
+              <a href="#"><img src="/images/prod 3.jpg" alt="Foto de producto"></a>
               <h4 class="Titulo-de-producto">Producto 3</h4>
               <p class="precio-de-producto">$$$</p>
             </div>    
@@ -92,6 +89,6 @@
         </div>
       </section>
     </main>
-    <%- include('partials/footer.ejs') %> 
+    <%- include('../partials/footer.ejs') %> 
   </body>
 </html>
