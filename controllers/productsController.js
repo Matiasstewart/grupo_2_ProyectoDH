@@ -98,7 +98,7 @@ const productsController ={
         res.render('products/create')
     },
     newProduct: (req,res) =>{
-        res.render('products/list')
+        res.send("¡Agregue un producto!")
     },
     // 
 
@@ -111,7 +111,7 @@ const productsController ={
         })
     },
     update: (req,res) =>{
-        res.render('products/list')
+        res.send("¡Elimine un producto!")
     },
     // 
 

@@ -16,13 +16,10 @@ router.get("/carrito", productsController.carrito)
 
 // Crear y almacenar
 router.get("/crear",productsController.create)
-router.post("/detalle/:id", productsController.newProduct)
+router.post("/", productsController.newProduct)
 
 // Editar y almacenar
 router.get("/editar/:id",productsController.edit)
-router.put("detalle/:id", productsController.update)
-
-
-
+router.put("/", productsController.update)
 
 module.exports = router
