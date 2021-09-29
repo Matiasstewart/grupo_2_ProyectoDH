@@ -71,53 +71,23 @@ body{
     flex-wrap: wrap;
 }
 
-.color h4{
-    width: 100%;
-    margin-bottom: 10px;
+.color select, .talle select{
+    border-radius: 5px;
+    background-color: #69cbf8;
+    border: none;
+    outline:none
 }
 
-.color label{
-    width: 50px;
+.color label, .talle label{
+    width: 60px;
     border: solid 2px transparent;
     margin: 2px;
-}
-
-.color input, .talle input{
-    display:none;
-}
-
-.color img{
-    width: 100%;
-    height: 100%;
-}
-
-.color input:checked + label{
-    border: solid 2px #000;
 }
 
 .talle {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-}
-
-.talle h4{
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.talle label{
-    width: 30px;
-    padding: 5px;
-    margin: 0 5px;
-    text-align: center;
-    border: solid 2px transparent;
-}
-
-.talle input:checked + label{
-    border: solid 2px #000;
-    background-color: #fbed96;
-    color: #000;
 }
 
 
