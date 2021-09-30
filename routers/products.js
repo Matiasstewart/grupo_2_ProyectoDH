@@ -16,7 +16,7 @@ router.get("/carrito", productsController.carrito)
 
 // Crear y almacenar
 router.get("/crear",productsController.create)
-router.post("/", productsController.newProduct)
+router.post("/", productsController.store)
 
 // Editar y almacenar
 router.get("/editar/:id",productsController.edit)

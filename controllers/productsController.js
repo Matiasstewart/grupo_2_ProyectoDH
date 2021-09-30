@@ -97,7 +97,7 @@ const productsController ={
     create: (req,res) =>{
         res.render('products/create')
     },
-    newProduct: (req,res) =>{
+    store: (req,res) =>{
         res.send("¡Agregue un producto!")
     },
     // 
@@ -111,7 +111,7 @@ const productsController ={
         })
     },
     update: (req,res) =>{
-        res.send("¡Elimine un producto!")
+        res.send("¡Edite un producto!")
     },
     // 
 
