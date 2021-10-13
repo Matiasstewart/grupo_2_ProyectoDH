@@ -7,7 +7,7 @@
       <section class="product">
         <div class="product-photos">
           <div class="main-photo">
-            <img src="/images/<%= producto.imagen%>" alt= <%=producto.nombre%> >
+            <img src="/images/<%= producto.image%>" alt= <%=producto.nombre%> >
           </div>
           <div class="gallery-product">
             <img src="/images/remera2.jpg" alt="remera2" />
@@ -17,9 +17,9 @@
         </div>
         <div class="product-price-and-form">
           <div class="product-details">
-            <h2 class="product-name"><%=producto.nombre %></h2>
+            <h2 class="product-name"><%=producto.name %></h2>
             <h4>EN STOCK</h4>
-            <h2 class="price">$<%= producto.precio%></h2>
+            <h2 class="price">$<%= producto.price%></h2>
             <h4>3 y 6 cuotas sin interés</h4>
             <p>Según la promo de tu tarjeta/banco</p>
             <a href="#">Calcular cuotas</a>
@@ -27,20 +27,23 @@
           <div class="product-add-form">
           <form action="/product-form" method="POST">
             <div class="color">
-              <label for="color"><strong>COLOR:</strong></label>
+              <label for="color"><strong>Color</strong></label>
               <select name="color" id="color">
-                <option value="#ff0000">Rojo</option>
-                <option value="#000000">Negro</option>
-                <option value="#0000ff">Azul</option>
-                <option value="#00ff00">Verde</option>
+                <option value="">Elegí un color</option>
+                <% let arrayColor = producto.color%>
+                <% for (const color of arrayColor){ %>
+                <option value="<%=color%>"><%=color%></option>
+                <%}%>
               </select>
             </div>
             <div class="talle">
-              <label for="size"><strong>TALLE:</strong></label>
+              <label for="size"><strong>Talle</strong></label>
               <select name="size" id="size">
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
+                <option value="">Elegí un talle</option>
+                <% let arraySize = producto.size%>
+                <% for (const size of arraySize){ %>
+                <option value="<%=size%>"><%=size%></option>
+                <%}%>
               </select>
             </div>
             <div class="add-to-cart-button">
@@ -51,7 +54,7 @@
           <div class="product-info">
           <h2>Detalle del producto</h2>
           <p>
-            <%=producto.descripcion%>
+            <%=producto.description%>
           </p>
           </div>
         </div>

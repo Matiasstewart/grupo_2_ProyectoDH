@@ -8,24 +8,31 @@
       <div class="products-list">
       <% productos.forEach(function(producto){ %>
       <section class="product">
-        <a href="/productos/detalle/<%= producto.id %>">
-          <img alt="imagen de producto" src="/images/<%=producto.imagen%>">
+        <a href="/productos/detalle/<%= producto.id %>" class="product-detail">
+          <div class="product-image">
+            <img alt="imagen de producto" src="/images/<%=producto.image%>">
+          </div>
           <article class="product-data">
-            <p><strong>Nombre: </strong> <%= producto.nombre %></p>
-            <p><strong>Descripcion: </strong> <%= producto.descripcion %></p>
-            <p><strong>Categoría: </strong> <%= producto.categoria %></p>
-            <p><strong>Precio: </strong> $<%=producto.precio%></p>
+            <p><strong>Nombre: </strong> <%= producto.name %></p>
+            <p><strong>Descripcion: </strong> <%= producto.description %></p>
+            <p><strong>Categoría: </strong> <%= producto.category %></p>
+            <p><strong>Precio: </strong> $<%=producto.price%></p>
           </article>
         </a>
+        <div class="edit-delete-buttons">
         <div class="edit-button-div">
           <a href="/productos/editar/<%= producto.id%>/" class="edit-button"><strong>Editar</strong></a>
         </div>
+        <form action="/productos/detalle/<%=producto.id%>?_method=DELETE" method="POST" class="delete-form">
+          <button type="submit" class="delete-button"><strong>Eliminar</strong></button>
+        </form>
+        </div>
       </section>
       <% }) %>
-      </div>
-      <div class="new-product-div">
-        <a href="/productos/crear/" class="new-product-button"><strong>CREAR PRODUCTO NUEVO</strong></a>
-      </div>
+    </div>
+    <div class="new-product-div">
+      <a href="/productos/crear/" class="new-product-button"><strong>CREAR PRODUCTO NUEVO</strong></a>
+    </div>
     </main>
     <%- include('../partials/footer') %>
   </body>
