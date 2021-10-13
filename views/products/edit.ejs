@@ -15,8 +15,8 @@
             <input type="file" name="image">
             <label for="category">Categoría</label>
             <select name="category" id="category" class="category">
-              <option value="">Elegí un pais</option>
-              <% let arrayCategories = ['snow','surf','skate']%>
+              <option value="">Elegí una categoria</option>
+              <% let arrayCategories = ['Snow','Surf','Skate']%>
               <% for (const category of arrayCategories){ %>
                 <option value="<%=category%>" <%= category == producto.category ? 'selected'  : null%>><%=category%></option>
               <%}%>

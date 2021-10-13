@@ -19,27 +19,23 @@ body{
 
 /* MAIN */
 .create-form{
-    padding: 50px 20px 0px 20px;
+    padding: 60px 20px 0px 20px;
 }
 
 .new-product-form{
     width: 90%;
     margin: auto;
-    padding: 3%;
+    padding: 4%;
     text-align: left;
 }
 
-.form-section-left label, .title-right{
+label, .form-section-right p{
     display: block;
     font-weight: bold;
     margin-top: 10px;
 }
 
-.title-right{
-    margin-bottom: 10px;
-}
-
-.new-product-form input, .form-section-left textarea{
+.new-product-form input, .form-section-left textarea, .category{
     border: none;
     border-radius: 15px;
     padding: 5px 10px;
@@ -54,6 +50,7 @@ input[type=checkbox]{
 
 .form-section-right label{
     display:inline-block;
+    font-weight: 100;
     width: 20%;
 }
 
@@ -92,11 +89,14 @@ input[type=checkbox]{
         justify-content: space-around;
         flex-wrap: wrap;
         width: 90%;
-        padding: 70px 20px 20px 20px;
+        padding: 20px;
     }
 
-    .new-product-form h2{
-        width:100%
+    .create-form h2{
+        padding-top: 60px;
+        padding-left: 50px;
+        width:100%;
+
     }
 
     .form-section-left, .form-section-right{
