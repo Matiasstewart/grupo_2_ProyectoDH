@@ -31,11 +31,11 @@ router.get("/carrito", productsController.carrito)
 
 // Crear y almacenar
 router.get("/crear",productsController.create)
-router.post("/", productsController.store)
+router.post("/", upload.single("image"), productsController.store)
 
 // Editar y almacenar
 router.get("/editar/:id",productsController.edit)
-router.put("/", productsController.update)
+router.put("/detalle/:id", upload.single("image"), productsController.update)
 
 // Borrar
 router.delete("/detalle/:id",productsController.delete)
