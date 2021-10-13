@@ -1,85 +1,8 @@
-let productos = [
-    {
-        id:1,
-        nombre: "Remera1",
-        descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aliquam nihil tempora aut provident dolore.",
-        imagen: "remera1.jpg",
-        categoria: "snow",
-        colores: "Blanco, Negro, Azul",
-        talles: "S, M, L",
-        precio: 100
-    },
-    {
-        id:2,
-        nombre: "Remera2",
-        descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aliquam nihil tempora aut provident dolore.",
-        imagen: "remera2.jpg",
-        categoria: "snow",
-        colores: "Blanco, Negro, Azul",
-        talles: "S, M, L",
-        precio: 200
-    },
-    {
-        id:3,
-        nombre: "Remera3",
-        descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aliquam nihil tempora aut provident dolore.",
-        imagen: "remera3.jpg",
-        categoria: "snow",
-        colores: "Blanco, Negro, Azul",
-        talles: "S, M, L",
-        precio: 100
-    },
-    {
-        id:4,
-        nombre: "Remera4",
-        descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aliquam nihil tempora aut provident dolore.",
-        imagen: "remera4.jpg",
-        categoria: "snow",
-        colores: "Blanco, Negro, Azul",
-        talles: "S, M, L",
-        precio: 200
-    },
-    {
-        id:5,
-        nombre: "Remera1",
-        descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aliquam nihil tempora aut provident dolore.",
-        imagen: "remera1.jpg",
-        categoria: "snow",
-        colores: "Blanco, Negro, Azul",
-        talles: "S, M, L",
-        precio: 400
-    },
-    {
-        id:6,
-        nombre: "Remera2",
-        descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aliquam nihil tempora aut provident dolore.",
-        imagen: "remera2.jpg",
-        categoria: "snow",
-        colores: "Blanco, Negro, Azul",
-        talles: "S, M, L",
-        precio: 100
-    },
-    {
-        id:7,
-        nombre: "Remera3",
-        descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aliquam nihil tempora aut provident dolore.",
-        imagen: "remera3.jpg",
-        categoria: "snow",
-        colores: "Blanco, Negro, Azul",
-        talles: "S, M, L",
-        precio: 300
-    },
-    {
-        id:8,
-        nombre: "Remera4",
-        descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aliquam nihil tempora aut provident dolore.",
-        imagen: "remera4.jpg",
-        categoria: "snow",
-        colores: "Blanco, Negro, Azul",
-        talles: "S, M, L",
-        precio: 200
-    }
-]
+const fs = require("fs");
+const path = require('path');
+
+const productsFilePath = path.join(__dirname, '../data/products.json');
+const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController ={
     detalle: (req,res)=>{
@@ -98,7 +21,20 @@ const productsController ={
         res.render('products/create')
     },
     store: (req,res) =>{
-        res.send("¡Agregue un producto!")
+        const newProduct = {
+			id: productos[productos.length - 1].id + 1,
+			name: req.body.name,
+            description: req.body.description,
+            category: req.body.category,
+            color: req.body.color,
+            size:req.body.size,
+            image:req.file.filename,
+			price: req.body.price,
+		}
+		productos.push(newProduct);
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, " "));
+		res.redirect("/productos");
     },
     // 
 
@@ -110,9 +46,28 @@ const productsController ={
             }
         })
     },
-    update: (req,res) =>{
-        res.send("¡Edite un producto!")
-    },
+    update: (req, res) => {
+		const id = req.params.id;
+		let productToEdit = productos.find(producto => producto.id == id);
+		
+		productToEdit = {
+			id: productToEdit.id,
+			name: req.body.name,
+            description: req.body.description,
+            category: req.body.category,
+            color: req.body.color,
+            size:req.body.size,
+            image: req.file ? req.file.filename : productToEdit.image,
+			price: req.body.price,
+			/* ...req.body, */
+		}
+
+		let newProducts = productos;
+		newProducts[id-1] = productToEdit;
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, " "));
+		res.redirect("/productos/detalle/" + productToEdit.id)
+	},
     // 
 
     list: (req,res) =>{
@@ -121,5 +76,12 @@ const productsController ={
         })
         res.render('products/list', {productos:productos})
     },
+    delete:(req, res) => {
+		let finalProducts = productos.filter(producto => producto.id != req.params.id);
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
+
+        res.redirect("/productos")
+	}
 }
 module.exports = productsController;
