@@ -4,7 +4,7 @@
   <body>
     <%- include('../partials/header.ejs') %> 
       <main>
-          <form action="" method="POST" class="register">
+          <form action="/usuario/login" method="POST" class="register" enctype='multipart/form-data'>
               <section>
                   <div class="text-register">
                     <h1>Crear nueva cuenta de cliente</h1>
@@ -12,41 +12,37 @@
                   <div class="text-register">
                     <h3>Informacion personal</h3>
                   </div>
-                  </section>
+                </section>
                   <section>
                   <div class="form-register">
                       <label class="title-label">Nombre</label>
-                      <input type="text" class="text-register-form" minlength="3" placeholder="Aca va tu nombre" required>
+                      <input type="text" class="text-register-form" minlength="3" placeholder="Aca va tu nombre" name='name' required>
                   </div>
                   <div  class="form-register">
                       <label class="title-label">Apellido</label>
-                      <input type="text" class="text-register-form" minlength="3" placeholder="Aca va tu apellido" required>
-                  </div>
-                  <div  class="form-register">
-                      <label for="fecha-de-nacimiento" class="title-label">Fecha de nacimiento</label>
-                      <input type="date" class="text-register-form" name="fecha-de-nacimiento" required>
-                  </div>
-                  <div  class="form-register">
-                      <label class="title-label">DNI</label>
-                      <input type="text" class="text-register-form" maxlength="8" placeholder="Aca va tu DNI" required>
+                      <input type="text" class="text-register-form" minlength="3" placeholder="Aca va tu apellido" name='lastname'required>
                   </div>
                 </section>
                 <section>
                   <div  class="form-register">
                       <label class="title-label">Email</label>
-                      <input type="email" class="text-register-form" name="email" placeholder="Aca va tu E-mail" required>
+                      <input type="email" class="text-register-form" name="email" placeholder="Aca va tu E-mail" name='email' required>
                   </div>
+                  <div  class="form-register">
+                  <label for="fotoPerfil" class="title-label"> Foto de perfil </label>
+                  <input class="text-register-form" id="avatar" type="file" name="image">
+                </div>
+                <div class="form-register">
+                  <label class="title-label">Categoria</label>
+                  <input type="text" class="text-register-form" minlength="3" placeholder="Admin o Usuario" name='category' required>
+              </div>
                   <div class="form-register">
                       <label for="contraseña" class="title-label">Contraseña</label>
-                      <input type="password" class="text-register-form" name="contraseña" placeholder="Aca va tu contraseña" required>
-                  </div>
-                  <div class="form-register">
-                      <label for="confirmar-contraseña" class="title-label">Confirmar Contraseña</label>
-                      <input type="password" class="text-register-form" name="confirmar-contraseña" placeholder="Aca va tu contraseña" required>
+                      <input type="password" class="text-register-form" placeholder="Aca va tu contraseña" name="psw" required>
                   </div>
                 </section>
                   <p class="p-register">Campos requeridos</p>
-                  <button type="submit" class="button-register"><a href="/">Crear Cuenta</a></button>
+                  <a href="/"><button type="submit" class="button-register">Crear Cuenta</button></a>
               </section>
           </form>
       </main>
