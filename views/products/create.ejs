@@ -6,45 +6,41 @@
     <main class="create-form">
       <h2>Formulario de producto</h2>
       <form action="/productos/" method="POST" class="new-product-form" enctype="multipart/form-data">
-        <div class="form-section-left">
+        <section class="form-section-left">
             <label for="name">Nombre</label>
             <input type="text" name="name" id="name">
             <label for="description">Descripción</label>
-            <textarea name="description" id="description" rows="3"></textarea>
+            <textarea name="description" id="description" rows="6"></textarea>
             <label for="image">Imagen</label>
             <input type="file" name="image">
             <label for="category">Categoría</label>
             <select name="category" id="category" class="category">
               <option value="">Elegí una categoria</option>
               <option value="snow">Snow</option>
-              <option value="beach">Surf</option>
+              <option value="surf">Surf</option>
               <option value="skate">Skate</option>
             </select>
-        </div>
-        <div class="form-section-right">
+          </section>
+        <section class="form-section-right">
             <p>Colores<p>
-            <input type="checkbox" name="color" id="color1" value="Rojo">
-            <label for="color1">Rojo</label>
-            <input type="checkbox" name="color" id="color2" value="Azul">
-            <label for="color2">Azul</label>
-            <input type="checkbox" name="color" id="color3" value="Verde">
-            <label for="color3">Verde</label><br>
-            <input type="checkbox" name="color" id="color4" value="Amarillo">
-            <label for="color4">Amarillo</label>
-            <input type="checkbox" name="color" id="color5" value="Blanco">
-            <label for="color5">Blanco</label>
-            <input type="checkbox" name="color" id="color6" value="Negro">
-            <label for="color6">Negro</label>
+              <% let arrayColores = ["Rojo","Azul","Amarillo","Verde","Blanco","Negro"] %>
+              <% for (const color of arrayColores) { %>
+                <div class="color-input">
+                <input type="checkbox" name="color" id="<%=color%>" value="<%=color%>">
+                <label for="<%=color%>"><%=color%></label>
+              </div>
+              <% } %>
             <p>Talles<p>
-            <input type="checkbox" name="size" id="S" value="S" />
-            <label for="S">S</label>
-            <input type="checkbox" name="size" id="M" value="M" />
-            <label for="M">M</label>
-            <input type="checkbox" name="size" id="L" value="L" />
-            <label for="L">L</label><br>
-            <label for="price">Precio</label><br>
+              <% let arraySize = ["S","M","L"] %>
+              <% for (const size of arraySize) { %>
+                <div class="size-input">
+                <input type="checkbox" name="size" id="size" value="<%=size%>">
+                <label for="size"><%=size%></label>
+              </div>
+              <% } %>
+            <label for="price" class="price">Precio</label>
             <input type="number" name="price" id="price"><br>
-        </div>
+            </section>
         <div>
             <button type="submit" class="new-product-button">CREAR PRODUCTO</button>
         </div>

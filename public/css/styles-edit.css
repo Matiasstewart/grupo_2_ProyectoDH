@@ -19,25 +19,22 @@ body{
 
 /* MAIN */
 .edit-form{
-    padding: 50px 20px 0px 20px;
+    padding: 60px 20px 0px 20px;
 }
 
 .edit-product-form{
     width: 90%;
     margin: auto;
-    padding: 3%;
+    padding: 2% 3%;
     text-align: left;
 }
 
-.form-section-left label, .title-right{
+.form-section-left label,.form-section-right p, .price{
     display: block;
     font-weight: bold;
     margin-top: 10px;
 }
 
-.title-right{
-    margin-bottom: 10px;
-}
 
 .edit-product-form input, .form-section-left textarea, .category{
     border: none;
@@ -51,7 +48,7 @@ body{
 
 input[type=checkbox]{
     width: 7%;
-    margin: 7px
+    margin: 5px
 }
 
 .edit-product-button{
@@ -89,11 +86,13 @@ input[type=checkbox]{
         justify-content: space-around;
         flex-wrap: wrap;
         width: 90%;
-        padding: 70px 20px 20px 20px;
+        padding: 20px;
     }
 
-    .edit-product-form h2{
-        width:100%
+    .edit-form h2{
+        padding-top: 60px;
+        padding-left: 50px;
+        width:100%;
     }
 
     .form-section-left, .form-section-right{

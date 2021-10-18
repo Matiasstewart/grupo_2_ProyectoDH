@@ -4,19 +4,19 @@
   <body>
     <%- include('../partials/header') %>
     <main class="edit-form">
+      <h2>Editar producto <%= producto.name%></h2>
       <form action="/productos/detalle/<%=producto.id%>?_method=PUT" method="POST" class="edit-product-form" enctype="multipart/form-data">
-        <h2>Editar producto <%= producto.name%></h2>
         <section class="form-section-left">
             <label for="name">Nombre</label>
             <input type="text" name="name" value= <%=producto.name%>>
             <label for="description">Descripción</label>
-            <textarea name="description" id="description" rows="5"><%= producto.description%></textarea>
+            <textarea name="description" id="description" rows="6"><%= producto.description%></textarea>
             <label for="image">Imagen</label>
             <input type="file" name="image">
             <label for="category">Categoría</label>
             <select name="category" id="category" class="category">
               <option value="">Elegí una categoria</option>
-              <% let arrayCategories = ['Snow','Surf','Skate']%>
+              <% let arrayCategories = ['snow','surf','skate']%>
               <% for (const category of arrayCategories){ %>
                 <option value="<%=category%>" <%= category == producto.category ? 'selected'  : null%>><%=category%></option>
               <%}%>
@@ -41,7 +41,7 @@
               <label for="size"><%=size%></label>
             </div>
             <% } %>
-            <label for="price">Precio</label><br>
+            <label for="price" class="price">Precio</label>
             <input type="number" name="price" id="price" value=<%= producto.price%>><br>
         </section>
         <div>
