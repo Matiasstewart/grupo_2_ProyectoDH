@@ -26,8 +26,8 @@ const productsController ={
 			name: req.body.name,
             description: req.body.description,
             category: req.body.category,
-            color: [req.body.color],
-            size:[req.body.size],
+            color: req.body.color,
+            size:req.body.size,
             image:req.file.filename,
 			price: req.body.price,
 		}
@@ -59,7 +59,6 @@ const productsController ={
             size:req.body.size,
             image: req.file ? req.file.filename : productToEdit.image,
 			price: req.body.price,
-			/* ...req.body, */
 		}
 
 		let newProducts = productos;
