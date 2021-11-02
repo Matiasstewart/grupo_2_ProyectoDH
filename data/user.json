@@ -10,173 +10,29 @@
     },
     {
         "id": 2,
-        "name": "Piper",
-        "lastname": "McBayne",
-        "email": "pmcbayne1@sphinn.com",
-        "img": "user_2.jpg",
-        "category": "Usuario",
-        "password": "vxzAIgz4"
+        "name": "Matias",
+        "lastname": "Stewart Usher",
+        "email": "stewartmatias@gmail.com",
+        "img": "1635879675010.jpg",
+        "category": "admin",
+        "password": "$2a$10$2dqdO/ebmtg/1YA9Ojflme1hVl7ignGG5AVQ4NeetDVnSOUmrQd.K"
     },
     {
         "id": 3,
-        "name": "Scott",
-        "lastname": "Severs",
-        "email": "ssevers2@gmail.com",
-        "img": "user_3.jpg",
-        "category": "Admin",
-        "password": "poy2eWwHf"
+        "name": "Lionel",
+        "lastname": "Messi",
+        "email": "liomessi@gmail.com",
+        "img": "1635879824787.jpg",
+        "category": "usuario",
+        "password": "$2a$10$LF3OdYyx/VmqBYqDSCz1SuCqKhRJNiF40CrPNwQtr5fbPCOB.sRJ."
     },
     {
         "id": 4,
-        "name": "Rebbecca",
-        "lastname": "Goodyear",
-        "email": "rgoodyear3@si.edu",
-        "img": "user_4.jpg",
-        "category": "Usuario",
-        "password": "ZTndy65sc"
-    },
-    {
-        "id": 5,
-        "name": "Una",
-        "lastname": "Rannigan",
-        "email": "urannigan4@de.vu",
-        "img": "user_5.jpg",
-        "category": "Admin",
-        "password": "mXAr6ojtdP"
-    },
-    {
-        "id": 6,
-        "name": "Gareth",
-        "lastname": "Lightowlers",
-        "email": "glightowlers5@arstechnica.com",
-        "img": "user_6.jpg",
-        "category": "Admin",
-        "password": "uuKfFxVAo"
-    },
-    {
-        "id": 7,
-        "name": "Maris",
-        "lastname": "Coat",
-        "email": "mcoat6@tumblr.com",
-        "img": "user_7.jpg",
-        "category": "Admin",
-        "password": "hbVtdQGHex"
-    },
-    {
-        "id": 8,
-        "name": "Clare",
-        "lastname": "Densumbe",
-        "email": "cdensumbe7@google.es",
-        "img": "user_8.jpg",
-        "category": "Admin",
-        "password": "PXt5R3bmNyhb"
-    },
-    {
-        "id": 9,
-        "name": "Zacharias",
-        "lastname": "Wildgoose",
-        "email": "zwildgoose8@amazon.com",
-        "img": "user_9.jpg",
-        "category": "Usuario",
-        "password": "WgXZ2zP"
-    },
-    {
-        "id": 10,
-        "name": "Adlai",
-        "lastname": "Eddy",
-        "email": "aeddy9@timesonline.co.uk",
-        "img": "user_10.jpg",
-        "category": "Admin",
-        "password": "hAZYYmYLwq"
-    },
-    {
-        "id": 11,
-        "name": "Murial",
-        "lastname": "Losbie",
-        "email": "mlosbiea@nih.gov",
-        "img": "user_11.jpg",
-        "category": "Usuario",
-        "password": "T343waJ"
-    },
-    {
-        "id": 12,
-        "name": "Kamillah",
-        "lastname": "Berthel",
-        "email": "kberthelb@google.com.br",
-        "img": "user_12.jpg",
-        "category": "Admin",
-        "password": "6pGTjC"
-    },
-    {
-        "id": 13,
-        "name": "Dorena",
-        "lastname": "Yurchishin",
-        "email": "dyurchishinc@bluehost.com",
-        "img": "user_13.jpg",
-        "category": "Admin",
-        "password": "cMGjkQHN"
-    },
-    {
-        "id": 14,
-        "name": "Faith",
-        "lastname": "Capelle",
-        "email": "fcapelled@sakura.ne.jp",
-        "img": "user_14.jpg",
-        "category": "Admin",
-        "password": "5lua0KUoTpuL"
-    },
-    {
-        "id": 15,
-        "name": "Clarine",
-        "lastname": "Manchester",
-        "email": "cmanchestere@ovh.net",
-        "img": "user_15.jpg",
-        "category": "Usuario",
-        "password": "Knv0ZixuZ1"
-    },
-    {
-        "id": 16,
-        "name": "Vanni",
-        "lastname": "Ubee",
-        "email": "vubeef@upenn.edu",
-        "img": "user_16.jpg",
-        "category": "Admin",
-        "password": "WHtvGB"
-    },
-    {
-        "id": 17,
-        "name": "Rivy",
-        "lastname": "Crispin",
-        "email": "rcrisping@spotify.com",
-        "img": "user_17.jpg",
-        "category": "Usuario",
-        "password": "nUMTFuf"
-    },
-    {
-        "id": 18,
-        "name": "Carny",
-        "lastname": "McConachie",
-        "email": "cmcconachieh@hao123.com",
-        "img": "user_18.jpg",
-        "category": "Usuario",
-        "password": "P6zQCzt5D2"
-    },
-    {
-        "id": 19,
-        "name": "Feliza",
-        "lastname": "Pulver",
-        "email": "fpulveri@nsw.gov.au",
-        "img": "user_19.jpg",
-        "category": "Usuario",
-        "password": "HQlNT1HTv"
-    },
-    {
-        "id": 20,
-        "name": "Hakim",
-        "lastname": "O' Mulderrig",
-        "email": "homulderrigj@dmoz.org",
-        "img": "user_20.jpg",
-        "category": "Usuario",
-        "password": "IkgvL1Tog"
+        "name": "Cristiano",
+        "lastname": "Ronaldo",
+        "email": "cr7@gmail.com",
+        "img": "1635879929308.jpg",
+        "category": "usuario",
+        "password": "$2a$10$xampQdJYlubtzJNceTL6tOcEv3CQ4XxH6m9p3Ha5Y6q/wgvrmgRmG"
     }
 ]
