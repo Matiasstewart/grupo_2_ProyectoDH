@@ -79,7 +79,6 @@ const usersController = {
         req.session.destroy();
         return res.redirect('/');
     }
-  
 }
 
 module.exports = usersController;
