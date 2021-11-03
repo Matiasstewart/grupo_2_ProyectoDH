@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head', {titulo:'Mi cuenta', css: 'profile'}); %>
+<body>
+	<%- include('../partials/header'); %>
+	<main class="main-profile">
+        <h2>Hola <%= user.name %></h2>
+        <div class="profile-data">
+            <h3>Mis datos</h3>
+            <p><strong>Nombre completo:</strong> <%=user.name%> <%=user.lastname%></p>
+            <p><strong>Email:</strong> <%=user.email%></p>
+            <p><strong></strong></p>
+        </div>
+        <div class="profile-avatar">
+            <img src="/images/avatars/<%=user.img%> ">
+        </div>
+        <div>
+            <a href="/usuario/logout">Cerrar sesión</a>
+        </div>
+        
+    </main>
+	<%- include('../partials/footer'); %>
+</body>
+</html>
