@@ -23,6 +23,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(publicPath));
 
+
 app.listen(3090, () => {
     console.log('Servidor corriendo en el puerto http://localhost:3090/ !');
 });

@@ -17,19 +17,19 @@ const uploadFile = multer({ storage });
 // CONTROLADOR
 let usersController = require("../controllers/usersController");
 
-// RUTAS
-// Login
+// Formulario de login
 router.get("/login",usersController.login);
 router.post('/login', usersController.loginProcess);
 
-// Registro
+// Procesar el Login
+router.post('/login', usersController.processLogin)
+
+// Formulario de registro
 router.get("/registro", usersController.registro);
-router.post("/registro", uploadFile.single('image'),usersController.proccesRegister);
 
-// Perfil de Usuario
-router.get('/mi-cuenta/', usersController.profile);
+// Procesar registro
+router.post("/registro", uploadFile.single('image'),usersController.processRegister);
 
-// Logout
-router.get('/logout/', usersController.logout);
+
 
 module.exports = router;
