@@ -40,13 +40,23 @@ const usersController = {
     
             
     },
+    login: (req,res)=>{
+        return res.render('users/login')
+    },
     processLogin: (req, res) => {
         let userToLogin = User.findByField('email', req.body.email)
         
         if(userToLogin) {
             let passwordIsOk = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if (passwordIsOk) {
-                return res.redirect('index')
+                delete userFound.password;
+				req.session.userLogged = userFound;
+
+				if(req.body.remember_me) {
+					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
+				}
+
+				return res.redirect('/usuario/mi-cuenta');
             }
             return res.render('users/login', {
                 errors: {
