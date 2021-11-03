@@ -16,13 +16,9 @@
               <% } %>
               <div class="email">
                 <label for="e-mail">Correo electrónico</label>
-                <input type="email" id="e-mail" name="email">
+                <input type="email" name= "email" id="e-mail">
+                
               </div>
-              <% if (locals.errors && errors.password) { %>
-                <div class="text-danger">
-                  <%= errors.password.msg %>
-                </div>
-              <% } %>
               <div class="password">
                 <label for="password">Contraseña</label>
                 <input type="password" id="password" name="psw">
@@ -30,7 +26,6 @@
               <div class="remember-me">
                 <input type="checkbox" name="remember_me" id="remember-me">
                 <label for="remember-me">Recordar mi cuenta</label>
-              </div>
               <a href="#"><button type="submit" class="login-button"><strong>INICIAR SESION</strong></button></a>
               <a href="#">¿Olvidaste tu contraseña?</a>
             </form>
