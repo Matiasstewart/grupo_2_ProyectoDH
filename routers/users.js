@@ -17,9 +17,19 @@ const uploadFile = multer({ storage });
 // CONTROLADOR
 let usersController = require("../controllers/usersController");
 
+// RUTAS
+// Login
 router.get("/login",usersController.login);
+router.post('/login', usersController.loginProcess);
 
+// Registro
 router.get("/registro", usersController.registro);
-router.post("/login", uploadFile.single('image'),usersController.proccesRegister)
+router.post("/registro", uploadFile.single('image'),usersController.proccesRegister);
+
+// Perfil de Usuario
+router.get('/mi-cuenta/', usersController.profile);
+
+// Logout
+router.get('/logout/', usersController.logout);
 
 module.exports = router;

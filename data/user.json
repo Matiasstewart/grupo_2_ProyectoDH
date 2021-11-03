@@ -34,5 +34,14 @@
         "img": "1635879929308.jpg",
         "category": "usuario",
         "password": "$2a$10$xampQdJYlubtzJNceTL6tOcEv3CQ4XxH6m9p3Ha5Y6q/wgvrmgRmG"
+    },
+    {
+        "id": 5,
+        "name": "Camila",
+        "lastname": "Galvan",
+        "email": "galvancamila@gmail.com",
+        "img": "1635966213614.jpg",
+        "category": "Admin",
+        "password": "$2a$10$IVV1FPwT4tsm/ACDPbrz5uSOxsx.tYcQMH3cefSqrLaw1Esf0ElX2"
     }
 ]

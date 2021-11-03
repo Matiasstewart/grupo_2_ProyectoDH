@@ -8,17 +8,22 @@
         <section class="login-form">
             <h2>Acceso del cliente</h2>
             <p>Si estás registrado, ingresá con tu dirección de correo electrónico</p>
-            <form action="/login" method="POST" class="form">
+            <form action="/usuario/login" method="POST" class="form">
+              <% if (locals.errors && errors.email) { %>
+                <div class="text-danger">
+                  <%= errors.email.msg %>
+                </div>
+              <% } %>
               <div class="email">
                 <label for="e-mail">Correo electrónico</label>
-                <input type="email" id="e-mail">
+                <input type="email" id="e-mail" name="email">
               </div>
               <div class="password">
                 <label for="password">Contraseña</label>
-                <input type="password" id="password">
+                <input type="password" id="password" name="psw">
               </div>
               <div class="remember-me">
-                <input type="checkbox" name="remember-me" id="remember-me">
+                <input type="checkbox" name="remember_me" id="remember-me">
                 <label for="remember-me">Recordar mi cuenta</label>
               </div>
               <a href="#"><button type="submit" class="login-button"><strong>INICIAR SESION</strong></button></a>

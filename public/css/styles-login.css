@@ -60,6 +60,10 @@ body{
     outline: none;
 }
 
+.text-danger{
+    color: #ff4a4a;
+}
+
 .login-form a{
     display: block;
     padding-bottom: 5px;
