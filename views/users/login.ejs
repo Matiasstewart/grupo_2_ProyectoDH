@@ -9,7 +9,16 @@
             <h2>Acceso del cliente</h2>
             <p>Si estás registrado, ingresá con tu dirección de correo electrónico</p>
             <form action="/usuario/login" method="POST" class="form">
-
+              <% if (locals.errors && errors.email) { %>
+                <div class="text-danger">
+                  <%= errors.email.msg %>
+                </div>
+              <% } %>
+              <div class="email">
+                <label for="e-mail">Correo electrónico</label>
+                <input type="email" name= "email" id="e-mail">
+                
+              </div>
               <div class="password">
                 <label for="password">Contraseña</label>
                 <input type="password" id="password" name="psw">
