@@ -3,6 +3,8 @@ const path = require('path');
 const bcryptjs = require('bcryptjs');
 const User = require ('../models/User')
 
+const {validationResult} = require('express-validator');
+
 const userJson = path.join(__dirname, '../data/user.json');
 const users = JSON.parse(fs.readFileSync(userJson, 'utf-8'));
 
@@ -11,6 +13,25 @@ const usersController = {
         res.render('users/register')
     },
     processRegister: (req,res) => {
+        let errors = validationResult(req);
+        if(!errors.isEmpty()){
+            return res.render('users/register', {
+				errors: errors.mapped(),
+				oldData: req.body
+			});
+        }
+
+		let userFound = users.find(oneUser => oneUser.email === req.body.email);
+		if(userFound) {
+			return res.render('users/register', {
+				errors: {
+					email: {
+						msg: 'Este email ya está registrado'
+					}
+				},
+				oldData: req.body
+			});
+		}
             const newUsers = {
                 id: users[users.length -1].id + 1,
                 name: req.body.name,
