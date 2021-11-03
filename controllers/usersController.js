@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const bcrypt = require('bcryptjs');
+const bcryptjs = require('bcryptjs');
 const User = require ('../models/User')
 
 const userJson = path.join(__dirname, '../data/user.json');
@@ -18,7 +18,7 @@ const usersController = {
                 email: req.body.email,
                 img: req.file.filename,
                 category: req.body.category,
-                password: bcrypt.hashSync(req.body.psw, 10),
+                password: bcryptjs.hashSync(req.body.psw, 10),
             }
 
             users.push(newUsers);
@@ -47,9 +47,9 @@ const usersController = {
         let userToLogin = User.findByField('email', req.body.email)
         
         if(userToLogin) {
-            let passwordIsOk = bcrypt.compareSync(req.body.password, userToLogin.password);
+            let passwordIsOk = bcryptjs.compareSync(req.body.psw, userToLogin.password);
             if (passwordIsOk) {
-                return res.redirect('index')
+                return res.render('index')
             }
             return res.render('users/login', {
                 errors: {
