@@ -19,15 +19,10 @@ let usersController = require("../controllers/usersController");
 
 // Formulario de login
 router.get("/login",usersController.login);
-router.post('/login', usersController.loginProcess);
-
-// Procesar el Login
 router.post('/login', usersController.processLogin)
 
 // Formulario de registro
 router.get("/registro", usersController.registro);
-
-// Procesar registro
 router.post("/registro", uploadFile.single('image'),usersController.processRegister);
 
 
