@@ -32,9 +32,13 @@
                   <label for="fotoPerfil" class="title-label"> Foto de perfil </label>
                   <input class="text-register-form" id="avatar" type="file" name="image">
                 </div>
-                <div class="form-register">
+                <div class="form-register " >
                   <label class="title-label">Categoria</label>
-                  <input type="text" class="text-register-form" minlength="3" placeholder="Admin o Usuario" name='category' required>
+                  <!-- <input type="text" class="text-register-form" minlength="3" placeholder="Admin o Usuario" name='category' required> -->
+                  <select class="text-register-form" name="category" required>
+                    <option value="Admin">Administrador</option>
+                    <option value="Usuario">Usuario</option>
+                  </select>
               </div>
                   <div class="form-register">
                       <label for="contraseña" class="title-label">Contraseña</label>

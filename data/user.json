@@ -43,5 +43,23 @@
         "img": "1635966213614.jpg",
         "category": "Admin",
         "password": "$2a$10$IVV1FPwT4tsm/ACDPbrz5uSOxsx.tYcQMH3cefSqrLaw1Esf0ElX2"
+    },
+    {
+        "id": 6,
+        "name": "Gonzalo",
+        "lastname": "Maidana",
+        "email": "gmaidana@gmail.com",
+        "img": "1637255212489.jpg",
+        "category": "Admin",
+        "password": "$2a$10$f3FPE3s7.UFBDdKnDEPKx.NTmZdPY6oXadxGMrPEGjLl4Q9XLz4O2"
+    },
+    {
+        "id": 7,
+        "name": "Lucas",
+        "lastname": "Garcia",
+        "email": "lgarcia@hotmail.com",
+        "img": "1637255361331.jpg",
+        "category": "Usuario",
+        "password": "$2a$10$fjYrxodxGFzephgxpuAGG.pSvhmLj664YyM4wgkxvw0Ob33kbmtcO"
     }
 ]

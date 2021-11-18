@@ -32,6 +32,17 @@ body{
     padding-top: 25px;
 }
 
+.form-register select {
+    display:block;
+    border-radius: 25px;
+    text-align: center;
+    margin: left;
+    font-size: 20px;
+    height: 37px;
+    margin-left: -20px;
+    margin-top: 10px;
+}
+
 .form-register label {
     display:block;
     border: none;
@@ -92,6 +103,12 @@ body{
 
 @media (min-width: 361px) {
     .form-register input {
+        margin: auto;
+        margin-top: 10px;
+        width: 300px;
+    }
+
+    .form-register select {
         margin: auto;
         margin-top: 10px;
         width: 300px;
