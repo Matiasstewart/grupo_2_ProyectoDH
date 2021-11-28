@@ -8,6 +8,7 @@ const {validationResult} = require('express-validator');
 const userJson = path.join(__dirname, '../data/user.json');
 const users = JSON.parse(fs.readFileSync(userJson, 'utf-8'));
 
+
 const usersController = {
     registro: (req,res)=>{
         res.render('users/register')

@@ -1,5 +1,3 @@
-const usersController = require("../../../controllers/usersController");
-
 module.exports = (sequelize, dataTypes) => {
     let alias = 'User';
     let cols = {
