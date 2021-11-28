@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Sizes';
+    let alias = 'Size';
     let cols = {
        id: {
             type: dataTypes.INTEGER(11),
@@ -22,11 +22,13 @@ module.exports = (sequelize, dataTypes) => {
 
      Size.associate = function (models){
         Size.belonsToMany(models.Product, {
-         as:"sizes",
+         as:"products",
          through: "products_sizes",
          foreingKey: "size_id",
          otherKey:"product_id",
          timestamps:"false"   
         })
     }
+
+    return Size
    }
