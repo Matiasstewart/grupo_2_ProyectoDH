@@ -95,5 +95,5 @@ module.exports = (sequelize, dataTypes) => {
         })
     };
 
-    return Product
+    return Product;
 }

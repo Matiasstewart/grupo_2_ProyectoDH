@@ -21,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
      const Color = sequelize.define(alias, cols, config); 
 
      Color.associate = function (models){
-        Color.belonsToMany(models.Product, {
+        Color.belongsToMany(models.Product, {
          as:"products",
          through: "products_colors",
          foreingKey: "color_id",
@@ -30,5 +30,5 @@ module.exports = (sequelize, dataTypes) => {
         })
     }
 
-    return Color
+    return Color;
    }

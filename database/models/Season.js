@@ -25,5 +25,5 @@ module.exports = (sequelize, dataTypes) => {
         })
     }
 
-    return Season
+    return Season;
 }

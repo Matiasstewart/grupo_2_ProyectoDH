@@ -2,7 +2,7 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'User';
     let cols = {
        id: {
-         type: dataTypes.INTEGER(11),
+         type: dataTypes.INTEGER,
          primaryKey: true,
          autoIncrement: true
        },
@@ -23,16 +23,16 @@ module.exports = (sequelize, dataTypes) => {
         allowNull: false
        },
        function_id:{
-           type: dataTypes.INTEGER(11),
+           type: dataTypes.INTEGER,
            allowNull: false
        },
        image: {
-           type: dataTypes.STING(255),
-           allowNull: false
+           type: dataTypes.STRING(255),
+           
        },
        deleted: {
            type: dataTypes.TINYINT(4),
-           allowNull: false
+           
        }
    
     };
@@ -47,14 +47,15 @@ module.exports = (sequelize, dataTypes) => {
      User.associate = function (models){
         User.belongsTo(models.Function, {
          foreignKey: 'function_id',
-         as: 'functions'
+         as: 'rol'
         })
     }
      
      User.associate = function (models){
-         User.hasMany(models.Carts, {
+         User.hasMany(models.Cart, {
              foreignKey: 'user_id',
              as: 'cartUser'
          })
      }
+     return User;
    }

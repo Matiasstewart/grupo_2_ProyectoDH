@@ -1,12 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 const bcryptjs = require('bcryptjs');
-const User = require ('../models/User')
-
+/* const User = require ('../models/User') */
+const db = require ('../database/models')
 const {validationResult} = require('express-validator');
 
-const userJson = path.join(__dirname, '../data/user.json');
-const users = JSON.parse(fs.readFileSync(userJson, 'utf-8'));
+/* const userJson = path.join(__dirname, '../data/user.json');
+const users = JSON.parse(fs.readFileSync(userJson, 'utf-8')); */
 
 
 const usersController = {
@@ -20,9 +20,23 @@ const usersController = {
 				errors: errors.mapped(),
 				oldData: req.body
 			});
-        }
+        } /* else {
+            db.User.create({
+                first_name: req.body.name,
+                last_name: req.body.lastname,
+                email: req.body.email,
+                user_image: req.file.filename,
+                function_id: req.body.category,
+                password: bcryptjs.hashSync(req.body.psw, 10)
+            })
+            .then(() =>{
+                return res.redirect('/usuario/login')
+            })
+            .catch((error) => {
+                res.send(error)})
+        } */
 
-		let userFound = users.find(oneUser => oneUser.email === req.body.email);
+		/* let userFound = users.find(oneUser => oneUser.email === req.body.email);
 		if(userFound) {
 			return res.render('users/register', {
 				errors: {
@@ -45,7 +59,7 @@ const usersController = {
 
             users.push(newUsers);
             fs.writeFileSync(userJson, JSON.stringify(users,null, 4))
-            res.redirect("/usuario/login")
+            res.redirect("/usuario/login") */
 
             /*let userInDB = User.findByField('email', req.body.email);
             

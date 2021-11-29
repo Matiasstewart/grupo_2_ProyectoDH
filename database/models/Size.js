@@ -21,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
      const Size = sequelize.define(alias, cols, config); 
 
      Size.associate = function (models){
-        Size.belonsToMany(models.Product, {
+        Size.belongsToMany(models.Product, {
          as:"products",
          through: "products_sizes",
          foreingKey: "size_id",
@@ -30,5 +30,5 @@ module.exports = (sequelize, dataTypes) => {
         })
     }
 
-    return Size
+    return Size;
    }
