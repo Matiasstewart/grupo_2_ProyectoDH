@@ -26,8 +26,9 @@ module.exports = (sequelize, dataTypes) => {
            type: dataTypes.INTEGER,
            allowNull: false
        },
-       image: {
+       user_image: {
            type: dataTypes.STRING(255),
+           allowNull:false
            
        },
        deleted: {
