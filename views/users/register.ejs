@@ -35,9 +35,11 @@
                 <div class="form-register " >
                   <label class="title-label">Categoria</label>
                   <!-- <input type="text" class="text-register-form" minlength="3" placeholder="Admin o Usuario" name='category' required> -->
-                  <select class="text-register-form" name="category" required>
-                    <option value="Admin">Administrador</option>
-                    <option value="Usuario">Usuario</option>
+                  <select class="text-register-form" name="function" required>
+                    <option value="" disabled selected>Selecciona una categoría</option>
+                      <% functions.forEach(category=> { %>
+                        <option value="<%= category.id %>"<%= locals.oldData && (category === oldData.function) ? 'selected'  : null%>><%= category.admin_or_user %></option>
+                      <% }) %>
                   </select>
               </div>
                   <div class="form-register">

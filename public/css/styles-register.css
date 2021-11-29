@@ -52,7 +52,7 @@ body{
     font-size: 20px;
 }
 
-.form-register input {
+.form-register input, .form-register select {
     margin: left;
     margin-left: -20px;
     margin-top: 10px;
@@ -102,7 +102,7 @@ body{
 }
 
 @media (min-width: 361px) {
-    .form-register input {
+    .form-register input, .form-register select {
         margin: auto;
         margin-top: 10px;
         width: 300px;
