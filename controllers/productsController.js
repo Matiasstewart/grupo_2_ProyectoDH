@@ -142,11 +142,17 @@ const productsController ={
         // res.render('products/list', {productos:productos})
     },
     delete:(req, res) => {
-		let finalProducts = productos.filter(producto => producto.id != req.params.id);
+        let productId = req.params.id;
+        db.Product.destroy({where: {id: productId}, force: true}) // force: true es para asegurar que se ejecute la acción
+        .then(()=>{
+            return res.redirect('/productos')})
+        .catch(error => res.send(error)) 
+		// let finalProducts = productos.filter(producto => producto.id != req.params.id);
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
+		// fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
 
-        res.redirect("/productos")
+        // res.redirect("/productos")
+
 	}
 }
 module.exports = productsController;
