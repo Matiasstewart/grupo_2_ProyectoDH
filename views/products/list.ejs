@@ -6,24 +6,24 @@
     <main class="main-list">
       <h2>Listado de Productos</h2>
       <div class="products-list">
-      <% productos.forEach(function(producto){ %>
+      <% products.forEach(product=>{ %>
       <section class="product">
-        <a href="/productos/detalle/<%= producto.id %>" class="product-detail">
+        <a href="/productos/detalle/<%= product.id%>" class="product-detail">
           <div class="product-image">
-            <img alt="imagen de producto" src="/images/<%=producto.image%>">
+            <img alt="imagen de producto" src="/images/<%=product.product_image%>">
           </div>
           <article class="product-data">
-            <p><strong>Nombre: </strong> <%= producto.name %></p>
-            <p><strong>Descripcion: </strong> <%= producto.description %></p>
-            <p><strong>Categoría: </strong> <%= producto.category %></p>
-            <p><strong>Precio: </strong> $<%=producto.price%></p>
+              <p><strong>Nombre: </strong> <%= product.title %></p>
+              <p><strong>Descripcion: </strong> <%= product.description %></p>
+              <p><strong>Categoría: </strong> <%= product.category %></p>
+              <p><strong>Precio: </strong> $<%=product.price%></p>
           </article>
         </a>
         <div class="edit-delete-buttons">
         <div class="edit-button-div">
-          <a href="/productos/editar/<%= producto.id%>/" class="edit-button"><strong>Editar</strong></a>
+          <a href="/productos/editar/<%= product.id%>/" class="edit-button"><strong>Editar</strong></a>
         </div>
-        <form action="/productos/detalle/<%=producto.id%>?_method=DELETE" method="POST" class="delete-form">
+        <form action="/productos/detalle/<%=product.id%>?_method=DELETE" method="POST" class="delete-form">
           <button type="submit" class="delete-button"><strong>Eliminar</strong></button>
         </form>
         </div>

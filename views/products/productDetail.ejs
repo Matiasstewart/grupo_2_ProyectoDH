@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <%- include('../partials/head.ejs',{titulo: producto.nombre, css:'productDetail'})%>
+  <%- include('../partials/head.ejs',{titulo: product.name, css:'productDetail'})%>
   <body>
     <%- include('../partials/header.ejs') %> 
     <main>
       <section class="product">
         <div class="product-photos">
           <div class="main-photo">
-            <img src="/images/<%= producto.image%>" alt= <%=producto.nombre%> >
+            <img src="/images/<%= product.image%>" alt= <%=product.nombre%> >
           </div>
           <div class="gallery-product">
             <img src="/images/remera2.jpg" alt="remera2" />
@@ -17,9 +17,9 @@
         </div>
         <div class="product-price-and-form">
           <div class="product-details">
-            <h2 class="product-name"><%=producto.name %></h2>
+            <h2 class="product-name"><%=product.title %></h2>
             <h4>EN STOCK</h4>
-            <h2 class="price">$<%= producto.price%></h2>
+            <h2 class="price">$<%= product.price%></h2>
             <h4>3 y 6 cuotas sin interés</h4>
             <p>Según la promo de tu tarjeta/banco</p>
             <a href="#">Calcular cuotas</a>
@@ -30,7 +30,7 @@
               <label for="color"><strong>Color</strong></label>
               <select name="color" id="color">
                 <option value="">Elegí un color</option>
-                <% let arrayColor = producto.color%>
+                <% let arrayColor = product.color%>
                 <% for (const color of arrayColor){ %>
                 <option value="<%=color%>"><%=color%></option>
                 <%}%>
@@ -40,7 +40,7 @@
               <label for="size"><strong>Talle</strong></label>
               <select name="size" id="size">
                 <option value="">Elegí un talle</option>
-                <% let arraySize = producto.size%>
+                <% let arraySize = product.size%>
                 <% for (const size of arraySize){ %>
                 <option value="<%=size%>"><%=size%></option>
                 <%}%>
@@ -54,7 +54,7 @@
           <div class="product-info">
           <h2>Detalle del producto</h2>
           <p>
-            <%=producto.description%>
+            <%=product.description%>
           </p>
           </div>
         </div>

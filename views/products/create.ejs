@@ -15,29 +15,23 @@
             <input type="file" name="image">
             <label for="category">Categoría</label>
             <select name="category" id="category" class="category">
-              <option value="">Elegí una categoria</option>
-              <option value="snow">Snow</option>
-              <option value="surf">Surf</option>
-              <option value="skate">Skate</option>
+              <option value="" disabled selected>Selecciona una categoría</option>
+              <% allCategories.forEach(category => { %>
+              <option value="<%= category.id %>"><%= category.category %></option>
+              <% }); %>
             </select>
           </section>
         <section class="form-section-right">
             <p>Colores<p>
-              <% let arrayColores = ["Rojo","Azul","Amarillo","Verde","Blanco","Negro"] %>
-              <% for (const color of arrayColores) { %>
-                <div class="color-input">
-                <input type="checkbox" name="color" id="<%=color%>" value="<%=color%>">
-                <label for="<%=color%>"><%=color%></label>
-              </div>
-              <% } %>
+              <% allColors.forEach(color => { %>
+                <input type="checkbox" name="color" id="<%=color.id%>>" value="<%=color.id%>">
+                <label for="<%=color.id%>>"><%=color.color%></label>
+              <% }); %>
             <p>Talles<p>
-              <% let arraySize = ["S","M","L"] %>
-              <% for (const size of arraySize) { %>
-                <div class="size-input">
-                <input type="checkbox" name="size" id="size" value="<%=size%>">
-                <label for="size"><%=size%></label>
-              </div>
-              <% } %>
+              <% allSizes.forEach(size => { %>
+                <input type="checkbox" name="size" id="<%=size.id%>>" value="<%=size.id%>">
+                <label for="<%=size.id%>>"><%=size.size%></label>
+              <% }); %><br>
             <label for="price" class="price">Precio</label>
             <input type="number" name="price" id="price"><br>
             </section>
