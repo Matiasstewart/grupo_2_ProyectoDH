@@ -32,8 +32,22 @@
                 <input type="checkbox" name="size" id="<%=size.id%>>" value="<%=size.id%>">
                 <label for="<%=size.id%>>"><%=size.size%></label>
               <% }); %><br>
+            <label for="season">Temporada</label>
+            <select name="season" id="season" class="category">
+              <option value="" disabled selected>Selecciona una temporada</option>
+              <% allSeasons.forEach(season => { %>
+              <option value="<%= season.id %>"><%= season.season %></option>
+              <% }); %>
+            </select>
+            <select name="gender" id="gender" class="category">
+              <option value="" disabled selected>Selecciona un género</option>
+              <option value="Femenino">Femenino</option>
+              <option value="Masculino">Masculino</option>
+            </select>
             <label for="price" class="price">Precio</label>
             <input type="number" name="price" id="price"><br>
+            <label for="discount" class="price">Descuento</label>
+            <input type="number" name="discount" id="discount"><br>
             </section>
         <div>
             <button type="submit" class="new-product-button">CREAR PRODUCTO</button>
