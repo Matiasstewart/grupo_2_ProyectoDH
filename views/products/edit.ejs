@@ -10,7 +10,7 @@
             <label for="name">Nombre</label>
             <input type="text" name="name" value= <%=Product.title%>>
             <label for="description">Descripción</label>
-            <textarea name="description" id="description" rows="5"><%= Product.description%></textarea>
+            <textarea name="description" id="description" rows="5" value= <%=Product.description%>></textarea>
             <label for="image">Imagen</label>
             <input type="file" name="image">
             <label for="category">Categoría</label>
@@ -26,12 +26,12 @@
               <% allColors.forEach(color => { %>
                 <input type="checkbox" name="color" id="<%=color.id%>>" value="<%=color.id%>">
                 <label for="<%=color.id%>>"><%=color.color%></label>
-              <% }); %>
+              <% }) %>
             <p>Talles<p>
               <% allSizes.forEach(size => { %>
                 <input type="checkbox" name="size" id="<%=size.id%>" value="<%=size.id%>">
                 <label for="<%=size.id%>>"><%=size.size%></label>
-              <% }); %><br>
+              <% }) %><br>
               <label for="season">Temporada</label>
               <select name="season" id="season" class="category">
                 <option value="" disabled selected>Selecciona una temporada</option>
