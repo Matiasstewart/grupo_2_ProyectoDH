@@ -40,4 +40,8 @@ router.put("/detalle/:id", upload.single("image"), productsController.update)
 // Borrar
 router.delete("/detalle/:id",productsController.delete)
 
+// Buscar
+router.get("/buscar",productsController.search)
+router.get("/resultados",productsController.results)
+
 module.exports = router

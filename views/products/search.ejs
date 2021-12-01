@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <%- include('../partials/head', {titulo:'Buscar producto', css: 'edit'}) %>
+  <body>
+    <%- include('../partials/header') %>
+    <main>
+            <h2>Buscar producto</h2>
+            <div class="edit-form">
+                <form action="/productos/resultados" method="GET">
+                    <input type="text" name="producto" id="producto">
+                    <button class="boton-buscar" type="submit">Buscar</button>
+                </form>
+            </div>
+        </form>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

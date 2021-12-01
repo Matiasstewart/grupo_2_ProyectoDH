@@ -46,11 +46,23 @@ const productsController ={
                 discount:req.body.discount,
                 gender:req.body.gender,
                 product_image: req.file.filename,
-                deleted: 0
+                deleted: 0,
+                sizes:[{
+                    size: req.body.size
+                }],
+                colors:[{
+                    color:req.body.color
+                }]
+            },
+            {
+                include:[
+                    {association: "sizes"},
+                    {association: "colors"}
+                ]
             }
         )
         .then(()=> {
-            return res.redirect('/movies')})   
+            return res.redirect('/productos')})   
         .catch(error => res.send(error))
         // const newProduct = {
 		// 	id: productos[productos.length - 1].id + 1,
@@ -74,7 +86,7 @@ const productsController ={
         let productId = req.params.id;
         let promProduct = db.Product.findByPk(productId,{include: ['colors','sizes','category','season']});
         let promColor = db.Color.findAll();
-        let promSizes = db.Sizes.findAll();
+        let promSizes = db.Size.findAll();
         let promCategory = db.Category.findAll();
         let promSeason = db.Season.findAll();
         Promise
@@ -101,11 +113,25 @@ const productsController ={
                 discount:req.body.discount,
                 gender:req.body.gender,
                 product_image: req.file.filename,
-                deleted: 0
+                deleted: 0,
+                sizes:[{
+                    size: req.body.size
+                }],
+                colors:[{
+                    color:req.body.color
+                }]
+            },
+            {
+                include:[{
+                    association: "sizes",
+                    association: "colors"
+                }]
             },
             {
                 where: {id: productId}
-            })
+            },
+            
+            )
         .then(()=> {
             return ("/productos/detalle/" + productId)})            
         .catch(error => res.send(error))
@@ -152,7 +178,21 @@ const productsController ={
 		// fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
 
         // res.redirect("/productos")
-
-	}
+	},
+    search:(req,res)=>{
+        return res.render("products/search")
+    },
+    results:(req, res) => {
+        Product.findAll({
+            where:{
+                title:{[Op.like]:"%"+req.query.producto+"%"}
+            }
+        })
+        .then(products => {
+            if(products.length > 0){
+                return res.render("products/results",{products:products})
+            }
+        })
+    },
 }
 module.exports = productsController;
