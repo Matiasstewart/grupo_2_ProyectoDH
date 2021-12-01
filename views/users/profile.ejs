@@ -7,12 +7,15 @@
         <h2>Hola <%= user.name %></h2>
         <div class="profile-data">
             <h3>Mis datos</h3>
-            <p><strong>Nombre completo:</strong> <%=user.name%> <%=user.lastname%></p>
+            <p><strong>Nombre completo:</strong> <%=user.first_name%> <%=user.last_name%></p>
             <p><strong>Email:</strong> <%=user.email%></p>
             <p><strong></strong></p>
         </div>
         <div class="profile-avatar">
             <img src="/images/avatars/<%=user.img%> ">
+        </div>
+        <div>
+            <a href="/usuario/editar/<%=user.id%>">Editar mi perfil</a>
         </div>
         <div>
             <a href="/usuario/logout">Cerrar sesión</a>
