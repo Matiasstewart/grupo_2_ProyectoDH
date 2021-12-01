@@ -108,6 +108,7 @@ const usersController = {
                 return res.render("users/profile",{user})
             }
         })
+        .catch(error => res.send(error))
 
     //     let userToLogin = User.findByField('email', req.body.email)
         
@@ -140,6 +141,40 @@ const usersController = {
     //        }
     //    })
   },
+  edit:(req,res)=>{
+    let users = User.findByPk(req.params.idUsuario);
+    let functions = db.Function.findAll();
+
+    Promise
+    .all([users,functions])
+    .then(([user,funcion]) => {
+        return res.render('users/edit.ejs', {user, functions:funcion});
+    })
+    .catch(error => res.send(error))
+    
+},
+update:(req,res)=>{
+    let userId = req.params.idUsuario;
+    let password = req.body.psw;
+    console.log(password);
+    User.update(
+        {
+            first_name: req.body.name,
+            last_name: req.body.lastname,
+            email: req.body.email,
+            password: bcryptjs.hashSync(password, 10),
+            function_id: req.body.function,
+            user_image: req.file.filename,
+            deleted: 0,
+        },
+        {
+            where: {id: userId}
+        })
+    .then(()=> {
+        return res.redirect('/usuario/mi-cuenta')})            
+    .catch(error => res.send(error))
+
+},
   profile: (req, res) => {
     User.findByPk(req.params.id)
     .then(user => {

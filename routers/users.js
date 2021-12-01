@@ -25,6 +25,11 @@ router.post("/registro", uploadFile.single('image'), validations, usersControlle
 // Perfil de Usuario
 router.get('/mi-cuenta/', authMiddleware, usersController.profile);
 
+// Editar perfil
+router.get("/editar/:idUsuario",usersController.edit);
+router.post("/editar",usersController.update);
+
+
 // Logout
 router.get('/logout/', usersController.logout);
 
