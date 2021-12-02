@@ -102,11 +102,28 @@ const usersController = {
 			where:{
 				email:req.body.email
 			}
-		})
-		.then(user =>{
-			if(user){
-                return res.render("users/profile",{user})
+		}).then(function(user){
+            if (user){
+                let password = bcryptjs.compareSync(req.body.psw, user.password)
+                if (password) {
+                    res.render('users/profile', {user})   
+                }
+                return res.render('users/login', {
+                    errors: {
+                        password: {
+                            msg: 'Las credenciales son inválidas'
+                        }
+                    }
+                })
             }
+            return res.render('users/login', {
+                errors: { 
+                    email: {
+                        msg: 'No se encuentra este email en nuestra base de datos'
+                    }
+
+                }
+            })
         })
         .catch(error => res.send(error))
 
