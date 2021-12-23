@@ -4,47 +4,98 @@
   <body>
     <%- include('../partials/header.ejs') %> 
       <main>
-          <form action="/usuario/registro" method="POST" class="register" enctype='multipart/form-data'>
+          <form action="/usuario/registro" method="POST" class="register" enctype='multipart/form-data' id='form'>
               <section>
                   <div class="text-register">
                     <h1>Crear nueva cuenta de cliente</h1>
                   </div>
-                  <div class="text-register">
-                    <h3>Informacion personal</h3>
+                  <div class="text-register InformacionPersonal">
+                    <h3 >Informacion personal</h3>
                   </div>
                 </section>
                   <section>
+                   <div class='divErrors'>
+                  <ul class='errores'></ul>
+                </div>
+
                   <div class="form-register">
                       <label class="title-label">Nombre</label>
-                      <input type="text" class="text-register-form" minlength="3" placeholder="Aca va tu nombre" name='name' required>
+
+                      <% if (locals.errors && errors.name) { %>
+                        <p class='formRegisterError'>
+                          <%= errors.name.msg %>
+                        </p>
+                     <% } %>
+
+                      <input type="text" class="text-register-form" name='name' value='<%= locals.oldData && oldData.name ? oldData.name : "" %>' id='name'>
+           
                   </div>
                   <div  class="form-register">
                       <label class="title-label">Apellido</label>
-                      <input type="text" class="text-register-form" minlength="3" placeholder="Aca va tu apellido" name='lastname'required>
+
+                      <% if (locals.errors && errors.lastname) { %>
+                        <p class='formRegisterError'>
+                          <%= errors.lastname.msg %>
+                        </p>
+                     <% } %>
+
+                      <input type="text" class="text-register-form" name='lastname' value='<%= locals.oldData && oldData.lastname ? oldData.lastname : "" %>' id='lastname'>                  
                   </div>
                 </section>
                 <section>
                   <div  class="form-register">
                       <label class="title-label">Email</label>
-                      <input type="email" class="text-register-form" name="email" placeholder="Aca va tu E-mail" name='email' required>
+
+                      <% if (locals.errors && errors.email) { %>
+                        <p class='formRegisterError'>
+                          <%= errors.email.msg %>
+                        </p>
+                     <% } %>
+
+                      <input type="email" class="text-register-form" name="email" value='<%= locals.oldData && oldData.email ? oldData.email : "" %>' id='email'>
                   </div>
                   <div  class="form-register">
                   <label for="fotoPerfil" class="title-label"> Foto de perfil </label>
-                  <input class="text-register-form" id="avatar" type="file" name="image">
+
+                  <% if (locals.errors && errors.image) { %>
+                    <p class='formRegisterError'>
+                      <%= errors.image.msg %>
+                    </p>
+                 <% } %>    
+
+                  <input class="text-register-form" id="avatar" type="file" name="image" value='<%= locals.oldData && oldData.image ? oldData.image : "" %>' id='image'>
                 </div>
                 <div class="form-register " >
                   <label class="title-label">Categoria</label>
+
+                  <% if (locals.errors && errors.category) { %>
+                    <p class='formRegisterError'>
+                      <%= errors.category.msg %>
+                    </p>
+                 <% } %>
+                 
                   <!-- <input type="text" class="text-register-form" minlength="3" placeholder="Admin o Usuario" name='category' required> -->
-                  <select class="text-register-form" name="function" required>
+                  <select class="text-register-form" name="category">
                     <option value="" disabled selected>Selecciona una categoría</option>
-                      <% functions.forEach(category=> { %>
-                        <option value="<%= category.id %>"<%= locals.oldData && (category === oldData.function) ? 'selected'  : null%>><%= category.admin_or_user %></option>
-                      <% }) %>
+
+                      <% if (locals.functions) { %>
+                        <% functions.forEach(category=> { %>
+                          <option value="<%= category.id %>"<%= locals.oldData && (category === oldData.function) ? 'selected' : ''%>><%= category.admin_or_user %></option>
+                        <% }) %>
+                     <% } %>
+                    
                   </select>
               </div>
                   <div class="form-register">
                       <label for="contraseña" class="title-label">Contraseña</label>
-                      <input type="password" class="text-register-form" placeholder="Aca va tu contraseña" name="psw" required>
+
+                      <% if (locals.errors && errors.psw) { %>
+                        <p class='formRegisterError'>
+                          <%= errors.psw.msg %>
+                        </p>
+                     <% } %>
+
+                      <input type="password" class="text-register-form" name="psw" id='psw'>
                   </div>
                 </section>
                   <p class="p-register">Campos requeridos</p>
@@ -53,5 +104,6 @@
           </form>
       </main>
       <%- include('../partials/footer.ejs') %> 
+      <script src='/js/userRegisterValidations.js'></script>
 </body>
 </html>

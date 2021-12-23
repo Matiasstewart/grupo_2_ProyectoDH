@@ -8,7 +8,10 @@
         <section class="login-form">
             <h2>Acceso del cliente</h2>
             <p>Si estás registrado, ingresá con tu dirección de correo electrónico</p>
-            <form action="/usuario/login" method="POST" class="form">
+
+            <ul class='errores'></ul>
+
+            <form action="/usuario/login" method="POST" class="form" id='form'>
               <% if (locals.errors && errors.email) { %>
                 <div class="text-danger">
                   <%= errors.email.msg %>
@@ -16,7 +19,7 @@
               <% } %>
               <div class="email">
                 <label for="e-mail">Correo electrónico</label>
-                <input type="email" name= "email" id="e-mail">
+                <input type="email" name= "email" id="e-mail" id='email'>
                 <% if (locals.errors && errors.password) { %>
                   <div class="text-danger">
                     <%= errors.password.msg %>
@@ -25,7 +28,7 @@
               </div>
               <div class="password">
                 <label for="password">Contraseña</label>
-                <input type="password" id="password" name="psw">
+                <input type="password" id="password" name="psw" id='psw'>
               </div>
               <div class="remember-me">
                 <input type="checkbox" name="remember_me" id="remember-me">
@@ -42,5 +45,6 @@
       </div>
     </main>
     <%- include('../partials/footer.ejs') %> 
+    <script src='/js/userLoginValidations.js'></script>
   </body>
 </html>

@@ -84,6 +84,12 @@ body{
     background-color:#fbed96;
 }
 
+.errores {
+    color: red;
+    font-size: 16px;
+    width: 300px;
+}
+
 /* FOOTER */
 
 /* DESKTOP */

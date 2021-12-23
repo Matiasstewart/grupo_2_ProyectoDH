@@ -19,27 +19,52 @@ const usersController = {
 		})
     },
     processRegister: (req,res) => {
-        // let errors = validationResult(req);
-        // if(!errors.isEmpty()){
-        //     return res.render('users/register', {
-		// 		errors: errors.mapped(),
-		// 		oldData: req.body
-		// 	});
-        // } /* else {
-        //     db.User.create({
-        //         first_name: req.body.name,
-        //         last_name: req.body.lastname,
-        //         email: req.body.email,
-        //         user_image: req.file.filename,
-        //         function_id: req.body.category,
-        //         password: bcryptjs.hashSync(req.body.psw, 10)
-        //     })
-        //     .then(() =>{
-        //         return res.redirect('/usuario/login')
-        //     })
-        //     .catch((error) => {
-        //         res.send(error)})
-        // } */
+       
+        let errors = validationResult(req);
+         if(!errors.isEmpty()){
+             return res.render('users/register', {
+		   		errors: errors.mapped(),
+		 		oldData: req.body
+		 	});
+         } else {
+             db.User.create({
+                 first_name: req.body.name,
+                 last_name: req.body.lastname,
+                 email: req.body.email,
+                 user_image: req.file.filename,
+                 function_id: req.body.category,
+                 password: bcryptjs.hashSync(req.body.psw, 10)
+             })
+             .then(() =>{
+                 return res.redirect('/usuario/login')
+             })
+             .catch((error) => {
+                 res.send(error)})
+         }
+
+       /*  const errors = validationResult(req);
+        if (errors.isEmpty()) {
+            User.create({
+                first_name: req.body.name,
+                last_name: req.body.lastname,
+                email: req.body.email,
+                password: bcryptjs.hashSync(req.body.psw, 10),
+                function_id: req.body.function,
+                user_image: req.file.filename,
+                deleted: 0,
+            
+            })
+            .then(() => {
+                return res.redirect("/usuario/login")
+            })
+            .catch(error => res.send(error))
+        } else {
+            console.log(errors)
+            return res.render ('users/register' , { 
+                errors: errors.mapped(),
+                oldData: req.body
+             })
+        } */
 
 		// /* let userFound = users.find(oneUser => oneUser.email === req.body.email);
 		// if(userFound) {
@@ -78,21 +103,6 @@ const usersController = {
         //             oldData: req.body
         //         })
         //     } */
-        
-        User.create({
-            first_name: req.body.name,
-            last_name: req.body.lastname,
-            email: req.body.email,
-			password: bcryptjs.hashSync(req.body.psw, 10),
-			function_id: req.body.function,
-            user_image: req.file.filename,
-            deleted: 0,
-        })
-		.then(() => {
-            return res.redirect("/usuario/login")
-        })
-        .catch(error => res.send(error))
-            
     },
     login: (req,res)=>{
         return res.render('users/login')

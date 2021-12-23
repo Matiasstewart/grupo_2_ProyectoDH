@@ -24,7 +24,7 @@ module.exports = (sequelize, dataTypes) => {
        },
        function_id:{
            type: dataTypes.INTEGER,
-           allowNull: false
+           
        },
        user_image: {
            type: dataTypes.STRING(255),
