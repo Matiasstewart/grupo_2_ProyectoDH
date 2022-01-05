@@ -4,13 +4,25 @@ const path = require('path');
 // const productsFilePath = path.join(__dirname, '../data/products.json');
 // const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const {validationResult} = require('express-validator');
+
 const db = require("../database/models");
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+
+const Product = db.Product;
+const Color = db.Color;
+const Size = db.Size;
+const Category = db.Category;
+const Season = db.Season;
+const Product_Color = db.Product_Color;
+const Product_Size = db.Product_Size;
 
 const productsController ={
     detalle: (req,res)=>{
-        db.Product.findByPk(req.params.id,{include: ['colors','sizes','category','season']})
+        db.Product.findByPk(req.params.id,{include:[{association:'colors'}, {association:'sizes'},{association:'category'}, {association:'season'}]})
             .then(product => {
-                res.render('products/productDetail',{product:product})
+                res.render('products/productDetail',{product:product, colors:product.colors, sizes:product.sizes, category:product.category, season: product.season})
             });
         // productos.forEach(producto=>{
         //     if(req.params.id == producto.id){
@@ -36,48 +48,53 @@ const productsController ={
         .catch(error => res.send(error))
     },
     store: (req,res) =>{
-        db.Product.create(
-            {
-                category_id: req.body.category,
-                season_id: req.body.season,
-                title: req.body.name,
-                description: req.body.description,
-                price: req.body.price,
-                discount:req.body.discount,
-                gender:req.body.gender,
-                product_image: req.file.filename,
-                deleted: 0,
-                sizes:[{
-                    size: req.body.size
-                }],
-                colors:[{
-                    color:req.body.color
-                }]
-            },
-            {
-                include:[
-                    {association: "sizes"},
-                    {association: "colors"}
-                ]
+        let promColor = db.Color.findAll();
+        let promSizes = db.Size.findAll();
+        let promCategory = db.Category.findAll();
+        let promSeason = db.Season.findAll();
+        
+        Promise
+        .all([promColor, promSizes, promCategory, promSeason])
+        .then(([allColors, allSizes, allCategories, allSeasons]) => {
+            let errors = validationResult(req);
+            if (!errors.isEmpty()) {
+			    return res.render('products/create', {
+				    errors: errors.mapped(),
+				    oldData:req.body,
+                    allColors, allSizes, allCategories, allSeasons
+			    });
+		    }else{
+                Product.create(
+                    {
+                    category_id: req.body.category,
+                    season_id: req.body.season,
+                    title: req.body.name,
+                    description: req.body.description,
+                    price: req.body.price,
+                    discount:req.body.discount,
+                    gender:req.body.gender,
+                    product_image: req.file.filename,
+                    deleted: 0,
+                    })
+                .then((product)=> {
+                    let colors = req.body.color;
+                    let sizes = req.body.size;
+                    colors.forEach(color=>{
+                        Product_Color.create({
+                            product_id:product.id,
+                            color_id: color
+                        })
+                    })
+                    sizes.forEach(size=>{
+                        Product_Size.create({
+                            product_id:product.id,
+                            size_id:size
+                        })
+                    })
+                    return res.redirect('/productos')})   
+                .catch(error => res.send(error))
             }
-        )
-        .then(()=> {
-            return res.redirect('/productos')})   
-        .catch(error => res.send(error))
-        // const newProduct = {
-		// 	id: productos[productos.length - 1].id + 1,
-		// 	name: req.body.name,
-        //     description: req.body.description,
-        //     category: req.body.category,
-        //     color: req.body.color,
-        //     size:req.body.size,
-        //     image:req.file.filename,
-		// 	price: req.body.price,
-		// }
-		// productos.push(newProduct);
-
-		// fs.writeFileSync(productsFilePath, JSON.stringify(productos, null, " "));
-		// res.redirect("/productos");
+        })
     },
     // 
 
@@ -92,8 +109,7 @@ const productsController ={
         Promise
         .all([promProduct,promColor, promSizes, promCategory, promSeason])
         .then(([Product, allColors, allSizes, allCategories, allSeasons]) => {
-            console.log(allGenres)
-            return res.render(path.resolve(__dirname, '..', 'views',  'products/edit'), {Product, allColors, allSizes, allCategories, allSeasons})})
+            return res.render('products/edit', {Product, allColors, allSizes, allCategories, allSeasons})})
         .catch(error => res.send(error))
         // productos.forEach(producto=>{
         //     if(req.params.id == producto.id){
@@ -103,81 +119,97 @@ const productsController ={
     },
     update: (req, res) => {
         let productId = req.params.id;
-        db.Product.update(
-            {
-                category_id: req.body.category,
-                season_id: req.body.season,
-                title: req.body.name,
-                description: req.body.description,
-                price: req.body.price,
-                discount:req.body.discount,
-                gender:req.body.gender,
-                product_image: req.file.filename,
-                deleted: 0,
-                sizes:[{
-                    size: req.body.size
-                }],
-                colors:[{
-                    color:req.body.color
-                }]
-            },
-            {
-                include:[{
-                    association: "sizes",
-                    association: "colors"
-                }]
-            },
-            {
-                where: {id: productId}
-            },
-            
-            )
-        .then(()=> {
-            return ("/productos/detalle/" + productId)})            
-        .catch(error => res.send(error))
-		// const id = req.params.id;
-		// let productToEdit = productos.find(producto => producto.id == id);
-		
-		// productToEdit = {
-		// 	id: productToEdit.id,
-		// 	name: req.body.name,
-        //     description: req.body.description,
-        //     category: req.body.category,
-        //     color: req.body.color,
-        //     size:req.body.size,
-        //     image: req.file ? req.file.filename : productToEdit.image,
-		// 	price: req.body.price,
-		// }
+        let promProduct = Product.findByPk(productId,{include: ['sizes','colors','season','category']});
+        let promColor = Color.findAll();
+        let promSizes = Size.findAll();
+        let promCategory = Category.findAll();
+        let promSeason = Season.findAll();
 
-		// let newProducts = productos;
-		// newProducts[id-1] = productToEdit;
-
-		// fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, " "));
-		// res.redirect("/productos/detalle/" + productToEdit.id)
+        Promise
+        .all([promProduct,promColor, promSizes, promCategory, promSeason])
+        .then(([Product, allColors, allSizes, allCategories, allSeasons]) => {
+            let errors = validationResult(req);
+            if (!errors.isEmpty()) {
+			    return res.render('products/edit', {
+				    errors: errors.mapped(),
+				    oldData:req.body,
+                    Product, allColors, allSizes, allCategories, allSeasons
+			    })
+            }else{
+                db.Product.update(
+                    {
+                        category_id: req.body.category,
+                        season_id: req.body.season,
+                        title: req.body.name,
+                        description: req.body.description,
+                        price: req.body.price,
+                        discount:req.body.discount,
+                        gender:req.body.gender,
+                        product_image: req.file.filename,
+                        deleted: 0,
+                    },
+                    {
+                        where: {id: productId}
+                })
+                .then(()=>{
+                    Product_Color.destroy(
+                        {where:
+                            {product_id:productId}
+                        });
+                    Product_Size.destroy(
+                        {where:
+                            {product_id:productId}
+                        })
+			    })
+                .then(()=>{
+                    let colors = req.body.color;
+                    let sizes = req.body.size;
+                    colors.forEach(color=>{
+                        Product_Color.create({
+                            product_id:productId,
+                            color_id: color
+                        },
+                        {
+                            where:{product_id:productId}  
+                        })
+                    })
+                    sizes.forEach(size=>{
+                        Product_Size.create({
+                            product_id:productId,
+                            size_id:size
+                        },
+                        {
+                            where:{product_id:productId}  
+                        })
+                    })
+				    return res.redirect("/productos/detalle/" + productId)  
+				})
+				.catch(error => res.send(error));
+            }
+        })
 	},
     // 
 
     list: (req,res) =>{
-        db.Product.findAll()
-            .then(products => {
-                res.render('products/list', {products})
+        let promProducts = db.Product.findAll();
+        let promCategories = db.Category.findAll();
+
+        Promise.all([promProducts, promCategories])
+        .then(([products, categories]) => {
+                res.render('products/list', {products:products, categories:categories})
             })
-        // productos.forEach(producto=>{
-        //     return producto  
-        // })
-        // res.render('products/list', {productos:productos})
+        .catch(error => res.send(error));
     },
     delete:(req, res) => {
         let productId = req.params.id;
-        db.Product.destroy({where: {id: productId}, force: true}) // force: true es para asegurar que se ejecute la acción
+        let productDestroy = Product.destroy({where: {id: productId}, force: true}) // force: true es para asegurar que se ejecute la acción
+        let product_SizeDestroy = Product_Size.destroy({where:{product_id:productId}, force: true})
+        let product_ColorDestroy = Product_Color.destroy({where:{product_id:productId}, force: true})
+
+        Promise.all([productDestroy, product_ColorDestroy, product_SizeDestroy])
         .then(()=>{
             return res.redirect('/productos')})
         .catch(error => res.send(error)) 
-		// let finalProducts = productos.filter(producto => producto.id != req.params.id);
-
-		// fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
-
-        // res.redirect("/productos")
 	},
     search:(req,res)=>{
         return res.render("products/search")
