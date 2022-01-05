@@ -55,7 +55,7 @@ module.exports = (sequelize, dataTypes) => {
         Product.belongsToMany(models.Size, {
             as:"sizes",
             through: "products_sizes",
-            foreingKey: "product_id",
+            foreignKey: "product_id",
             otherKey:"size_id",
             timestamps:"false" 
         })
@@ -65,7 +65,7 @@ module.exports = (sequelize, dataTypes) => {
         Product.belongsToMany(models.Color, {
             as:"colors",
             through: "products_colors",
-            foreingKey: "product_id",
+            foreignKey: "product_id",
             otherKey:"color_id",
             timestamps:"false"    
         })
@@ -75,7 +75,7 @@ module.exports = (sequelize, dataTypes) => {
         Product.belongsToMany(models.Cart, {
             as:"carts",
             through: "carts_products",
-            foreingKey: "product_id",
+            foreignKey: "product_id",
             otherKey:"cart_id",
             timestamps:"false"    
         })
