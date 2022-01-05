@@ -20,6 +20,11 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage});
 
+// Middlewares
+const productCreateValidations = require('../Middlewares/productCreateMiddleware')
+const productEditValidations = require('../Middlewares/productEditMiddleware') 
+
+
 // Listado
 router.get("/",productsController.list)
 
@@ -31,11 +36,11 @@ router.get("/carrito", productsController.carrito)
 
 // Crear y almacenar
 router.get("/crear",productsController.create)
-router.post("/", upload.single("image"), productsController.store)
+router.post("/", upload.single("image"), productCreateValidations, productsController.store)
 
 // Editar y almacenar
 router.get("/editar/:id",productsController.edit)
-router.put("/detalle/:id", upload.single("image"), productsController.update)
+router.put("/detalle/:id", upload.single("image"), productEditValidations, productsController.update)
 
 // Borrar
 router.delete("/detalle/:id",productsController.delete)
