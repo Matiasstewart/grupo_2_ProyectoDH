@@ -19,155 +19,89 @@ const usersController = {
 		})
     },
     processRegister: (req,res) => {
-       
-        let errors = validationResult(req);
-         if(!errors.isEmpty()){
-             return res.render('users/register', {
-		   		errors: errors.mapped(),
-		 		oldData: req.body
-		 	});
-         } else {
-             db.User.create({
-                 first_name: req.body.name,
-                 last_name: req.body.lastname,
-                 email: req.body.email,
-                 user_image: req.file.filename,
-                 function_id: req.body.category,
-                 password: bcryptjs.hashSync(req.body.psw, 10)
-             })
-             .then(() =>{
-                 return res.redirect('/usuario/login')
-             })
-             .catch((error) => {
-                 res.send(error)})
-         }
-
-       /*  const errors = validationResult(req);
-        if (errors.isEmpty()) {
-            User.create({
-                first_name: req.body.name,
-                last_name: req.body.lastname,
-                email: req.body.email,
-                password: bcryptjs.hashSync(req.body.psw, 10),
-                function_id: req.body.function,
-                user_image: req.file.filename,
-                deleted: 0,
-            
-            })
-            .then(() => {
-                return res.redirect("/usuario/login")
-            })
-            .catch(error => res.send(error))
-        } else {
-            console.log(errors)
-            return res.render ('users/register' , { 
-                errors: errors.mapped(),
-                oldData: req.body
-             })
-        } */
-
-		// /* let userFound = users.find(oneUser => oneUser.email === req.body.email);
-		// if(userFound) {
-		// 	return res.render('users/register', {
-		// 		errors: {
-		// 			email: {
-		// 				msg: 'Este email ya está registrado'
-		// 			}
-		// 		},
-		// 		oldData: req.body
-		// 	});
-		// }
-        //     const newUsers = {
-        //         id: users[users.length -1].id + 1,
-        //         name: req.body.name,
-        //         lastname: req.body.lastname,
-        //         email: req.body.email,
-        //         img: req.file.filename,
-        //         category: req.body.category,
-        //         password: bcryptjs.hashSync(req.body.psw, 10),
-        //     }
-
-        //     users.push(newUsers);
-        //     fs.writeFileSync(userJson, JSON.stringify(users,null, 4))
-        //     res.redirect("/usuario/login") */
-
-        //     /*let userInDB = User.findByField('email', req.body.email);
-            
-        //     if (userInDB) {
-        //         return res.render('register.ejs', {
-        //             errors: {
-        //                 email: {
-        //                     msg: 'Este email ya está registrado'
-        //                 }
-        //             },
-        //             oldData: req.body
-        //         })
-        //     } */
-    },
+		db.Function.findAll()
+		.then(functions=>{
+			let errors = validationResult(req);
+        	if(!errors.isEmpty()){
+            return res.render('users/register', {
+				errors: errors.mapped(),
+				oldData: req.body,
+				functions
+			})}
+			
+				User.create({
+					first_name: req.body.name,
+					last_name: req.body.lastname,
+					email: req.body.email,
+					password: bcryptjs.hashSync(req.body.psw, 10),
+					function_id: req.body.function,
+					user_image: req.file ? req.file.filename : '',
+					deleted: 0,
+				})
+				.then(() => {
+					return res.redirect("/usuario/login")
+				})
+				.catch(error => res.send(error))
+			
+		})
+		.catch(error => res.send(error))
+	},
     login: (req,res)=>{
         return res.render('users/login')
     },
-    processLogin: (req, res) => {
-        User.findOne({
-			where:{
-				email:req.body.email
-			}
-		}).then(function(user){
-            if (user){
-                let password = bcryptjs.compareSync(req.body.psw, user.password)
-                if (password) {
-                    res.render('users/profile', {user})   
-                }
-                return res.render('users/login', {
+  processLogin:(req,res)=>{
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.render('users/login', {
+            errors: errors.mapped(),
+            oldData:req.body
+        });
+    }else{
+        return User.findOne({
+            where:{
+                email:req.body.email
+            }
+        })
+        .then(function (user){
+            console.log(user)
+            if(user == null){
+                res.render('users/login', {
                     errors: {
-                        password: {
-                            msg: 'Las credenciales son inválidas'
+                        email: {
+                            msg: 'El email ingresado no está registrado'
                         }
                     }
                 })
             }
-            return res.render('users/login', {
-                errors: { 
-                    email: {
-                        msg: 'No se encuentra este email en nuestra base de datos'
+            else {
+                let passwordHash =  user.password;
+                let samePassword = bcryptjs.compareSync(req.body.psw, passwordHash);
+
+                if(samePassword){
+                    // Por seguridad
+                    delete user.password;
+                    req.session.userLogged = user;
+
+                    if(req.body.remember_me) {
+                        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
                     }
 
+                    return res.redirect('/usuario/mi-cuenta/'+user.id);
+                }else{
+                    return res.render('users/login', {
+                        errors: {
+                            psw: {
+                                msg: 'La contraseña no es correcta'
+                            }
+                        },
+                        oldData:req.body
+                    })
                 }
-            })
+            }
         })
-        .catch(error => res.send(error))
-
-    //     let userToLogin = User.findByField('email', req.body.email)
-        
-    //     if(userToLogin) {
-    //         let passwordIsOk = bcryptjs.compareSync(req.body.psw, userToLogin.password);
-    //         if (passwordIsOk) {
-    //             delete userToLogin.password;
-	// 			req.session.userLogged = userToLogin;
-
-	// 			if(req.body.remember_me) {
-	// 				res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
-	// 			}
-
-	// 			return res.redirect('/usuario/mi-cuenta');
-    //         }
-    //         return res.render('users/login', {
-    //             errors: {
-    //                 password: {
-    //                     msg: 'Las credenciales son inválidas'
-    //                 }
-    //             }
-    //         })
-    //     }
-
-    //    return res.render('users/login', {
-    //        errors: {
-    //            email: {
-    //                msg: 'No se encuentra este email en nuestra base de datos'
-    //            }
-    //        }
-    //    })
-  },
+        .catch(error => res.send(error))	
+    }
+},
   edit:(req,res)=>{
     let users = User.findByPk(req.params.idUsuario);
     let functions = db.Function.findAll();
@@ -191,14 +125,14 @@ update:(req,res)=>{
             email: req.body.email,
             password: bcryptjs.hashSync(password, 10),
             function_id: req.body.function,
-            user_image: req.file.filename,
+            user_image: req.file ? req.file.filename : '',
             deleted: 0,
         },
         {
             where: {id: userId}
         })
     .then(()=> {
-        return res.redirect('/usuario/mi-cuenta')})            
+        return res.redirect('/usuario/mi-cuenta' + userId)})            
     .catch(error => res.send(error))
 
 },
@@ -206,7 +140,8 @@ update:(req,res)=>{
     User.findByPk(req.params.id)
     .then(user => {
         return res.render('users/profile.ejs', {user});
-    });
+    })
+    .catch(error => res.send(error))
     //   return res.render('users/profile', {
     //       user: req.session.userLogged
     //   });
