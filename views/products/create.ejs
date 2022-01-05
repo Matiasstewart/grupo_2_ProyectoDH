@@ -9,10 +9,34 @@
         <section class="form-section-left">
             <label for="name">Nombre</label>
             <input type="text" name="name" id="name">
+            <div>
+              <small class="text-danger error-name"></small>
+            </div>
+            <% if (locals.errors && errors.name) { %>
+              <div class="text-danger">
+                <%= errors.name.msg %> 
+              </div>
+            <% } %>
             <label for="description">Descripción</label>
             <textarea name="description" id="description" rows="6"></textarea>
+            <div>
+              <small class="text-danger error-description"></small>
+            </div>
+            <% if (locals.errors && errors.description) { %>
+              <div class="text-danger">
+                <%= errors.description.msg %> 
+              </div>
+            <% } %>
             <label for="image">Imagen</label>
-            <input type="file" name="image">
+            <input type="file" name="image" id="image" accept=".JPG,.JPEG,.PNG,.GIF">
+            <div>
+              <small class="text-danger error-image"></small>
+            </div>
+            <% if (locals.errors && errors.image) { %>
+              <div class="text-danger">
+                <%= errors.image.msg %> 
+              </div>
+            <% } %>
             <label for="category">Categoría</label>
             <select name="category" id="category" class="category">
               <option value="" disabled selected>Selecciona una categoría</option>
@@ -39,6 +63,7 @@
               <option value="<%= season.id %>"><%= season.season %></option>
               <% }); %>
             </select>
+            <label for="gender">Género</label>
             <select name="gender" id="gender" class="category">
               <option value="" disabled selected>Selecciona un género</option>
               <option value="Femenino">Femenino</option>
@@ -55,5 +80,6 @@
       </form>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/js/productCreateValid.js"></script>
   </body>
 </html>
