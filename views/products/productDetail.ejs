@@ -20,6 +20,10 @@
             <h2 class="product-name"><%=product.title %></h2>
             <h4>EN STOCK</h4>
             <h2 class="price">$<%= product.price%></h2>
+            <% if(product.discount != 0 ){ %>
+              <h3 class="discount"><%= product.discount%>% descuento</h3>
+              <h2 class="price">$ <%= product.price * (100-product.discount)/100 %></h2>
+            <% } %>
             <h4>3 y 6 cuotas sin interés</h4>
             <p>Según la promo de tu tarjeta/banco</p>
             <a href="#">Calcular cuotas</a>
@@ -29,21 +33,19 @@
             <div class="color">
               <label for="color"><strong>Color</strong></label>
               <select name="color" id="color">
-                <option value="">Elegí un color</option>
-                <% let arrayColor = product.color%>
-                <% for (const color of arrayColor){ %>
-                <option value="<%=color%>"><%=color%></option>
-                <%}%>
+                <option value="" disabled selected>Elegí un color</option>
+                  <% colors.forEach(color=> { %>
+                    <option value="<%= color.id %>"<%= locals.errors && (color.id == oldData.color) ? 'selected'  : null%>><%= color.color %></option>
+                  <% }) %>
               </select>
             </div>
             <div class="talle">
               <label for="size"><strong>Talle</strong></label>
               <select name="size" id="size">
-                <option value="">Elegí un talle</option>
-                <% let arraySize = product.size%>
-                <% for (const size of arraySize){ %>
-                <option value="<%=size%>"><%=size%></option>
-                <%}%>
+                <option value="" disabled selected>Elegí un talle</option>
+                  <% sizes.forEach(size=> { %>
+                    <option value="<%= size.id %>"<%= locals.errors && (size.id == oldData.size) ? 'selected'  : null%>><%= size.size %></option>
+                  <% }) %>
               </select>
             </div>
             <div class="add-to-cart-button">
