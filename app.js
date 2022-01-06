@@ -39,7 +39,7 @@ app.use("/usuario", usersRoutes);
 
 // Rutas APIs
 // const apiProductsRoutes = require('./routes/api/products');
-const apiUsersRoutes = require('./routes/api/users');
+const apiUsersRoutes = require('./routers/api/users');
 // 
 
 app.use('/api/users', apiUsersRoutes);
