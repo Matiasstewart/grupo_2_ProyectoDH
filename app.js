@@ -38,10 +38,10 @@ app.use("/productos",productsRoutes);
 app.use("/usuario", usersRoutes);
 
 // Rutas APIs
-// const apiProductsRoutes = require('./routes/api/products');
+const apiProductsRoutes = require('./routers/api/products');
 const apiUsersRoutes = require('./routers/api/users');
 // 
 
 app.use('/api/users', apiUsersRoutes);
 
-// app.use('/api/products', apiProductsRoutes);
+app.use('/api/products', apiProductsRoutes);
