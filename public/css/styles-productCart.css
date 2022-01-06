@@ -10,7 +10,7 @@
 body{
     font-family: 'Roboto', sans-serif;
     color:#000;
-    background-image: linear-gradient(to bottom, #ace0f9 0%, #fbed96 100%);
+    background-color:#f8f9fc;
 }
 
 main {
@@ -26,16 +26,36 @@ main {
     color: black;
     border-radius: 10px;
     width: 100%;
-    box-shadow: 0px 0px 10px rgb(0, 0, 0); 
+    box-shadow: 0px 0px 10px 0px rgb(165, 165, 165);
 }
 
 .img-cart {
     max-width: 200px;
     margin: auto;
+    
 }
 
 form div {
-    margin-top: 5px;
+    margin-top: 15px;
+    background-image: linear-gradient(to top right,   
+    #e792b3,
+    #e690a8,
+    #b36b7f);
+    width: 100px;
+    border-radius: 10px;
+    opacity: 0.8;
+    height: 50px;
+    padding-top: 5px;
+    border: 2px solid black;
+}
+
+form div label {
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+form div select {
+    margin: auto;
 }
 
 .summary-cart {
@@ -46,7 +66,7 @@ form div {
     position: relative;
     min-width: 250px;
     max-width: 250px;
-    box-shadow: 0px 0px 10px rgb(0, 0, 0); 
+    box-shadow: 0px 0px 10px 0px rgb(165, 165, 165);
 }
 
 .summary-cart div {
@@ -55,23 +75,39 @@ form div {
     padding-bottom: 7px;
 }
 
-.summary-cart div p {
+.summary-cartP p{
     text-align: left;
     padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    background-image: linear-gradient(to top right,   
+    #e792b3,
+    #e690a8,
+    #b36b7f);
+    width: 100px;
+    opacity: 0.8;
 }
 
 .button-cart {
     margin-top: 10px;
     font-size: 15px;
-    background-color: black;
-    color: white;
+    background-image: linear-gradient(to top right,   
+    #e792b3,
+    #e690a8,
+    #b36b7f);
+    color: black;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
+    opacity: 0.8;
+    font-weight: bold;
+
 }
 
 .button-cart p {
     margin-bottom: 10px;
     font-size: 16px;
+    color: black;
+    font-weight: bold;
 }
 
 .discount-cart {
@@ -88,11 +124,16 @@ form div {
 
 .button-discount {
     margin-top: 7px;
-    padding: 10px;
-    background-color: black;
-    color: white;
+    padding: 5px;
+    background-image: linear-gradient(to top right,   
+    #e792b3,
+    #e690a8,
+    #b36b7f);
+    color: black;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    opacity: 0.8;
 }
 
 .button-discount p {

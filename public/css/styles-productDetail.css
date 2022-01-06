@@ -12,7 +12,7 @@ body{
     font-family: 'Roboto', sans-serif;
     color:#000;
     /* background-image: linear-gradient(to top, #facfbd 0%, #ace0f9 100%); */
-    background-image: linear-gradient(to bottom, #ace0f9 0%, #fbed96 100%);
+    background-color:#f8f9fc;
 }
 
 /* HEADER */

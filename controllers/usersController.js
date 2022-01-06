@@ -35,7 +35,7 @@ const usersController = {
 					email: req.body.email,
 					password: bcryptjs.hashSync(req.body.psw, 10),
 					function_id: req.body.function,
-					user_image: req.file ? req.file.filename : '',
+					user_image: req.file.filename,
 					deleted: 0,
 				})
 				.then(() => {

@@ -10,7 +10,7 @@
 body{
     font-family: 'Roboto', sans-serif;
     color:#000;
-    background-image: linear-gradient(to bottom, #ace0f9 0%, #fbed96 100%);
+    background-color:#f8f9fc;
 }
 
 /* HEADER */
@@ -18,7 +18,7 @@ body{
 /* MAIN */
 .main-form{
     padding: 70px 20px 0px 20px;
-    
+    margin-bottom: 5.2%;
 }
 
 .login-and-new-account{
@@ -26,6 +26,9 @@ body{
     margin: auto;
     padding: 0px 5%;
     text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgb(165, 165, 165);
 }
 
 .login-form{
@@ -50,14 +53,18 @@ body{
     margin: 0 auto;
     text-align: left;
     padding-bottom: 15px;
+    
 }
 
 .email input, .password input{
     width: 100%;
     border: none;
     padding: 5px 10px;
-    border-radius: 15px;
+    border-radius: 10px;
     outline: none;
+    background-color: #e690a8;
+    border: black solid 2px;
+    opacity: 0.8;
 }
 
 .text-danger{
@@ -71,11 +78,16 @@ body{
 }
 
 .login-button, .account-button{
+    margin-top: 5px;
     padding: 10px 15px;
     color: #000;
-    background-color: #ace0f9;
+    background-image: linear-gradient(to top right,   
+    #e792b3,
+    #e690a8,
+    #b36b7f);
+    opacity: 0.8;
     border: solid 2px #000;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 300ms;
 }
@@ -92,6 +104,12 @@ body{
 
 /* FOOTER */
 
+@media(min-width:369px){
+    .login-and-new-account{
+       margin-bottom: 5%;
+    }
+}
+
 /* DESKTOP */
 @media(min-width:769px){
     /* HEADER */
@@ -105,9 +123,10 @@ body{
         display: flex;
         justify-content: space-around;
         flex-wrap:wrap;
-        margin: auto;
+        margin-top: 5%;
         padding: 0px;
         text-align: left;
+        border: rgb(155, 155, 155) solid 1.5px;
     }
 
     .login-form{
@@ -129,5 +148,9 @@ body{
     }
    
     /* FOOTER */
+
+    footer {
+        
+    }
    
 }

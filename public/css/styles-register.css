@@ -10,11 +10,13 @@
 body{
     font-family: 'Roboto', sans-serif;
     color:#000;
-    background-image: linear-gradient(to bottom, #ace0f9 0%, #fbed96 100%);
+    background-color:#f8f9fc;
 }
 
 .register {
     padding: 15px;
+
+    margin-bottom: 50px;
 }
 
 .text-register{
@@ -26,21 +28,40 @@ body{
     padding-top: 25px;
 }
 
+.form-register-total {
+    display: block;
+    max-width: 80vw;
+    background-color: white;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.15);
+    border-radius: 10px;
+    padding-bottom: 20px;
+    
+}
+
+
 .form-register {
     width: 90%;
     margin: auto;
     padding-top: 25px;
+
 }
 
 .form-register select {
     display:block;
-    border-radius: 25px;
     text-align: center;
     margin: left;
     font-size: 20px;
     height: 37px;
     margin-left: -20px;
     margin-top: 10px;
+    border-radius: 10px;
+    background-image: linear-gradient(to top right,   
+    #e792b3,
+    #e690a8,
+    #b36b7f);
+    background-size: cover;
+    border: #000 solid 2px;
+    opacity: 0.8;
 }
 
 .form-register label {
@@ -56,6 +77,14 @@ body{
     margin: left;
     margin-left: -20px;
     margin-top: 10px;
+    border-radius: 10px;
+    background-image: linear-gradient(to top right,   
+    #e792b3,
+    #e690a8,
+    #b36b7f);
+    background-size: cover;
+    border: #000 solid 2px;
+    opacity: 0.8;
 }
 
 .text-register-form {
@@ -63,12 +92,12 @@ body{
     width: 250px;
     font-size: 15px;
     border-radius: 20px;
-    border: 2px silver solid;
     margin-top: 5px;
     padding: 5px 5px 5px 10px;
     background-color:white;
     color:black;
     text-align: center;
+    
 }
 
 .title-label {
@@ -87,18 +116,24 @@ body{
 
 .button-register {
     display:block;
-    background-color: black;
-    font-size: 15px;
-    color:white;
+    background-image: linear-gradient(to top right,   
+    #e792b3,
+    #e690a8,
+    #b36b7f);
+    font-size: 10px;
+    color:black;
     padding: 8px 10px;
     border-radius: 10px;
-    border: 2px solid silver;
     margin: auto;
+    padding-bottom: 10px;
+    border: black solid 2px;
 }
 
-.button-register a {
-    color: white;
-    font-size: 20px;
+a .button-register {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    border: black solid 2px;
 }
 
 .formRegisterError {
@@ -125,9 +160,14 @@ body{
 }
 
 @media (min-width: 361px) {
+    .form-register-total {
+        margin: auto;
+        max-width: 80vw;
+    }
+ }
+
     .form-register input, .form-register select {
         margin: auto;
-        margin-top: 10px;
         width: 300px;
     }
 
@@ -164,7 +204,21 @@ body{
         border-radius: 10px;
         border: 2px solid silver;
     }
-}
+
+
+@media (min-width: 769px){
+    .form-register-total {
+        margin: auto;
+        max-width: 50vw;
+    }
+ }
+
+ @media (min-width: 1380px){
+    .form-register-total {
+        margin: auto;
+        max-width: 40vw;
+    }
+ }
 
 
 

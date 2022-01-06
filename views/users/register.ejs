@@ -5,6 +5,7 @@
     <%- include('../partials/header.ejs') %> 
       <main>
           <form action="/usuario/registro" method="POST" class="register" enctype='multipart/form-data' id='form'>
+            <div class='form-register-total'>
               <section>
                   <div class="text-register">
                     <h1>Crear nueva cuenta de cliente</h1>
@@ -101,6 +102,7 @@
                   <p class="p-register">Campos requeridos</p>
                   <a href="/"><button type="submit" class="button-register">Crear Cuenta</button></a>
               </section>
+            </div>
           </form>
       </main>
       <%- include('../partials/footer.ejs') %> 

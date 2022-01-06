@@ -11,7 +11,7 @@
 body{
     font-family: 'Roboto', sans-serif;
     color:#000;
-    background-image: linear-gradient(to bottom, #ace0f9 0%, #fbed96 100%);
+    background-color:#f8f9fc;
     outline: none;
 }
 
@@ -24,7 +24,8 @@ body{
 }
 
 .products-list{
-    margin: 10px 30px
+    margin: 10px 30px;
+
 }
 
 .product{
@@ -33,18 +34,20 @@ body{
     background-color: transparent;
     margin: 10px;
     padding: 5px;
-    transition: all 300ms
+    transition: all 300ms;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px rgb(165, 165, 165);
 }
 
-.product:hover{
-    border: solid 2px #fff;
-    background-color: #fff;
-}
-
-.product:hover .edit-button, .product:hover .delete-button{
-    background-color: #ace0f9;
-    border-radius: 20px;
-    border:solid 2px black
+.product .edit-button, .product .delete-button{
+    background-image: linear-gradient(to top right,   
+    #e792b3,
+    #e690a8,
+    #b36b7f);
+    opacity: 0.8;
+    border-radius: 10px;
+    border: none;
+    border: solid 2px #000;
 }
 
 .product a{
@@ -56,6 +59,7 @@ body{
     justify-content: center;
     flex-wrap: wrap;
 }
+
 
 .edit-button-div, .delete-form{
     width: 30%;
@@ -87,12 +91,17 @@ body{
     color: #000;
     text-align: center;
     padding: 7px;
-    background-color: #ace0f9;
-    border: solid 2px #000;
-    border-radius: 20px;
+    background-image: linear-gradient(to top right,   
+    #e792b3,
+    #e690a8,
+    #b36b7f);
+    opacity: 0.8;
+    border-radius: 10px;
     margin: auto;
+    margin-bottom: 2.5% !important;
     max-width: 280px;
     transition: all 300ms;
+    border: solid 2px #000;
 }
 
 .new-product-button:hover{

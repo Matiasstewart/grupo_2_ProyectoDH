@@ -2,11 +2,12 @@
     display:flex;
     justify-content: space-between;
 }
+
 .mobile-nav-bar{
     width: 100%;
     position: fixed;
     z-index:10;
-    background-color: #ace0f9;
+    background-color: #e690a8;
     padding: 15px 0;
 }
 .logo, .left-side, .right-side{

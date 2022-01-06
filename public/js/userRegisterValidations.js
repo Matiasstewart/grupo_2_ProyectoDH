@@ -52,7 +52,7 @@ window.addEventListener('load', function(){
             messages.push('La contraseña debe tener mas de 8 caracteres')
         }
 
-       /*  if (image.files.name.match(/.(jpg|jpeg|png|gif)$/i)) {
+      /*   if ((/.(jpg|jpeg|png|gif)$/i).test(image.value) && image.value != '') {
             messages.push('La imagen deberá ser de formato JPG, JPEG, PNG o GIF')
         } */
 
