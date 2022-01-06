@@ -34,7 +34,7 @@ const usersController = {
 					last_name: req.body.lastname,
 					email: req.body.email,
 					password: bcryptjs.hashSync(req.body.psw, 10),
-					function_id: req.body.function,
+					function_id: 2,
 					user_image: req.file.filename,
 					deleted: 0,
 				})
@@ -86,7 +86,7 @@ const usersController = {
                         res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
                     }
 
-                    return res.redirect('/usuario/mi-cuenta/'+user.id);
+                    return res.render('users/profile' , {user});
                 }else{
                     return res.render('users/login', {
                         errors: {
@@ -132,7 +132,7 @@ update:(req,res)=>{
             where: {id: userId}
         })
     .then(()=> {
-        return res.redirect('/usuario/mi-cuenta' + userId)})            
+        return res.redirect('/users/edit' + userId)})            
     .catch(error => res.send(error))
 
 },

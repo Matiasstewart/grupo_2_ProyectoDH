@@ -23,16 +23,18 @@ const upload = multer({storage: storage});
 // Middlewares
 const productCreateValidations = require('../Middlewares/productCreateMiddleware')
 const productEditValidations = require('../Middlewares/productEditMiddleware') 
+const guestMiddleware = require('../Middlewares/guestMiddleware');
+const authMiddleware = require('../Middlewares/authMiddleware');
 
 
 // Listado
-router.get("/",productsController.list)
+router.get("/", authMiddleware ,productsController.list)
 
 // Detalle de producto
 router.get("/detalle/:id", productsController.detalle)
 
 // Carrito
-router.get("/carrito", productsController.carrito)
+router.get("/carrito", authMiddleware, productsController.carrito)
 
 // Crear y almacenar
 router.get("/crear",productsController.create)

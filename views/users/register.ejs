@@ -79,11 +79,9 @@
                   <select class="text-register-form" name="category">
                     <option value="" disabled selected>Selecciona una categoría</option>
 
-                      <% if (locals.functions) { %>
-                        <% functions.forEach(category=> { %>
-                          <option value="<%= category.id %>"<%= locals.oldData && (category === oldData.function) ? 'selected' : ''%>><%= category.admin_or_user %></option>
-                        <% }) %>
-                     <% } %>
+                      
+                          <option value="User">User</option>
+                      
                     
                   </select>
               </div>
