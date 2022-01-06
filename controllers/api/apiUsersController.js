@@ -6,7 +6,7 @@ const apiUsersController = {
         .findAll({attributes:{exclude:['password','function_id','user_image','deleted']}})
         .then(users => {
             users.forEach(user=>{
-                user.dataValues.detail = 'https://localhost:3030/api/users/' + user.id
+                user.dataValues.detail = 'https://localhost:3090/api/users/' + user.id
             })
             return res.status(200).json({
                 count: users.length,
@@ -31,7 +31,7 @@ const apiUsersController = {
         .then(user=>{
             return res.status(200).json({
                 user: user,
-                imageURL:'http://localhost:3030/api/users/'+user.id + '/' + user.user_image,
+                imageURL:'http://localhost:3090/api/users/'+user.id + '/' + user.user_image,
                 status: 200
 
             })

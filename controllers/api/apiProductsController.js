@@ -16,7 +16,7 @@ const apiProductsController = {
         Promise.all([promProducts,promCategory])
         .then(([products,category])=> {
             products.forEach(product => {
-                product.dataValues.detail = 'http://localhost:3030/api/products/' + product.id;
+                product.dataValues.detail = 'http://localhost:3090/api/products/' + product.id;
             });
             return res.status(200).json({
                 count: products.length,
@@ -25,6 +25,8 @@ const apiProductsController = {
                     Snow: category[1].count,
                     Surf: category[2].count    
                 },
+                countCategory: category.length 
+                ,
                 products:products,
                 status: 200
 
@@ -46,7 +48,7 @@ const apiProductsController = {
         .then(product=>{
             return res.status(200).json({
                 product: product,
-                imageURL:'http://localhost:3030/api/products/'+product.id + '/' + product.product_image,
+                imageURL:'http://localhost:3090/api/products/'+product.id + '/' + product.product_image,
                 status: 200
 
             })
