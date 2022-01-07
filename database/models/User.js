@@ -50,13 +50,12 @@ module.exports = (sequelize, dataTypes) => {
          foreignKey: 'function_id',
          as: 'rol'
         })
+
+        User.hasMany(models.Cart, {
+            foreignKey: 'user_id',
+            as: 'cartUser'
+        })
     }
-     
-     User.associate = function (models){
-         User.hasMany(models.Cart, {
-             foreignKey: 'user_id',
-             as: 'cartUser'
-         })
-     }
+
      return User;
    }
