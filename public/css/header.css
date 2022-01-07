@@ -9,7 +9,9 @@
     position: fixed;
     z-index:10;
     background-color: #e690a8;
-    padding: 15px 0;
+    height: 90px;
+    padding: 15px;
+    opacity: 0.95;
 }
 .logo, .left-side, .right-side{
     font-size: 20px;
@@ -30,20 +32,26 @@
     display: none;
 }
 
-
 @media (min-width:369px) {
      /* burguerMenu */
 .burguerA {
-    color: black;
+    color: white !important;
     text-decoration: none;
   }
   
+  .carrito {
+    display: none;
+    color: #e690a8;
+    
+  }
+
   .nav-menu{
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 60px;
-    margin-left: 10%;
+    margin-top: 80px;
+    margin-left: 10px;
     width: 10%;
   }
   
@@ -92,30 +100,51 @@
     .nav-menu{
       position: fixed;
       left: -100%;
-      top: 50px;
+      top: 10px;
       gap: 0;
       flex-direction: column;
-      background-color: transparent;
-      width: 10%;
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 125px;
       text-align: center;
       transition: 0.3s;
       list-style-type: none;
       font-weight: bold;
+      display: block;
+      font-size: 10px;
+      border-bottom-right-radius: 5px;
+      margin-left: 0;
     }
   
     .nav-item{
-      margin: 2px 0;
+      margin: 3px 0;
+      display: block; 
+      width: 120px;
     }
   
     .nav-menu.active{
       left: 0;
     }
+
+    .fa-shopping-cart {
+       display: none;
+    }
 }   
+
 
 @media(min-width:769px){
     .nav{
         position: relative;
    }
+
+   .carrito {
+    color: black;
+    
+  }
+
+   .nav-menu {
+    margin-left: 10%;
+  }
+
     .mobile-nav-bar{
         display: flex;
         justify-content: center;

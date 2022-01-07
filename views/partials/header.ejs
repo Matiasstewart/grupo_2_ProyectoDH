@@ -7,10 +7,13 @@
               <nav >
                 <ul class="nav-menu">
                   <li class="nav-item">
-                    <a href="/usuario/login" class="nav-link burguerA">Loguear/Registrar</a>
+                    <a href="/usuario/login" class="nav-link burguerA">Login/Register</a>
                   </li>
                   <li class="nav-item">
                     <a href="/productos/carrito" class="nav-link burguerA">Carrito</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/usuario/logout" class="nav-link burguerA">Cerrar sesión</a>
                   </li>
                 </ul>
               <div class='moveBurger'>
@@ -33,16 +36,16 @@
               <a href="/usuario/mi-cuenta"><img src="/images/avatars/<%= locals.userLogged.user_image %>" width="45" height="45" style="border-radius: 20%;">
                 <br>
                <%= locals.userLogged.first_name %></a>
-               <a href="/productos/carrito"><i class="fas fa-shopping-cart"></i></a>
+               <a href="/productos/carrito"><i class="fas fa-shopping-cart carrito"></i></a>
             <% } else { %>
               <a href="/usuario/login"><i class="fas fa-user"></i></a>
-              <a href="/productos/carrito"><i class="fas fa-shopping-cart"></i></a>
+              <a href="/productos/carrito"><i class="fas fa-shopping-cart carrito"></i></a>
             <% } %>
           </div>
           <div class="icons-bottom">
-            <a href="facebook.com"><i class="fab fa-facebook-f"></i></a>
-            <a href="instagram.com"><i class="fab fa-instagram"></i></a>
-            <a href="twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
           </div>
         </div>
       </div>
