@@ -28,7 +28,7 @@ router.get('/mi-cuenta/:idUsuario', authMiddleware, usersController.profile);
 
 // Editar perfil
 router.get("/editar/:idUsuario",usersController.edit);
-router.post("/editar/:idUsuario",usersController.update);
+router.post("/editar/:idUsuario",uploadFile.single('image'), usersController.update);
 
 
 // Logout
