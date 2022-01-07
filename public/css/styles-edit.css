@@ -63,6 +63,7 @@ input[type=checkbox]{
     cursor: pointer;
     color: #000;
     transition: all 300ms;
+    
 }
 
 .edit-product-button:hover{

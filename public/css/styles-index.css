@@ -23,6 +23,16 @@ body{
 .video-loop video{
     opacity: 0.8;
 }
+
+.h2Video{
+  color: white;
+  font-size: 25px;
+  font-weight: normal;
+  opacity: 0.85;
+  margin-bottom: 0%;
+  margin-top: 50%;
+}
+
 .cartel{
     position: absolute;
     bottom:20%;
@@ -188,6 +198,44 @@ body{
     color: #b36b7f;
 }
 
+@media(min-width:369px){
+    
+      .h2Video{
+        font-size: 20px;
+        margin-bottom: -10%;
+        width: 80vw;
+        color: white;
+       opacity: 0.85;
+      }
+      
+      .h1Video{  
+          color: white;
+          opacity: 0.85;
+          font-size: 25px;
+          margin-bottom: 2.5%;
+          margin-top: 10%;
+          width: 80vw;
+          font-weight: bolder;
+        }
+      
+      .h3Video {  
+          color: white;
+          font-size: 15px;
+          margin-bottom: 0%;
+          width: 80vw;
+          font-weight: bold;
+          opacity: 0.85;
+      }   
+      .h4Video {
+          margin-top: 10px;
+          width: 80vw;
+          color: white;
+          opacity: 0.85;
+          font-weight: lighter;
+      }
+
+}
+
 /* TABLET */
 @media(min-width:481px){
     /* video-loop */
@@ -239,6 +287,36 @@ footer section {
         height: 100%;
         object-fit: cover;
    }
+
+   .h2Video {
+       color: white;
+       opacity: 0.85;
+       margin-bottom: 1.5%;
+   }
+
+   .h1Video{
+    color: white;
+    font-size: 50px;
+    opacity: 0.85;
+    margin-bottom: 2.5%;
+    margin-top: 0%;
+    font-weight: bolder;
+  }
+
+.h3Video {
+    color: white;
+    opacity: 0.85;
+    margin-bottom: 2.5%;
+    font-weight: bold;
+}
+
+.h4Video {
+    color: white;
+    opacity: 0.85;
+    font-weight: lighter;
+    margin-top: 100px;
+}
+
     .cartel{
         bottom: 40%;
    }

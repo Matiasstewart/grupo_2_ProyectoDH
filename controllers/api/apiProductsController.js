@@ -20,11 +20,11 @@ const apiProductsController = {
             });
             return res.status(200).json({
                 count: products.length,
-                countByCategory:{
-                    Skate: category[0].count,
-                    Snow: category[1].count,
-                    Surf: category[2].count    
-                },
+                countByCategory:[{
+                    Skate: category[0],
+                    Snow: category[1],
+                    Surf: category[2] 
+                }],
                 countCategory: category.length 
                 ,
                 products:products,

@@ -36,11 +36,13 @@
                   <label class="title-label">Categoria</label>
                   <!-- <input type="text" class="text-register-form" minlength="3" placeholder="Admin o Usuario" name='category' required> -->
                   <p>
-                    <select class="text-register-form" name="function">
-                      <option value="" disabled>Selecciona una categoría</option>
-                      <% functions.forEach(funct => { %>
-                      <option value="<%= funct.id %>"<%= funct.id === user.function_id ?"selected" :null%>><%= funct.admin_or_user %></option>
-                      <% }); %>
+                    <select class="text-register-form" name="category">
+                      <option value="" disabled selected>Selecciona una categoría</option>
+  
+                        
+                            <option value="User">User</option>
+                        
+                      
                     </select>
                   </p>
                 </div>
@@ -50,7 +52,7 @@
                 </div>
                 </section>
                   <p class="p-register">Campos requeridos</p>
-                  <button type="submit" class="button-register">Editar Cuenta</button>
+                  <a href="/"><button type="submit" class="button-edit">Editar Cuenta</button></a>
               </section>
           </form>
       </main>
