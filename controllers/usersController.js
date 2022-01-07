@@ -28,7 +28,7 @@ const usersController = {
 				oldData: req.body,
 				functions
 			})}
-			if(req.body.number === '123456'){
+			if(req.body.number === 123456){
                 return User.create({
 					first_name: req.body.name,
 					last_name: req.body.lastname,
