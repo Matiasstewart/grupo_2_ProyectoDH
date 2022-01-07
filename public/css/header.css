@@ -35,11 +35,7 @@
 @media (min-width:369px) {
      /* burguerMenu */
 .burguerA {
-<<<<<<< HEAD
-    color: white;
-=======
-    color: black !important;
->>>>>>> 6701a72bf30925a0a3192d6d9c8ec625f91d1be0
+    color: white !important;
     text-decoration: none;
   }
   
@@ -116,6 +112,7 @@
       display: block;
       font-size: 10px;
       border-bottom-right-radius: 5px;
+      margin-left: 0;
     }
   
     .nav-item{
