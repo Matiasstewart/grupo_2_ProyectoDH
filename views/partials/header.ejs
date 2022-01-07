@@ -2,8 +2,27 @@
     <nav class="nav">
       <div class="mobile-nav-bar">
         <div class="left-side">
-          <i class="fas fa-bars"></i>
-          <p>Menu</p>
+          <div class="container">
+            <div class="subcontainer">
+              <nav >
+                <ul class="nav-menu">
+                  <li class="nav-item">
+                    <a href="/usuario/login" class="nav-link burguerA">Loguear/Registrar</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/productos/carrito" class="nav-link burguerA">Carrito</a>
+                  </li>
+                </ul>
+              <div class='moveBurger'>
+                <div class="hamburger">
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                </div>
+                </div>
+              </nav>
+            </div>
+          </div>
         </div>
         <div class="logo">
           <a href="/"><p>BE/LIVE WILD</p></a>
@@ -11,8 +30,9 @@
         <div class="right-side">
           <div class="icons-top">
             <% if (locals.isLogged) { %>
-              <a href="/usuario/mi-cuenta"><img src="/images/avatars/<%= locals.userLogged.img %>" width="30" style="border-radius: 100%;">
-               <%= locals.userLogged.name %></a>
+              <a href="/usuario/mi-cuenta"><img src="/images/avatars/<%= locals.userLogged.user_image %>" width="45" height="45" style="border-radius: 20%;">
+                <br>
+               <%= locals.userLogged.first_name %></a>
                <a href="/productos/carrito"><i class="fas fa-shopping-cart"></i></a>
             <% } else { %>
               <a href="/usuario/login"><i class="fas fa-user"></i></a>
