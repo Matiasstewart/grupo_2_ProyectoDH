@@ -40,7 +40,7 @@
 @media (min-width:369px) {
      /* burguerMenu */
 .burguerA {
-    color: black;
+    color: white;
     text-decoration: none;
   }
   
@@ -102,14 +102,15 @@
       top: 10px;
       gap: 0;
       flex-direction: column;
-      background-color: transparent;
-      width: 10%;
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 125px;
       text-align: center;
       transition: 0.3s;
       list-style-type: none;
       font-weight: bold;
       display: block;
       font-size: 10px;
+      border-bottom-right-radius: 5px;
     }
   
     .nav-item{
