@@ -12,6 +12,8 @@ body{
     background-color:#f8f9fc;
 }
 
+
+
 /* MAIN */
 /* video-loop */
 .video-loop{
@@ -314,7 +316,7 @@ footer section {
     color: white;
     opacity: 0.85;
     font-weight: lighter;
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
     .cartel{
