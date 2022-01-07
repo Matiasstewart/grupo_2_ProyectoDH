@@ -15,89 +15,93 @@
                   </div>
                 </section>
                   <section>
-                   <div class='divErrors'>
-                  <ul class='errores'></ul>
-                </div>
-
                   <div class="form-register">
                       <label class="title-label">Nombre</label>
-
+                      <input type="text" class="text-register-form" name='name' 
+                      value='<%= locals.oldData && oldData.name ? oldData.name : "" %>' id='name'>
+                      <div>
+                        <small class="text-danger error-name"></small>
+                      </div>
                       <% if (locals.errors && errors.name) { %>
                         <p class='formRegisterError'>
                           <%= errors.name.msg %>
                         </p>
                      <% } %>
-
-                      <input type="text" class="text-register-form" name='name' value='<%= locals.oldData && oldData.name ? oldData.name : "" %>' id='name'>
-           
                   </div>
                   <div  class="form-register">
                       <label class="title-label">Apellido</label>
-
+                      <input type="text" class="text-register-form" name='lastname' value='<%= locals.oldData && oldData.lastname ? oldData.lastname : "" %>' id='lastname'>
+                      <div>
+                        <small class="text-danger error-lastname"></small>
+                      </div>
                       <% if (locals.errors && errors.lastname) { %>
                         <p class='formRegisterError'>
                           <%= errors.lastname.msg %>
                         </p>
                      <% } %>
-
-                      <input type="text" class="text-register-form" name='lastname' value='<%= locals.oldData && oldData.lastname ? oldData.lastname : "" %>' id='lastname'>                  
                   </div>
                 </section>
                 <section>
                   <div  class="form-register">
                       <label class="title-label">Email</label>
-
+                      <input type="email" class="text-register-form" name="email" value='<%= locals.oldData && oldData.email ? oldData.email : "" %>' id='email'>
+                      <div>
+                        <small class="text-danger error-email"></small>
+                      </div>
                       <% if (locals.errors && errors.email) { %>
                         <p class='formRegisterError'>
                           <%= errors.email.msg %>
                         </p>
                      <% } %>
-
-                      <input type="email" class="text-register-form" name="email" value='<%= locals.oldData && oldData.email ? oldData.email : "" %>' id='email'>
                   </div>
-                  <div  class="form-register">
-                  <label for="fotoPerfil" class="title-label"> Foto de perfil </label>
-
-                  <% if (locals.errors && errors.image) { %>
-                    <p class='formRegisterError'>
-                      <%= errors.image.msg %>
-                    </p>
-                 <% } %>    
-
-                  <input class="text-register-form" id="avatar" type="file" name="image" value='<%= locals.oldData && oldData.image ? oldData.image : "" %>' id='image'>
-                </div>
-                <div class="form-register " >
-                  <label class="title-label">Categoria</label>
-
+                  <div class="form-register">
+                      <label for="fotoPerfil" class="title-label"> Foto de perfil </label>
+                      <input class="text-register-form" id="avatar" type="file" name="image">
+                      <div>
+                        <small class="text-danger error-image"></small>
+                      </div>
+                      <% if (locals.errors && errors.image) { %>
+                        <p class='formRegisterError'>
+                          <%= errors.image.msg %>
+                        </p>
+                       <% } %>
+                  </div>
+                  <div class="form-register " >
+                      <label class="title-label">Categoria</label>
+                  <!-- <input type="text" class="text-register-form" minlength="3" placeholder="Admin o Usuario" name='category' required> -->
+                  <select class="text-register-form" name="category" id="category">
+                    <option value="" disabled selected>Selecciona una categoría</option>
+                      <% functions.forEach(category=> { %>
+                        <option value="<%= category.id %>"
+                          <% locals.errors && (category.id == oldData.function_id) ? 'selected'  : null%>><%= category.admin_or_user %></option>
+                      <% }) %>
+                  </select>
+                  <div>
+                    <small class="text-danger error-category"></small>
+                  </div>
                   <% if (locals.errors && errors.category) { %>
                     <p class='formRegisterError'>
                       <%= errors.category.msg %>
                     </p>
                  <% } %>
-                 
-                  <!-- <input type="text" class="text-register-form" minlength="3" placeholder="Admin o Usuario" name='category' required> -->
-                  <select class="text-register-form" name="category">
-                    <option value="" disabled selected>Selecciona una categoría</option>
-
-                      
-                          <option value="User">User</option>
-                      
+              </div>
+              <div class="form-register admin-code">
                     
-                  </select>
               </div>
                   <div class="form-register">
                       <label for="contraseña" class="title-label">Contraseña</label>
-
+                      <input type="password" class="text-register-form" name="psw" id='psw'>
+                      <div>
+                        <small class="text-danger error-password"></small>
+                      </div>
                       <% if (locals.errors && errors.psw) { %>
                         <p class='formRegisterError'>
                           <%= errors.psw.msg %>
                         </p>
-                     <% } %>
-
-                      <input type="password" class="text-register-form" name="psw" id='psw'>
+                      <% } %>
                   </div>
                 </section>
-                  <p class="p-register">Campos requeridos</p>
+                  <p class="p-register"></p>
                   <a href="/"><button type="submit" class="button-register">Crear Cuenta</button></a>
               </section>
             </div>
