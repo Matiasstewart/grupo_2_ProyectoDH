@@ -59,41 +59,32 @@ module.exports = (sequelize, dataTypes) => {
             otherKey:"size_id",
             timestamps:"false" 
         })
-    };
 
-    Product.associate = function (models){
         Product.belongsToMany(models.Color, {
-            as:"colors",
-            through: "products_colors",
-            foreignKey: "product_id",
-            otherKey:"color_id",
-            timestamps:"false"    
+          as:"colors",
+          through: "products_colors",
+          foreignKey: "product_id",
+          otherKey:"color_id",
+          timestamps:"false"    
         })
-    };
-    
-    Product.associate = function (models){
         Product.belongsToMany(models.Cart, {
-            as:"carts",
-            through: "carts_products",
-            foreignKey: "product_id",
-            otherKey:"cart_id",
-            timestamps:"false"    
+          as:"carts",
+          through: "carts_products",
+          foreignKey: "product_id",
+          otherKey:"cart_id",
+          timestamps:"false"    
         })
-    };
 
-    Product.associate = function (models){
         Product.belongsTo(models.Season, {
-            as: 'season',
-            foreignKey: 'season_id'
+          as: 'season',
+          foreignKey: 'season_id'
         })
-    };
 
-    Product.associate = function (models){
         Product.belongsTo(models.Category, {
-            as: 'category',
-            foreignKey: 'category_id'
+          as: 'category',
+          foreignKey: 'category_id' 
         })
-    };
+    }
 
     return Product;
 }
