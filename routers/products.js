@@ -28,7 +28,7 @@ const authMiddleware = require('../Middlewares/authMiddleware');
 
 
 // Listado
-router.get("/", authMiddleware ,productsController.list)
+router.get("/", productsController.list)
 
 // Detalle de producto
 router.get("/detalle/:id", productsController.detalle)
