@@ -20,7 +20,8 @@ const Product_Size = db.Product_Size;
 
 const productsController ={
     detalle: (req,res)=>{
-        db.Product.findByPk(req.params.id,{include:[{association:'colors'}, {association:'sizes'},{association:'category'}, {association:'season'}]})
+        db.Product.findByPk(req.params.id,
+            {include:[{association:'colors'}, {association:'sizes'},{association:'category'}, {association:'season'}]})
             .then(product => {
                 res.render('products/productDetail',{product:product, colors:product.colors, sizes:product.sizes, category:product.category, season: product.season})
             });
