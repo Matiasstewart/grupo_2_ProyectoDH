@@ -44,11 +44,15 @@
               <a href="/usuario/mi-cuenta/<%=userLogged.id%>"><img src="/images/avatars/<%= locals.userLogged.user_image %>" width="45" height="45" style="border-radius: 20%;">
                 <br>
                <%= locals.userLogged.first_name %></a>
+               <div class='icons-bottom'>
                <a href="/productos/carrito"><i class="fas fa-shopping-cart carrito"></i></a>
                <a href='/usuario/logout'><i class="fas fa-sign-out-alt carrito"></i></a>
+              </div>
             <% } else { %>
+              <div class='icons-bottom'>
               <a href="/usuario/login"><i class="fas fa-user"></i></a>
               <a href="/productos/carrito"><i class="fas fa-shopping-cart carrito"></i></a>
+            </div>
             <% } %>
           </div>
           <div class="icons-bottom">
