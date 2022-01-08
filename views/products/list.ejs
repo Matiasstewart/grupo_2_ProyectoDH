@@ -40,9 +40,11 @@
       </section>
       <% }) %>
     </div>
+    <% if(locals.userLogged && locals.userLogged.function_id == 1){ %> 
     <div class="new-product-div">
       <a href="/productos/crear/" class="new-product-button"><strong>CREAR PRODUCTO NUEVO</strong></a>
     </div>
+    <% } %>
     </main>
     <%- include('../partials/footer') %>
   </body>
