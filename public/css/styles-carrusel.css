@@ -25,6 +25,11 @@ a{
     opacity: 0.9;
 }
 
+.top-productsDetail-title {
+    margin-left: 10%;
+    margin-bottom: -10px;
+}
+
 .Carousel{
     width: 100%;
     margin: 0px 60px;
