@@ -8,27 +8,30 @@
         <section class="login-form">
             <h2>Acceso del cliente</h2>
             <p>Si estás registrado, ingresá con tu dirección de correo electrónico</p>
-
-            <ul class='errores'></ul>
-
             <form action="/usuario/login" method="POST" class="form" id='form'>
-              <% if (locals.errors && errors.email) { %>
-                <div class="text-danger">
-                  <%= errors.email.msg %>
-                </div>
-              <% } %>
               <div class="email">
                 <label for="e-mail">Correo electrónico</label>
-                <input type="email" name= "email" id="e-mail" id='email'>
-                <% if (locals.errors && errors.password) { %>
+                <input type="email" name= "email" id="e-mail" value="<%= locals.oldData ? oldData.email : null %>" class="email-input">
+                <div>
+                  <small class="text-danger error-email"></small>
+                </div>
+                <% if (locals.errors && errors.email) { %>
                   <div class="text-danger">
-                    <%= errors.password.msg %>
+                    <%= errors.email.msg %>
                   </div>
                 <% } %>
               </div>
               <div class="password">
                 <label for="password">Contraseña</label>
-                <input type="password" id="password" name="psw" id='psw'>
+                <input type="password" id="password" name="psw" class="password-input">
+                <div>
+                  <small class="text-danger error-password"></small>
+                </div>
+                <% if (locals.errors && errors.psw) { %>
+                  <div class="text-danger">
+                    <%= errors.psw.msg %>
+                  </div>
+                <% } %>
               </div>
               <div class="remember-me">
                 <input type="checkbox" name="remember_me" id="remember-me">
@@ -45,6 +48,6 @@
       </div>
     </main>
     <%- include('../partials/footer.ejs') %> 
-    <!-- <script src='/js/userLoginValidations.js'></script> -->
+    <script src='/js/userLoginValidations.js'></script>
   </body>
 </html>
