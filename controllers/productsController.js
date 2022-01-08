@@ -130,6 +130,8 @@ const productsController ={
         .all([promProduct,promColor, promSizes, promCategory, promSeason])
         .then(([Product, allColors, allSizes, allCategories, allSeasons]) => {
             let errors = validationResult(req);
+            let colors = req.body.color;
+            let sizes = req.body.size;
             if (!errors.isEmpty()) {
 			    return res.render('products/edit', {
 				    errors: errors.mapped(),
@@ -137,55 +139,57 @@ const productsController ={
                     Product, allColors, allSizes, allCategories, allSeasons
 			    })
             }else{
-                db.Product.update(
-                    {
-                        category_id: req.body.category,
-                        season_id: req.body.season,
-                        title: req.body.name,
-                        description: req.body.description,
-                        price: req.body.price,
-                        discount:req.body.discount,
-                        gender:req.body.gender,
-                        product_image: req.file.filename,
-                        deleted: 0,
-                    },
-                    {
-                        where: {id: productId}
+                let promProdColor = Product_Color.destroy(
+                    {where:
+                        {product_id:productId}
+                    });
+                let promProdSize = Product_Size.destroy(
+                    {where:
+                        {product_id:productId}
+                    })
+
+                Promise.all([promProdColor,promProdSize])
+                .then(()=>{
+                    return db.Product.update(
+                        {
+                            category_id: req.body.category,
+                            season_id: req.body.season,
+                            title: req.body.name,
+                            description: req.body.description,
+                            price: req.body.price,
+                            discount:req.body.discount,
+                            gender:req.body.gender,
+                            product_image: req.file.filename,
+                            deleted: 0,
+                        },
+                        {
+                            where: {id: productId}
+                    })
                 })
                 .then(()=>{
-                    Product_Color.destroy(
-                        {where:
-                            {product_id:productId}
-                        });
-                    Product_Size.destroy(
-                        {where:
-                            {product_id:productId}
+                        console.log(colors);
+                        console.log(sizes);
+                        colors.forEach(color=>{
+                            Product_Color.create({
+                                product_id:productId,
+                                color_id: color
+                            },
+                            {
+                                where:{product_id:productId}  
+                            })
                         })
-			    })
-                .then(()=>{
-                    let colors = req.body.color;
-                    let sizes = req.body.size;
-                    colors.forEach(color=>{
-                        Product_Color.create({
-                            product_id:productId,
-                            color_id: color
-                        },
-                        {
-                            where:{product_id:productId}  
+                        sizes.forEach(size=>{
+                            Product_Size.create({
+                                product_id:productId,
+                                size_id:size
+                            },
+                            {
+                                where:{product_id:productId}  
+                            })
                         })
-                    })
-                    sizes.forEach(size=>{
-                        Product_Size.create({
-                            product_id:productId,
-                            size_id:size
-                        },
-                        {
-                            where:{product_id:productId}  
-                        })
-                    })
-				    return res.redirect("/productos/detalle/" + productId)  
-				})
-				.catch(error => res.send(error));
+                        return res.redirect("/productos/detalle/" + productId)  
+                })
+                .catch(error => res.send(error));
             }
         })
 	},
