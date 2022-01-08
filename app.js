@@ -45,3 +45,8 @@ const apiUsersRoutes = require('./routers/api/users');
 app.use('/api/users', apiUsersRoutes);
 
 app.use('/api/products', apiProductsRoutes);
+
+// Error 404 Not found
+app.use((req,res,next)=>{
+    res.status(404).render("404notFound")
+})
