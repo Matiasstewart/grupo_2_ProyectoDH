@@ -31,12 +31,10 @@ window.addEventListener('load', function(){
         if (email.value === '' || email.value == null) {
             setError(errorEmail, 'Debes ingresar tu email', email)
         } else if (regexEmail.test(email.value) == false){
-            setError(errorEmail, 'Debes ingresar un email con @', email)
-        }else{
-            setOk(errorEmail,'',email,password)
+            messages.push('Debes ingresar un email valido')
         }
 
-       /*  if (password.value === '') {
+        /* if (password.value === '') {
             messages.push('Debes ingresar una contraseña')
         } else if (password.value.length < 8 ) {
             messages.push('La contraseña debe tener mas de 8 caracteres')

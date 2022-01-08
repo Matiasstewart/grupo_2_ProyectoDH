@@ -47,15 +47,19 @@
           </section>
         <section class="form-section-right">
             <p>Colores<p>
+              <div class='colorSelect'>
               <% allColors.forEach(color => { %>
                 <input type="checkbox" name="color" id="<%=color.id%>>" value="<%=color.id%>">
                 <label for="<%=color.id%>>"><%=color.color%></label>
               <% }); %>
+              </div>
             <p>Talles<p>
+              <div class='colorSelect'>
               <% allSizes.forEach(size => { %>
                 <input type="checkbox" name="size" id="<%=size.id%>>" value="<%=size.id%>">
                 <label for="<%=size.id%>>"><%=size.size%></label>
               <% }); %><br>
+            </div>
             <label for="season">Temporada</label>
             <select name="season" id="season" class="category">
               <option value="" disabled selected>Selecciona una temporada</option>

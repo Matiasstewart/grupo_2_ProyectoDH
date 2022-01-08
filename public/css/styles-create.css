@@ -39,6 +39,22 @@ body{
     
 }
 
+.colorSelect {
+    border: none;
+    border-radius: 10px;
+    padding: 7px 10px;
+    width: 100%;
+    outline: none;
+    overflow: hidden;
+    margin-bottom: 1px;
+    background-image: linear-gradient(to top right,   
+    #e792b3,
+    #e690a8,
+    #b36b7f);
+    opacity: 0.8;
+    border: solid 2px #000;
+}
+
 .new-product-form input, .form-section-left textarea, .category{
     border: none;
     border-radius: 10px;
@@ -92,6 +108,7 @@ input[type=checkbox]{
     /* MAIN */
     .create-form{
         padding: 0;
+        margin-bottom: 9.3%;
     }
     
     .new-product-form{
@@ -103,10 +120,10 @@ input[type=checkbox]{
     }
 
     .create-form h2{
-        padding-top: 60px;
-        padding-left: 50px;
-        width:100%;
-
+        padding-top: 55px;
+        padding-left: 70px;
+        padding-bottom: 5px;
+        width:100%;;
     }
 
     .form-section-left, .form-section-right{
