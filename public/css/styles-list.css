@@ -54,6 +54,7 @@ h2 {
     border-radius: 10px;
     border: none;
     border: solid 2px #000;
+    margin-left: 60px;
 }
 
 .product a{
@@ -62,10 +63,16 @@ h2 {
 
 .edit-delete-buttons{
     display: flex;
-    justify-content: center;
+    justify-content: right;
     flex-wrap: wrap;
+    width: 100%;
 }
 
+
+.cart-button-div {
+    position: block;
+    padding-left: 50px;
+}
 
 .edit-button-div, .delete-form{
     width: 30%;
@@ -123,7 +130,21 @@ h2 {
 /* FOOTER */
 
 /* TABLET */
+
+@media (min-width: 369px) {
+    .delete-button{
+        position: relative;
+        left: -55px
+    }
+}
+
 @media(min-width: 489px){
+
+    .delete-button{
+        position: block;
+        left: 0px;
+    }
+
     .products-list{
         display: flex;
         justify-content: space-between;
@@ -144,7 +165,6 @@ h2 {
     .product-image img{
         width: 200px;
         height: 200px;
-        margin: 0 auto;
     }
 
     .edit-button-div, .delete-form{
@@ -204,4 +224,12 @@ h2 {
    
     /* FOOTER */
    
+}
+
+@media (min-width: 769px){
+    .cart-button-div {
+        position: relative;
+        left: 50px;
+        padding-left: 50px;
+    }
 }
