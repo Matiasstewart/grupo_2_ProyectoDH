@@ -33,7 +33,7 @@
         <div class="right-side">
           <div class="icons-top">
             <% if (locals.isLogged) { %>
-              <a href="/usuario/mi-cuenta"><img src="/images/avatars/<%= locals.userLogged.user_image %>" width="45" height="45" style="border-radius: 20%;">
+              <a href="/usuario/mi-cuenta/<%=userLogged.id%>"><img src="/images/avatars/<%= locals.userLogged.user_image %>" width="45" height="45" style="border-radius: 20%;">
                 <br>
                <%= locals.userLogged.first_name %></a>
                <a href="/productos/carrito"><i class="fas fa-shopping-cart carrito"></i></a>

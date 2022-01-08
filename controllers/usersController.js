@@ -77,7 +77,6 @@ const usersController = {
             }
         })
         .then(function (user){
-            console.log(user)
             if(user == null){
                 res.render('users/login', {
                     errors: {
@@ -100,7 +99,7 @@ const usersController = {
                         res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
                     }
 
-                    return res.render('users/profile' , {user});
+                    return res.redirect('/usuario/mi-cuenta/'+user.id);
                 }else{
                     return res.render('users/login', {
                         errors: {
@@ -130,14 +129,12 @@ const usersController = {
 },
 update:(req,res)=>{
     let userId = req.params.idUsuario;
-    let password = req.body.psw;
-    console.log(password);
     User.update(
         {
             first_name: req.body.name,
             last_name: req.body.lastname,
             email: req.body.email,
-            password: bcryptjs.hashSync(password, 10),
+            password: bcryptjs.hashSync(req.body.psw, 10),
             function_id: req.body.function,
             user_image: req.file ? req.file.filename : '',
             deleted: 0,
@@ -146,19 +143,16 @@ update:(req,res)=>{
             where: {id: userId}
         })
     .then(()=> {
-        return res.redirect('/users/edit' + userId)})            
+        return res.redirect('/usuario/mi-cuenta/' + userId)})            
     .catch(error => res.send(error))
 
 },
   profile: (req, res) => {
-    User.findByPk(req.params.id)
+    User.findByPk(req.params.idUsuario)
     .then(user => {
         return res.render('users/profile.ejs', {user});
     })
     .catch(error => res.send(error))
-    //   return res.render('users/profile', {
-    //       user: req.session.userLogged
-    //   });
   },
 
   logout: (req, res) => {
