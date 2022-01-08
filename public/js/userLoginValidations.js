@@ -31,7 +31,9 @@ window.addEventListener('load', function(){
         if (email.value === '' || email.value == null) {
             setError(errorEmail, 'Debes ingresar tu email', email)
         } else if (regexEmail.test(email.value) == false){
-            messages.push('Debes ingresar un email valido')
+            setError(errorEmail, 'Debes ingresar un email válido', email)
+        } else{
+            setOk(errorEmail,'',email, password)
         }
 
         /* if (password.value === '') {
