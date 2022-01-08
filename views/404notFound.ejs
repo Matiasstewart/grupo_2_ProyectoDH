@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>La pagina solicitada no existe!</h1>
-</body>
+<%- include('partials/head.ejs',{titulo:'Be/Live Wild', css:'404notFound'})%>
+
+    <body class="body404">
+        <main>
+            <!-- <video class="video404" id="myVideo404" muted autoplay loop preload="auto">
+                <source src="/images/Sunset Laps in Lapland_1080p.mp4" type="video/mp4">
+            </video> -->
+            <div class="div404" class="content404">
+                <h1 class="title404">Lo sentimos, la pagina solicitada no existe o no se encuentra disponible!</h1>
+                <h3 class="subTitle404">Intentelo nuevamente más tarde</h3>
+                <a href="http://localhost:3090/" class="a404">
+                    <button class="button404"> REGRESAR AL HOME</button>
+                </a>
+                <p class="p404">BE/LIVE WILD</p>
+            </div>
+        </main>
+    </body>
+
 </html>
