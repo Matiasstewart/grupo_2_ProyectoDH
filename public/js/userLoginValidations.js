@@ -16,10 +16,10 @@ window.addEventListener('load', function(){
         if (email.value === '' || email.value == null) {
             messages.push('Debes ingresar un email')
         } else if (regexEmail.test(email.value) == false){
-            messages.push('Debes ingresar un mail valido')
+            messages.push('Debes ingresar un email valido')
         }
 
-       /*  if (password.value === '') {
+        /* if (password.value === '') {
             messages.push('Debes ingresar una contraseña')
         } else if (password.value.length < 8 ) {
             messages.push('La contraseña debe tener mas de 8 caracteres')

@@ -4,8 +4,8 @@
   <body>
     <%- include('../partials/header') %>
     <main class="edit-form">
+      <h2>Editar producto <%= Product.title%></h2>
       <form action="/productos/detalle/<%=Product.id%>?_method=PUT" method="POST" class="edit-product-form" enctype="multipart/form-data">
-        <h2>Editar producto <%= Product.title%></h2>
         <section class="form-section-left">
             <label for="name">Nombre</label>
             <input type="text" name="name" value= "<%= locals.oldData ? oldData.name : Product.title %>" id="name">
