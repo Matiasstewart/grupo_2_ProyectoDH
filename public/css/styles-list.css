@@ -25,7 +25,12 @@ body{
 
 .products-list{
     margin: 10px 30px;
+    
+}
 
+h2 {
+    margin-left: 3%;
+    margin-bottom: -30px;
 }
 
 .product{
@@ -37,6 +42,7 @@ body{
     transition: all 300ms;
     background-color: white;
     box-shadow: 0px 0px 10px 0px rgb(165, 165, 165);
+    justify-content: center;
 }
 
 .product .edit-button, .product .delete-button{
@@ -163,10 +169,13 @@ body{
 
     .products-list{
         margin: 10px;
+        width: 95%;
     }
 
     .product{
-        width: 49%;
+        width: 47%;
+        margin-bottom: 20px !important;
+        margin: auto;
     }
 
     .product-detail{
@@ -179,18 +188,18 @@ body{
     }
 
     .product-image{
-        width: 40%;
+        width: 45%;
     }
 
     .product img{
         width: 100%;
         height: 90%;
-        max-width: 180px;
-        max-height: 180px;
+        max-width: 240px;
+        max-height: 250px;
     }
     
     .product-data{
-        width: 48%;
+        width: 48% 
     }
    
     /* FOOTER */

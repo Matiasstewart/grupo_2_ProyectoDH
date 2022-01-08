@@ -21,9 +21,16 @@ const apiProductsController = {
             return res.status(200).json({
                 count: products.length,
                 countByCategory:[{
-                    Skate: category[0],
-                    Snow: category[1],
-                    Surf: category[2] 
+                    TablaDeSkate: category[0],
+                    TablaDeSnow: category[1],
+                    TablaDeSurf: category[2],
+                    GafasDeSnow: category[3],
+                    Pantalones: category[4],
+                    Zapatillas: category[5],
+                    ShortDeBabaño: category[6],
+                    Camperas: category[7],
+                    Remeras: category[8], 
+                    Gorros: category[9],
                 }],
                 countCategory: category.length 
                 ,
