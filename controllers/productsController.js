@@ -216,14 +216,17 @@ const productsController ={
         return res.render("products/search")
     },
     results:(req, res) => {
-        Product.findAll({
+        let promCategories = db.Category.findAll();
+        let promProducts = Product.findAll({
             where:{
                 title:{[Op.like]:"%"+req.query.producto+"%"}
             }
-        })
-        .then(products => {
+        });
+
+        Promise.all([promProducts,promCategories])
+        .then(([products, categories]) => {
             if(products.length > 0){
-                return res.render("products/results",{products:products})
+                return res.render("products/results",{products, categories})
             }
         })
     },
