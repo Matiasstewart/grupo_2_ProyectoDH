@@ -19,7 +19,7 @@
                       <input type="text" class="text-register-form " name='name' 
                       value='<%= locals.oldData && oldData.name ? oldData.name : "" %>' id='name'>
                       <div>
-                        <small class="text-danger error-name is-invalid"></small>
+                        <small class="text-danger error-name"></small>
                       </div>
                       <% if (locals.errors && errors.name) { %>
                         <p class='formRegisterError'>
@@ -31,7 +31,7 @@
                       <label class="title-label">Apellido</label>
                       <input type="text" class="text-register-form" name='lastname' value='<%= locals.oldData && oldData.lastname ? oldData.lastname : "" %>' id='lastname'>
                       <div>
-                        <small class="text-danger error-lastname is-invalid"></small>
+                        <small class="text-danger error-lastname"></small>
                       </div>
                       <% if (locals.errors && errors.lastname) { %>
                         <p class='formRegisterError'>
@@ -45,7 +45,7 @@
                       <label class="title-label">Email</label>
                       <input type="email" class="text-register-form" name="email" value='<%= locals.oldData && oldData.email ? oldData.email : "" %>' id='email'>
                       <div>
-                        <small class="text-danger error-email is-invalid"></small>
+                        <small class="text-danger error-email"></small>
                       </div>
                       <% if (locals.errors && errors.email) { %>
                         <p class='formRegisterError'>
@@ -57,7 +57,7 @@
                       <label for="fotoPerfil" class="title-label"> Foto de perfil </label>
                       <input class="text-register-form" id="avatar" type="file" name="image">
                       <div>
-                        <small class="text-danger error-image is-invalid"></small>
+                        <small class="text-danger error-image"></small>
                       </div>
                       <% if (locals.errors && errors.image) { %>
                         <p class='formRegisterError'>
@@ -76,7 +76,7 @@
                       <% }) %>
                   </select>
                   <div>
-                    <small class="text-danger error-category is-invalid"></small>
+                    <small class="text-danger error-category"></small>
                   </div>
                   <% if (locals.errors && errors.category) { %>
                     <p class='formRegisterError'>
@@ -91,7 +91,7 @@
                       <label for="contraseña" class="title-label">Contraseña</label>
                       <input type="password" class="text-register-form" name="psw" id='psw'>
                       <div>
-                        <small class="text-danger error-password is-invalid"></small>
+                        <small class="text-danger error-password"></small>
                       </div>
                       <% if (locals.errors && errors.psw) { %>
                         <p class='formRegisterError'>

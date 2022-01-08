@@ -76,11 +76,14 @@ h1 {
     font-size: 20px;
 }
 
-.form-register input, .form-register select {
+.text-register-form{
+    display:flex;
+    width: 250px;
+    font-size: 15px;
     margin: left;
     margin-left: -20px;
-    margin-top: 10px;
-    border-radius: 10px;
+    margin-top: 5px;
+    border-radius: 20px;
     background-image: linear-gradient(to top right,   
     #e792b3,
     #e690a8,
@@ -88,20 +91,9 @@ h1 {
     background-size: cover;
     border: #000 solid 2px;
     opacity: 0.8;
-    width: 30vw;
-}
-
-.text-register-form {
-    display:flex;
-    width: 250px;
-    font-size: 15px;
-    border-radius: 20px;
-    margin-top: 5px;
     padding: 5px 5px 5px 10px;
-    background-color:white;
     color:black;
     text-align: center;
-    
 }
 
 .title-label {
@@ -185,13 +177,17 @@ a .button-edit {
     border: black solid 2px;
 }
 
-.is-invalid {
+.text-danger {
     color: rgb(233, 0, 0);
     display: block;
     margin-top: 5px;
     font-size: 15px;
     text-align: center;
 } 
+
+.is-invalid{
+    border: 2px solid rgb(233, 0, 0);
+}
 
 @media (min-width: 361px) {
     .form-register-total {
