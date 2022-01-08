@@ -23,13 +23,24 @@ const productsController ={
         db.Product.findByPk(req.params.id,
             {include:[{association:'colors'}, {association:'sizes'},{association:'category'}, {association:'season'}]})
             .then(product => {
-                res.render('products/productDetail',{product:product, colors:product.colors, sizes:product.sizes, category:product.category, season: product.season})
+                db.Product.findAll({
+                    where:{
+                        category_id:product.category_id
+                    },
+                    limit:6
+                })
+                .then(products =>{
+                    console.log(products)
+                    res.render('products/productDetail',{product:product, colors:product.colors, sizes:product.sizes, category:product.category, season: product.season, products})
+                })          
             });
         // productos.forEach(producto=>{
         //     if(req.params.id == producto.id){
         //         res.render('products/productDetail',{producto:producto})
         //     }
         // })  
+
+        
     },
     carrito: (req,res)=>{
         res.render('products/productCart')
