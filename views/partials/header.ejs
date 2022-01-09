@@ -12,10 +12,11 @@
                       <button class="boton-buscar" type="submit">Buscar</button>
                   </form>
                   </li>
-                  <li class="nav-item">
-                    <a href="/usuario/login" class="nav-link burguerA">Login/Register</a>
-                  </li>
-                  <% if(locals.userLogged){ %>
+                  <% if(!locals.userLogged){ %>
+                    <li class="nav-item">
+                      <a href="/usuario/login" class="nav-link burguerA">Login/Register</a>
+                    </li>
+                  <% } else if (locals.userLogged){%>
                     <li class="nav-item">
                       <a href="/productos/carrito" class="nav-link burguerA">Carrito</a>
                     </li>
@@ -50,7 +51,7 @@
               </div>
             <% } else { %>
               <div class='icons-bottom'>
-              <a href="/usuario/login"><i class="fas fa-user"></i></a>
+              <a href="/usuario/login"><i class="fas fa-user carrito"></i></a>
               <a href="/productos/carrito"><i class="fas fa-shopping-cart carrito"></i></a>
             </div>
             <% } %>

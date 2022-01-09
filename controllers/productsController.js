@@ -178,6 +178,7 @@ const productsController ={
                     })
                 })
                 .then(()=>{
+                    if(req.body.colors && req.body.sizes){
                         console.log(colors);
                         console.log(sizes);
                         colors.forEach(color=>{
@@ -198,7 +199,8 @@ const productsController ={
                                 where:{product_id:productId}  
                             })
                         })
-                        return res.redirect("/productos/detalle/" + productId)  
+                    }
+                    return res.redirect("/productos/detalle/" + productId)  
                 })
                 .catch(error => res.send(error));
             }
