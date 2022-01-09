@@ -43,7 +43,42 @@
     color: white !important;
     text-decoration: none;
   }
+
+  .burgerMenuContentInput {
+    border: none;
+    outline: none;
+    text-align: center;
+    width: 90%;
+    margin-bottom: 5px;
+    font-size: 12px;
+    background-color:#e2e2e2;
+  }
+
+  .burgerMenuContentInput:hover {
+    background-color:white;
+  }
   
+  .burgerMenuContentButton {
+    left:62%;
+    height: 4%;
+    border: none;
+    width: 60%;
+    background-color: #e67192;
+    font-size: 15px;
+    color: white;
+  }
+
+  .burgerMenuContentButton:hover {
+    background-color: #e75982;
+  }
+
+  .burgerMenuContentLogin {
+    opacity: 0.8;
+  }
+
+   .burgerMenuContentLogin:hover {
+    opacity: 1;
+  }
 
   .nav-menu{
     display: flex;
@@ -102,7 +137,7 @@
       top: 10px;
       gap: 0;
       flex-direction: column;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.8);
       width: 125px;
       text-align: center;
       transition: 0.3s;
@@ -122,6 +157,7 @@
   
     .nav-menu.active{
       left: 0;
+      transition: 0.5s;
     }
 
     .fa-shopping-cart {
@@ -136,8 +172,7 @@
    }
 
    .carrito {
-    color: black;
-    
+    color: black;  
   }
 
   .burgerMenuContentInput {
@@ -153,11 +188,11 @@
     text-align: center;
     width: 56%;
     font-size: 12px;
-    opacity: 0.85;
+    background-color:#e2e2e2;
   }
 
   .burgerMenuContentInput:hover {
-    opacity: 1;
+    background-color:white;
   }
 
   .burgerMenuContentButton {
@@ -170,14 +205,13 @@
     width: 28%;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    background-color: #e690a8;
+    background-color: #e67192;
     font-size: 15px;
     color: white;
-    opacity: 0.8;
   }
 
   .burgerMenuContentButton:hover {
-    opacity: 1;
+    background-color: #e75982;
   }
 
   .burgerMenuContentLogin {
@@ -186,17 +220,17 @@
     top: 16%;
     left: 6%;
     font-size: 22px;
-    opacity: 0.7;
+    opacity: 0.8;
+    
   }
 
-  .burgerMenuContentLogin:hover {
+   .burgerMenuContentLogin:hover {
     opacity: 1;
   }
 
-  
-
    .nav-menu {
     margin-left: 10%;
+    margin-top: 0px;
   }
 
     .mobile-nav-bar{
