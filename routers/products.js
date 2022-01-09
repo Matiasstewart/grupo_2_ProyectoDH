@@ -25,6 +25,7 @@ const productCreateValidations = require('../Middlewares/productCreateMiddleware
 const productEditValidations = require('../Middlewares/productEditMiddleware') 
 const guestMiddleware = require('../Middlewares/guestMiddleware');
 const authMiddleware = require('../Middlewares/authMiddleware');
+const adminMiddleware = require('../Middlewares/adminMiddleware');
 
 
 // Listado
@@ -37,11 +38,11 @@ router.get("/detalle/:id", productsController.detalle)
 router.get("/carrito" , productsController.carrito)
 
 // Crear y almacenar
-router.get("/crear",productsController.create)
+router.get("/crear",adminMiddleware, productsController.create)
 router.post("/", upload.single("image"), productCreateValidations, productsController.store)
 
 // Editar y almacenar
-router.get("/editar/:id",productsController.edit)
+router.get("/editar/:id", adminMiddleware, productsController.edit)
 router.put("/detalle/:id", upload.single("image"), productEditValidations, productsController.update)
 
 // Borrar
