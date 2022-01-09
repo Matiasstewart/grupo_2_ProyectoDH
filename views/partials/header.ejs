@@ -9,20 +9,26 @@
                   <li class="nav-item">
                     <div class='burgerMenuContent'></div>
                     <form action="/productos/resultados" method="GET">
-                        <label for="producto" >Buscá un producto</label>
+                        <label for="producto" class='burguerMenuContentTitle'>Buscá un producto</label>
                         <input type="text" name="producto" id="producto" class='burgerMenuContentInput'>
                         <button class="boton-buscar burgerMenuContentButton" type="submit">Buscar</button>
                     </form>
                   </li>
-                  <li class="nav-item burguerMenuContent">
-                    <a href="/productos">Todos los productos</a>
-                    <ul>
-                      <li><a href="/productos/categoria?n=9" class="nav-link">Remeras</a></li>
-                      <li><a href="/productos/categoria?n=5" class="nav-link">Pantalones</a></li>
-                      <li><a href="/productos/categoria?n=6" class="nav-link">Zapatillas</a></li>
-                      <li><a href="/productos/categoria?n=8" class="nav-link">Camperas</a></li>
-                      <li><a href="/productos/categoria?n=10" class="nav-link">Gorros</a></li>
-                      <li><a href="/productos/categoria?n=7" class="nav-link">Shorts de baño</a></li>
+                  <li class="nav-item ">
+                    <a href="/productos" class='burgerMenuContentLinkTittle'>Todos los productos</a>
+                    <ul class='burgerMenuContentLink'>
+                      <li><a href="/productos/categoria?n=7" class="nav-link ">Shorts de baño</a></li>
+                      <br>
+                      <li><a href="/productos/categoria?n=5" class="nav-link ">Pantalones</a></li>
+                      <br>
+                      <li><a href="/productos/categoria?n=6" class="nav-link ">Zapatillas</a></li>
+                      <br>
+                      <li><a href="/productos/categoria?n=8" class="nav-link ">Camperas</a></li>
+                      <br>
+                      <li><a href="/productos/categoria?n=9" class="nav-link ">Remeras</a></li>
+                      <br>
+                      <li><a href="/productos/categoria?n=10" class="nav-link ">Gorros</a></li>
+                
                     </ul>
                   </li>
                   <% if(!locals.userLogged){ %>

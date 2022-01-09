@@ -59,6 +59,15 @@
   border-bottom-right-radius: 5px;
 }
 
+.burgerMenuContentLink  {
+  transition: 2s;
+  text-align: left;
+}
+
+.burgerMenuContentLink :hover {
+  transform: scale(1.1);
+  translate: ;
+}
 
 @media (min-width:369px) {
      /* burguerMenu */
@@ -104,10 +113,13 @@
 
   .burgerMenuContentLogin {
     opacity: 0.8;
+    font-size: 12px;
+    transition: 2s;
   }
 
    .burgerMenuContentLogin:hover {
     opacity: 1;
+    transform: scale(1.1);
   }
 
   
@@ -153,10 +165,6 @@
       transform: translateY(-7px) rotate(-45deg);
     }
   
-    .nav-menu{
-      
-    }
-  
     .nav-item{
       margin: 3px 0;
       display: block; 
@@ -170,6 +178,25 @@
 
     .fa-shopping-cart {
        display: none;
+    }
+
+    .burguerMenuContentTitle {
+      color: white;
+      font-size: 14px;
+      
+      text-align: left;
+    }
+
+    .burgerMenuContentLinkTittle {
+      text-align: left;
+      color: white;
+      font-size: 12px
+    }
+    
+    .burgerMenuContentLink a {
+      color : white;
+      font-weight: normal;
+      font-size: 12px;
     }
 }   
 
@@ -187,7 +214,7 @@
     position: absolute;
     border: none;
     margin: auto;
-    top: 10%;
+    top: 12%;
     left: 6%;
     height: 4%;
     border-top-left-radius: 5px;
@@ -207,7 +234,7 @@
     border: none;
     position: absolute;
     margin: auto;
-    top: 10%;
+    top: 12%;
     left:62%;
     height: 4%;
     width: 28%;
@@ -225,8 +252,8 @@
   .burgerMenuContentLogin {
     position: absolute;
     margin: auto;
-    top: 16%;
-    left: 6%;
+    top: 90%;
+    left: 5%;
     font-size: 22px;
     opacity: 0.8;
     
@@ -325,5 +352,82 @@
     top: 0;
     border-bottom-right-radius: 0px;
   }
+
+  .burguerMenuContentTitle {
+      position: absolute;
+      left: 6%;
+      top: 7.2%;
+      width: 90%;
+      color: white;
+      font-size: 16px;
+      width: 95%;
+      text-align: left;
+    }
+
+    .burgerMenuContentLinkTittle {
+      position: absolute;
+      top: 21.5%;
+      left: 7%;
+      width: 95%;
+      color: white;
+      font-size: 16px;
+      text-align: left;
+    }
+    
+    .burgerMenuContentLink {
+      position: absolute;
+      display: block;
+      top: 27%;
+      left: 10%;
+      width: 80%;
+    }
+    
+    .burgerMenuContentLink a {
+      color : white;
+      font-weight: normal;
+      font-size: 14px;
+    }
+  }
+
+  @media (min-width: 1380px){
+
+    .burguerMenuContentTitle {
+      position: absolute;
+      left: 6%;
+      top: 7.5%;
+      width: 90%;
+      color: white;
+      font-size: 25px;
+      width: 90%;
+      text-align: left;
+    }
+
+    .burgerMenuContentLinkTittle {
+      position: absolute;
+      top: 21.5%;
+      left: 6%;
+      width: 80%;
+      color: white;
+      font-size: 20px;
+      text-align: left;
+    }
+    
+    .burgerMenuContentLink {
+      position: absolute;
+      display: block;
+      top: 26%;
+      left: 10%;
+      width: 80%;
+    }
+    
+    .burgerMenuContentLink a {
+      color : white;
+      font-weight: normal;
+      font-size: 18px;
+      position: relative;
+    }
+
+    
+  
 
 }
