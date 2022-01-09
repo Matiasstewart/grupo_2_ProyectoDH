@@ -90,18 +90,20 @@ const productsController ={
                 .then((product)=> {
                     let colors = req.body.color;
                     let sizes = req.body.size;
-                    colors.forEach(color=>{
-                        Product_Color.create({
-                            product_id:product.id,
-                            color_id: color
+                    if(colors && sizes){
+                        colors.forEach(color=>{
+                            Product_Color.create({
+                                product_id:product.id,
+                                color_id: color
+                            })
                         })
-                    })
-                    sizes.forEach(size=>{
-                        Product_Size.create({
-                            product_id:product.id,
-                            size_id:size
+                        sizes.forEach(size=>{
+                            Product_Size.create({
+                                product_id:product.id,
+                                size_id:size
+                            })
                         })
-                    })
+                    }
                     return res.redirect('/productos')})   
                 .catch(error => res.send(error))
             }
