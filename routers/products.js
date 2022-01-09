@@ -34,7 +34,7 @@ router.get("/", productsController.list)
 router.get("/detalle/:id", productsController.detalle)
 
 // Carrito
-router.get("/carrito", authMiddleware, productsController.carrito)
+router.get("/carrito" , productsController.carrito)
 
 // Crear y almacenar
 router.get("/crear",productsController.create)
