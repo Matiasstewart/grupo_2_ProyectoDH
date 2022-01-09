@@ -28,24 +28,27 @@
           </div>
           <div class="product-add-form">
           <form action="/product-form" method="POST">
-            <div class="color">
-              <label for="color"><strong>Color</strong></label>
-              <select name="color" id="color">
-                <option value="" disabled selected>Elegí un color</option>
-                  <% colors.forEach(color=> { %>
-                    <option value="<%= color.id %>"<%= locals.errors && (color.id == oldData.color) ? 'selected'  : null%>><%= color.color %></option>
-                  <% }) %>
-              </select>
-            </div>
-            <div class="talle">
-              <label for="size"><strong>Talle</strong></label>
-              <select name="size" id="size">
-                <option value="" disabled selected>Elegí un talle</option>
-                  <% sizes.forEach(size=> { %>
-                    <option value="<%= size.id %>"<%= locals.errors && (size.id == oldData.size) ? 'selected'  : null%>><%= size.size %></option>
-                  <% }) %>
-              </select>
-            </div>
+            <% if (product.category_id != 1 && product.category_id != 2 && product.category_id != 3 && product.category_id != 4){%>
+              <div class="color">
+                <label for="color"><strong>Color</strong></label>
+                <select name="color" id="color">
+                  <option value="" disabled selected>Elegí un color</option>
+                    <% colors.forEach(color=> { %>
+                      <option value="<%= color.id %>"<%= locals.errors && (color.id == oldData.color) ? 'selected'  : null%>><%= color.color %></option>
+                    <% }) %>
+                </select>
+              </div>
+              <div class="talle">
+                <label for="size"><strong>Talle</strong></label>
+                <select name="size" id="size">
+                  <option value="" disabled selected>Elegí un talle</option>
+                    <% sizes.forEach(size=> { %>
+                      <option value="<%= size.id %>"<%= locals.errors && (size.id == oldData.size) ? 'selected'  : null%>><%= size.size %></option>
+                    <% }) %>
+                </select>
+              </div>
+            <% } %>
+            
             <div class="add-to-cart-button">
               <button type="submit"><h4>AGREGAR AL CARRITO</h4></button>
             </div>
@@ -69,7 +72,7 @@
             <% products.forEach(item =>{ %>
               <div class="slick">
                 <div>
-                    <a class='carruselCss' href="/">
+                    <a class='carruselCss' href="/productos/detalle/<%=item.id%>">
                         <h4 class='h4carruselCss'><%=item.title%></h4>
                         <picture>
                             <img src="/images/<%=item.product_image%>" alt="Image">
