@@ -248,5 +248,18 @@ const productsController ={
             }
         })
     },
+    category:(req,res)=>{
+        let promCategory = db.Category.findByPk(req.params.n);
+        let promProducts = db.Product.findAll({
+            where:{
+                category_id:req.params.n
+            }
+        });
+
+        Promise.all([promCategory, promProducts])
+        .then(([category, products])=>{
+            return res.render('products/categories',{category, products})
+        })
+    }
 }
 module.exports = productsController;

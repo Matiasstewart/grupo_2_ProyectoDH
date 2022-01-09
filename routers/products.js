@@ -1,7 +1,6 @@
 let express = require("express");
 const multer = require("multer");
 const path = require("path")
-const { carrito } = require("../controllers/productsController");
 let router = express.Router();
 
 // CONTROLADORES
@@ -51,5 +50,8 @@ router.delete("/detalle/:id",productsController.delete)
 // Buscar
 router.get("/buscar",productsController.search)
 router.get("/resultados",productsController.results)
+
+// Productos por categoria
+router.get("/categoria/:n", productsController.category)
 
 module.exports = router
