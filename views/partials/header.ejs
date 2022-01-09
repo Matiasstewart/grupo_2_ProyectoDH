@@ -8,13 +8,14 @@
                 <ul class="nav-menu">
                   <li class="nav-item">
                     <form action="/productos/resultados" method="GET">
-                      <input type="text" name="producto" id="producto">
-                      <button class="boton-buscar" type="submit">Buscar</button>
+                      <div class='burgerMenuContent'>
+                      <input type="text" name="producto" id="producto" class='burgerMenuContentInput'>
+                      <button class="boton-buscar burgerMenuContentButton" type="submit">Buscar</button>
                   </form>
                   </li>
                   <% if(!locals.userLogged){ %>
-                    <li class="nav-item">
-                      <a href="/usuario/login" class="nav-link burguerA">Login/Register</a>
+                    <li class="nav-item burgerMenuContent">
+                      <a href="/usuario/login" class="nav-link burguerA burgerMenuContentLogin">Login/Register</a>
                     </li>
                   <% } else if (locals.userLogged){%>
                     <li class="nav-item">
