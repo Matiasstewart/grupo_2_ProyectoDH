@@ -19,18 +19,19 @@ body{
 
 /* MAIN */
 .main-list{
-    padding: 70px 20px 0px 20px;
+    padding: 90px 20px 0px 20px;
     
 }
 
 .products-list{
-    margin: 10px 30px;
+    margin: 20px 20px 0 20px;
+    
     
 }
 
 h2 {
     margin-left: 3%;
-    margin-bottom: -30px;
+    padding-top: 10px;
 }
 
 .product{
@@ -168,7 +169,7 @@ h2 {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        margin: 10px 0;
+        margin-top: 30px 10px 0 10px;
     }
 
     .product{
@@ -182,8 +183,8 @@ h2 {
     }
 
     .product-image img{
-        width: 200px;
-        height: 200px;
+        max-width: 180px;
+        max-height: 180px;
     }
 
     .edit-button-div, .delete-form{
@@ -241,8 +242,8 @@ h2 {
     .product img{
         width: 100%;
         height: 90%;
-        max-width: 240px;
-        max-height: 250px;
+        max-width: 200px;
+        max-height: 200px;
     }
     
     .product-data{
