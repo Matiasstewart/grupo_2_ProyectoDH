@@ -7,11 +7,23 @@
               <nav >
                 <ul class="nav-menu">
                   <li class="nav-item">
+                    <div class='burgerMenuContent'></div>
                     <form action="/productos/resultados" method="GET">
-                      <div class='burgerMenuContent'>
-                      <input type="text" name="producto" id="producto" class='burgerMenuContentInput'>
-                      <button class="boton-buscar burgerMenuContentButton" type="submit">Buscar</button>
-                  </form>
+                        <label for="producto" >Buscá un producto</label>
+                        <input type="text" name="producto" id="producto" class='burgerMenuContentInput'>
+                        <button class="boton-buscar burgerMenuContentButton" type="submit">Buscar</button>
+                    </form>
+                  </li>
+                  <li class="nav-item burguerMenuContent">
+                    <a href="/productos">Todos los productos</a>
+                    <ul>
+                      <li><a href="/productos/categoria?n=9" class="nav-link">Remeras</a></li>
+                      <li><a href="/productos/categoria?n=5" class="nav-link">Pantalones</a></li>
+                      <li><a href="/productos/categoria?n=6" class="nav-link">Zapatillas</a></li>
+                      <li><a href="/productos/categoria?n=8" class="nav-link">Camperas</a></li>
+                      <li><a href="/productos/categoria?n=10" class="nav-link">Gorros</a></li>
+                      <li><a href="/productos/categoria?n=7" class="nav-link">Shorts de baño</a></li>
+                    </ul>
                   </li>
                   <% if(!locals.userLogged){ %>
                     <li class="nav-item burgerMenuContent">
