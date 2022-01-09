@@ -30,7 +30,6 @@ const productsController ={
                     limit:6
                 })
                 .then(products =>{
-                    console.log(products)
                     res.render('products/productDetail',{product:product, colors:product.colors, sizes:product.sizes, category:product.category, season: product.season, products})
                 })          
             });
@@ -178,7 +177,7 @@ const productsController ={
                     })
                 })
                 .then(()=>{
-                    if(req.body.colors && req.body.sizes){
+                    if(colors && sizes){
                         console.log(colors);
                         console.log(sizes);
                         colors.forEach(color=>{
