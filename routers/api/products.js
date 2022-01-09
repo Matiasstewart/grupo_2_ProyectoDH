@@ -9,6 +9,8 @@ router.get('/last-product',apiProductsController.lastProduct);
 
 router.get('/:id',apiProductsController.product);
 
+router.get('/:id/:productImage',apiProductsController.image);
+
 
 
 module.exports = router;

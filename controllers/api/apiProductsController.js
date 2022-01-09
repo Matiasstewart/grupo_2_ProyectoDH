@@ -1,4 +1,4 @@
-
+const path = require('path')
 const db = require('../../database/models');
 
 const apiProductsController = {
@@ -31,12 +31,23 @@ const apiProductsController = {
             ]
         })
         .then((product)=>{
-            console.log(product)
             return res.status(200).json({
                 product:product,
-                imageURL:'http://localhost:3090/api/products/'+product.id + '/' + product.product_image,
+                imageURL:'http://localhost:3090/api/products/'+product[0].id + '/' + product[0].product_image,
                 status:200
             })
+        })
+    },
+    image:(req,res)=>{
+        db.Product.findOne({
+            where:{
+                id:req.params.id,
+                product_image: req.params.productImage
+            }
+        })
+        .then(product =>{
+            console.log(product)
+            return res.sendFile(path.resolve(__dirname, '../../public/images/' + product.product_image))
         })
     },
     list: (req, res) => {
