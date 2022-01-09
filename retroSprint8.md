@@ -1,0 +1,3 @@
+Lo que hicimos bien: Avanzamos mucho en el proyecto sobre todo en la parte estetica, realizamos el Dashboard y lo hicimos funcionar de manera correcta.
+Lo que hicimos mal: Creemos que hicimos las cosas mejor que los esprints anteriores y no tenemos mucho que criticar de este, tal vez podriamos haber pulido detalles minimos.
+Lo que deberiamos empezar a hacer: Utilizar correctamente las metodologias de trabajo ágiles para proyectos futuros.
