@@ -61,12 +61,11 @@
 
 .burgerMenuContentLink  {
   transition: 2s;
-  text-align: left;
+  text-align: left !important;
 }
 
 .burgerMenuContentLink :hover {
   transform: scale(1.1);
-  translate: ;
 }
 
 @media (min-width:369px) {
@@ -74,6 +73,10 @@
 .burguerA {
     color: white !important;
     text-decoration: none;
+  }
+
+  .burgerMenuContentLink {
+    text-align: center;
   }
 
   .nav-menu{
@@ -118,6 +121,17 @@
   }
 
    .burgerMenuContentLogin:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  .burgerMenuContentLoginA {
+    opacity: 0.8;
+    font-size: 12px;
+    transition: 2s;
+  }
+
+   .burgerMenuContentLoginA:hover {
     opacity: 1;
     transform: scale(1.1);
   }
@@ -253,15 +267,29 @@
     position: absolute;
     margin: auto;
     top: 90%;
-    left: 5%;
+    left: 6%;
     font-size: 22px;
     opacity: 0.8;
-    
   }
 
    .burgerMenuContentLogin:hover {
     opacity: 1;
   }
+
+  .burgerMenuContentLoginA {
+    position: absolute;
+    margin: auto;
+    top: 94%;
+    left: 6%;
+    font-size: 22px;
+    opacity: 0.8;
+  }
+
+   .burgerMenuContentLoginA:hover {
+    opacity: 1;
+  }
+
+
     .mobile-nav-bar{
         display: flex;
         justify-content: center;
