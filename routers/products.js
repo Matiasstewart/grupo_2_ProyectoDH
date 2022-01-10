@@ -52,6 +52,6 @@ router.get("/buscar",productsController.search)
 router.get("/resultados",productsController.results)
 
 // Productos por categoria
-router.get("/categoria/:n", productsController.category)
+router.get("/categoria", productsController.category)
 
 module.exports = router

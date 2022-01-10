@@ -249,10 +249,10 @@ const productsController ={
         })
     },
     category:(req,res)=>{
-        let promCategory = db.Category.findByPk(req.params.n);
+        let promCategory = db.Category.findByPk(req.query.n);
         let promProducts = db.Product.findAll({
             where:{
-                category_id:req.params.n
+                category_id: req.query.n
             }
         });
 
