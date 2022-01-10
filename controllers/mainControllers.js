@@ -6,7 +6,7 @@ const mainController = {
         db.Product.findAll({
             where:{
                 discount:{
-                    [Op.or]:[{a:10},{a:20}]
+                    [Op.or]:[15, 10]
                 }
             },
             limit:8

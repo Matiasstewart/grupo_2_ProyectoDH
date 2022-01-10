@@ -17,16 +17,23 @@
           <div class="product-image">
             <img alt="imagen de producto" src="/images/<%=product.product_image%>">
           </div>
-          <article class="product-data">
-              <p><strong>Nombre: </strong> <%= product.title %></p>
-              <p><strong>Descripcion: </strong> <%= product.description %></p>
+          <article class="product-data" style = <%= !locals.userLogged ||(locals.userLogged && locals.userLogged.function_id != 1) ? 'margin:auto;text-align:center' : '' %>>
+              <p><strong><%= product.title %></strong></p>
+              <% if(locals.userLogged && locals.userLogged.function_id == 1){ %>
+                <p><strong>Descripcion: </strong> <%= product.description %></p>
+              <% } %>
               <p><strong>Categoría: </strong>
                 <% categories.forEach(cate=>{ %>
                   <%= product.category_id == cate.id ? cate.category : null %>
                 <% }) %>
               </p>
-              <p><strong>Precio: </strong> $<%=product.price%></p>
-              <p><strong>Descuento: </strong> <%=product.discount%>%</p>
+              
+              <% if(product.discount == 0){ %>
+                <p><strong>$<%=product.price%></strong></p>
+              <% } else {%>
+                <span style="text-decoration: line-through;margin-right: 10px;">$<%=product.price%></span><span style="color: rgb(16, 182, 16);"><strong>$<%= product.price * (100-product.discount)/100 %></strong></span>
+                <p><strong><%=product.discount%>% OFF</strong> </p>
+              <% } %>
           </article>
         </a>
         <div class="edit-delete-buttons">
