@@ -59,12 +59,15 @@
   border-bottom-right-radius: 5px;
 }
 
-.burgerMenuContentLink  {
-  transition: 2s;
+.burgerMenuContentLink li{
+  transition: 1s;
+  opacity: 0.8;
   text-align: left !important;
+  font-weight: bold;
 }
 
-.burgerMenuContentLink :hover {
+.burgerMenuContentLink li:hover {
+  opacity: 1;
   transform: scale(1.1);
 }
 
@@ -94,6 +97,7 @@
     margin-bottom: 5px;
     font-size: 12px;
     background-color:#e2e2e2;
+    transition: 1s;
   }
 
   .burgerMenuContentInput:hover {
@@ -108,6 +112,7 @@
     background-color: #e67192;
     font-size: 15px;
     color: white;
+    transition: 1s;
   }
 
   .burgerMenuContentButton:hover {
