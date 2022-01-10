@@ -39,6 +39,10 @@ body{
     
 }
 
+.text-danger {
+    color: rgb(204, 2, 2)
+}
+
 .colorSelect {
     border: none;
     border-radius: 10px;
