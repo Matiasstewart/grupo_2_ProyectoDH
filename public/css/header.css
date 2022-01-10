@@ -71,6 +71,18 @@
   transform: scale(1.1);
 }
 
+.burgerMenuContentLinkTittle {
+  transition: 1s;
+  opacity: 0.8;
+  text-align: left !important;
+  font-weight: bold;
+}
+
+.burgerMenuContentLinkTittle:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+ 
 @media (min-width:369px) {
      /* burguerMenu */
 .burguerA {
@@ -437,8 +449,8 @@
 
     .burgerMenuContentLinkTittle {
       position: absolute;
-      top: 21.5%;
-      left: 6%;
+      top: 22.5%;
+      left: 10% !important;
       width: 80%;
       color: white;
       font-size: 20px;
@@ -456,7 +468,7 @@
     .burgerMenuContentLink a {
       color : white;
       font-weight: normal;
-      font-size: 18px;
+      font-size: 20px;
       position: relative;
     }
 
